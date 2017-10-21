@@ -38,6 +38,8 @@ document. Here is an example of what your program might look like:
 
 ![screenshot1](https://i.imgur.com/mi2Gv7x.png)
 
+![screenshot2](https://i.imgur.com/aSKCyvy.gifv)
+
 Part of software development is being given a goal but not necessarily being 
 given instruction on all of the details needed to accomplish that goal. For example,
 even though working with things like images, threads, JSON, and the iTunes Search API 
