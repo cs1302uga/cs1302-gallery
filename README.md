@@ -60,10 +60,12 @@ clutter.
 
 ### Learning Outcomes
 
-* Implement generic classes according to an interface (1302-LO1).
+* Plan, design, implement, test, debug, and deploy a complete object-oriented
+  software solution in Linux/Unix environment (1302-LO1)
 * Utilitze inheritance and polymorphism in a software project (1302-LO3-LO4).
-* TODO
-* TODO
+* Develop a GUI for a software project (1302-LO7).
+* Implement exception-handling in a software project (1302-LO8).
+* Understand and apply langauge basics using an OOP language (1302-LO11).
 
 ### Functional Requirements
 
