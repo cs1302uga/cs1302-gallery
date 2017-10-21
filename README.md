@@ -139,16 +139,31 @@ is probably not the best idea.
 
 Below are some frequently asked questions related to this project.
 
-1. **Q1?**
+1. **How do I query the iTunes Search API?**
    
+   In order query the iTunes Search API, you need to access the iTunes Search 
+   API service via a carefully contructed URL. Here is a an example of a query
+   URL that searches for all Jack Johnson audio and video content (movies, 
+   podcasts, music, music videos, audiobooks, short films, and tv shows):
+   ```
+   https://itunes.apple.com/search?term=jack+johnson
+   ```
+   While something similar the above URL is all you need for this project,
+   the iTunes Search API has many options to help fine tune your query.
+   Please see the 
+   [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
+   for more information.
+
+   Query results are returned in JavaScript Object Notation (JSON) and will
+   likely need to be parsed using a third party library in order to be used
+   in your application. 
+
+2. **How do I download the JSON result for a query?**
+
    TODO answer
 
-2. **Q2?**
 
-   TODO answer
-
-
-3. **Q3?**
+3. **How do I parse the JSON result for a query?**
 
    TODO answer
 
