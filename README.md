@@ -168,7 +168,7 @@ Below are some frequently asked questions related to this project.
    Suppose you have a `String` object referred to by `sUrl` containing the 
    URL for an iTunes Search API query. In order to download the result, you 
    will need to create a [`URL`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-   object and a [`InputStreamReader'](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html) 
+   object and a [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html) 
    object as follows:
    ```java
    URL url = new URL(sUrl);
@@ -227,14 +227,14 @@ Below are some frequently asked questions related to this project.
    The HTML Javadoc documentation for the Google Gson API can be found 
    [here](https://google.github.io/gson/apidocs/).
 
-4. **How do I make my application to not hang when executing long running event handlers?**
+4. **How do I make my application to not/freeze hang when executing long running event handlers?**
 
    For the most part, your GUI application is just like any other Java 
    application you have ever written. If a line of code takes a long time to
    execute, then there is a delay before the next line of code is executed.
    This can be problematic in GUI applications since the underlying GUI 
    framework, essentially, pauses what it is doing in order to do what you
-   ask it to do. This can cause your GUI to hang (i.e., become unresponsive)
+   ask it to do. This can cause your GUI to hang/freeze (i.e., become unresponsive)
    when you have code blocks that take more than a few milliseconds. 
 
    The way to solve this problem is through the basic use of threads.
