@@ -32,7 +32,7 @@ Your goal is to implement a GUI application in Java using JavaFX 8 that displays
 gallery of images based on the results of a search query to the 
 [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching).
 This will require you to lookup things in Javadoc and apply your knowledge of
-things like inheritance, polymorphism, and lambda expressions. The functional
+things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this 
 document. Here is an example of what your program might look like:
 
