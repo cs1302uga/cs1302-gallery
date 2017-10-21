@@ -65,8 +65,8 @@ clutter.
 
 ### Functional Requirements
 
-* **Main Requirements:** Your application needs to have the components listed 
-  below. They need to function as described. If a certain aspect of a component 
+* **Main Requirements (100 points):** Your application needs to have the components 
+  listed below. They need to function as described. If a certain aspect of a component 
   (e.g., style or behavior) is not specified in these requirements, then that
   aspect is at the discretion of the implementor. The screenshot provided earlier 
   in this project description is meant to serve as a reference. It is okay if
@@ -123,9 +123,14 @@ clutter.
   contain an image of you as well as your name, email, and the version number
   for your application (version can be whatever you want). This window should
   be *application modal*, and it should be closable so that the user can return
-  to the main part of the application.
+  to the main part of the application. If you are doing both of the extra
+  credit requirements, then please make the "Help" menu the right-most menu
+  in the menu bar.
 
-* **Extra Credit 2 (5 points):** 
+* **Extra Credit 2 (5 points):** Add a "Theme" menu to the menu bar that lets
+  the user switch between different stylings for the application. In order to
+  receive points for this requirement, you should support at least one theme
+  in addition to your application's default theme. 
 
 ### Non-Functional Requirements
 
