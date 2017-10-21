@@ -158,6 +158,11 @@ Below are some frequently asked questions related to this project.
    likely need to be parsed using a third party library in order to be used
    in your application. 
 
+   When constructing a query string in Java, take special care that the
+   search term is [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+   This can be easily accomplished for you using the static `encode` method in
+   [`URLEncoder`](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html).
+
 2. **How do I download the JSON result for a query?**
 
    Suppose you have a `String` object referred to by `sUrl` containing the 
@@ -224,6 +229,86 @@ Below are some frequently asked questions related to this project.
 
 4. **How do I make my application to not hang when executing long running event handlers?**
 
-   TODO answer
+   For the most part, your GUI application is just like any other Java 
+   application you have ever written. If a line of code takes a long time to
+   execute, then there is a delay before the next line of code is executed.
+   This can be problematic in GUI applications since the underlying GUI 
+   framework, essentially, pauses what it is doing in order to do what you
+   ask it to do. This can cause your GUI to hang (i.e., become unresponsive)
+   when you have code blocks that take more than a few milliseconds. 
+
+   The way to solve this problem is through the basic use of threads.
+   The term *thread* refers to a single thread of execution, in which
+   code is executed in sequential order. When you launch your JavaFX
+   application, part of the application life-cycle is the creation of
+   a thread for your GUI. By default, any code executed by or in response
+   to your GUI components (e.g., the code for an event handler) takes place 
+   in this thread. If you do not want your program to hang, then you
+   will need to create a separate thread for your problematic code
+   snippets. This works because a Java program can have multiple threads
+   executing concurrently.
+
+   To create a thread, you need to instatiate a 
+   [`Thread`](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) object
+   with a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) 
+   implementation for your problematic code snippet. Since `Runnable` is
+   a functional interface, this process is simplified using a lambda
+   expression or method reference. Here is an example of how to create
+   and start a thread:
+   ```java
+   Runnable r = () -> {
+       /* problematic code here */
+   };
+   Thread t = new Thread(r);
+   t.start();
+   ```
+   After the call to `t.start()`, both the exising JavaFX thread and the
+   newly created thread are executing concurrently. You cannot assume 
+   that statements in either thread execute in any predetermined order.
+   When writing an event handler with problematic code, you might do
+   something like the following:
+   ```java
+   EventHandler<ActionEvent> handler = event -> {
+       Thread t = new Thread(() -> {
+           /* place problematic code here */
+       });
+       t.start();
+   };
+   button.setOnAction(handler);
+   ```   
+
+5. **What does "Not on FX application thread" mean and how do I fix it?**
+
+   Usually an `IllegalStateException` with the message "Not on FX application thread"
+   means that you are trying to access or modify some node (i.e., a component
+   or container) in the scene graph from a code snippet that is not executing
+   in the main JavaFX thread (see Q4 in this FAQ). If you want to fix this, then
+   the code snippet that interacts with the scene graph needs to be wrapped
+   in a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
+   implementation and passed to the static `runLater` method in 
+   [`Platform`](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Platform.html).
+   Since `Runnable` is a functional interface, this process is simplified using
+   a lambda expression or method reference. Here is a basic example:
+   ```java
+   Runnable r = () -> {
+       /* place code interacting with scene graph here */
+   };
+   Platform.runLater(r);
+   ```
+   The `runLater` method ensures that the code in your `Runnable` implementation 
+   executes in the main JavaFX thread. Here is a more complicated example that 
+   combines this scenario with the one described in Q4 of this FAQ:
+   ```java
+   EventHandler<ActionEvent> handler = event -> {
+       Thread t = new Thread(() -> {
+           /* some problematic code here */
+           Platform.runLater(() -> { /* interact with scene graph */ });
+           /* perhaps more problematic code here */
+       });
+       t.start();
+   };
+   button.setOnAction(handler);
+   ```
+   Of course, multiple calls to the `runLater` method can be used as needed.
 
 Have a question? Please post it on the course Piazza.
