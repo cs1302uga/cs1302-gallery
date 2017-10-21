@@ -1,7 +1,7 @@
 
 # CSCI 1302 - Gallery
 
-This document contains the description for the Lists project
+This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Fall 2017 CSCI 1302 classes
 at the University of Georgia.
 
