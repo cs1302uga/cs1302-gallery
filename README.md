@@ -84,7 +84,7 @@ clutter.
     initial set of images should correspond to some default query. If the
     application is in "play mode", then every two (2) seconds, a random image 
     that is currently being displayed should be replaced with a random image 
-    that is not currently being displayed (assuming more than 20 images
+    that is not currently being displayed (assuming more than 20 images are
     gathered from the response to the search query).
 
   * **Toolbar (50 points):** The application needs to have a toolbar that 
@@ -385,6 +385,21 @@ Below are some frequently asked questions related to this project.
 
 6. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
-   TODO timeline
+   The easiest way to accomplish this in a JavaFX application is using the
+   [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html) 
+   and [`KeyFrame`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/KeyFrame.html) 
+   classes. Here is an example that prints the current time (using 
+   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to 
+   standard output every two (2) seconds (specified using
+   [`Duration`](https://docs.oracle.com/javase/8/javafx/api/javafx/util/Duration.html)), indefinitely:
+   ```java
+   EventHandler<ActionEvent> handler = event -> System.out.println(LocalTime.now());
+   KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), handler);
+   TimeLine timeline = new Timeline();
+   timeline.setCycleCount(Timeline.INDEFINITE);
+   timeline.getKeyFrames().add(keyFrame);
+   timeline.play();
+   ```
+   The `Timeline` object also hase a `pause` method to pause the execution of the timeline.
 
 Have a question? Please post it on the course Piazza.
