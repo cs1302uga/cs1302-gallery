@@ -160,10 +160,69 @@ Below are some frequently asked questions related to this project.
 
 2. **How do I download the JSON result for a query?**
 
-   TODO answer
-
+   Suppose you have a `String` object referred to by `sUrl` containing the 
+   URL for an iTunes Search API query. In order to download the result, you 
+   will need to create a [`URL`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
+   object and a [`InputStreamReader'](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html) 
+   object as follows:
+   ```java
+   URL url = new URL(sUrl);
+   InputStreamReader reader = new InputStreamReader(url.openStream());
+   ```
+   If you want the JSON response as a string, then you might use a
+   [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
+   to access the individual lines of the response. If you're simply parsing
+   the JSON response using a third party library, then most support the
+   use of the `InputStreamReader` directly.
 
 3. **How do I parse the JSON result for a query?**
+
+   Parsing JSON can be tricky, and there are many options. Your instructor
+   recommends using Google's [`Gson`](https://github.com/google/gson) library.
+   Let's assume you have an `InputStreamReader` object referred to by `reader`
+   for the JSON response to the example query described in Q1 of this FAQ.
+   First, you will need to create a [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html)
+   object:
+   ```java
+   JsonParser jp = new JsonParser();
+   ```
+   Then, you can parse the JSON response using the `parse` method to return
+   the [`JsonElement`](https://google.github.io/gson/apidocs/com/google/gson/JsonElement.html)
+   object representing the root of the response:
+   ```java
+   JsonElement je = jp.parse(reader);
+   ```
+   After that, you can traverse the response using the methods described in
+   the Google Gson API. Since this is probably all very new to you, I
+   recommend printing `je` to standard output and comparing it to the output
+   description provided by the iTunes Search API. Also, here is a short code
+   snippet (without error checking) that prints the art URLs associated with 
+   the JSON response for the example query:
+   ```java
+   JsonObject root = je.getAsJsonObject();                      // root of response
+   JsonArray results = root.getAsJsonArray("results");          // "results" array
+   int numResults = results.size();                             // "results" array size
+   for (int i = 0; i < numResults; i++) {                       
+       JsonObject result = results.get(i).getAsJsonObject();    // object i in array
+       JsonElement artworkUrl100 = result.get("artworkUrl100"); // artworkUrl100 member
+       if (artworkUrl100 != null) {                             // member might not exist
+            String artUrl = artworkUrl100.getAsString();        // get member as string
+            System.out.println(artUrl);                         // print the string
+       } // if
+   } // for
+   ```
+   
+   You can add the Gson library to your project by adding its Maven dependency
+   to your `pom.xml` file. Search for `com.google.code.gson` on 
+   [`Maven Central`](http://search.maven.org/) for the exact dependency
+   information that needs to be added to your `pom.xml` file. At the time of
+   this writing, version `2.8.2` is the most recent version available and is
+   considered stable. 
+
+   The HTML Javadoc documentation for the Google Gson API can be found 
+   [here](https://google.github.io/gson/apidocs/).
+
+4. **How do I make my application to not hang when executing long running event handlers?**
 
    TODO answer
 
