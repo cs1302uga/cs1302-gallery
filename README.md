@@ -38,7 +38,9 @@ document. Here is an example of what your program might look like:
 
 ![screenshot1](https://i.imgur.com/mi2Gv7x.png)
 
-![screenshot2](https://i.imgur.com/tdRDXM1.gif)
+Here are links to an animated version: 
+[gifv](https://i.imgur.com/tdRDXM1.gifv), 
+[gif](https://i.imgur.com/tdRDXM1.gif).
 
 Part of software development is being given a goal but not necessarily being 
 given instruction on all of the details needed to accomplish that goal. For example,
