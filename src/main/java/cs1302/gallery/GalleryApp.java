@@ -11,8 +11,7 @@ public class GalleryApp extends Application {
 
     @Override
     public void start(Stage stage) {
-	this.stage = stage;
-	MainPane pane = new MainPane(this);
+	HBox pane = new HBox();
         Scene scene = new Scene(pane);
 	stage.setMaxWidth(640);
 	stage.setMaxHeight(480);
