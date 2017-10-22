@@ -29,7 +29,7 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 * **2017-10-21:** Made some things a little more clear in the FAQ.
 
 * **2017-10-22:** Added a ["Useful Links"](#useful-links) section to
-  the project description supplement.
+  the project description supplement. 
 
 ## Project Description
 
@@ -41,7 +41,7 @@ things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this 
 document. Here is an example of what your program might look like:
 
-![screenshot1](https://i.imgur.com/mi2Gv7x.png)
+![screenshot1](https://i.imgur.com/eUh0NbF.png)
 
 Here are links to an animated version: 
 [gifv](https://i.imgur.com/tdRDXM1.gifv), 
