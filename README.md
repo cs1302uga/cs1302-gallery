@@ -28,6 +28,9 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 * **2017-10-21:** Made some things a little more clear in the FAQ.
 
+* **2017-10-22:** Added a ["Useful Linkes"](#useful-links) section to
+  the project description supplement.
+
 ## Project Description
 
 Your goal is to implement a GUI application in Java using JavaFX 8 that displays a 
@@ -214,6 +217,24 @@ creating a post about something like this the day or night the project is due
 is probably not the best idea.
 
 # Supplement
+
+## Useful Links
+
+### JavaFX 8
+
+* [Package: `javafx`](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
+* [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html)
+* [Styling UI Controls with CSS](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/apply-css.htm)
+
+### Third Party APIs and Libraries
+
+* [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
+* [Google Gson Library](https://github.com/google/gson)
+
+### Other
+
+* [JavaScript Object Notation (JSON)](https://en.wikipedia.org/wiki/JSON)
+* [URL Encoding](https://en.wikipedia.org/wiki/Percent-encoding)
 
 ## FAQ
 
