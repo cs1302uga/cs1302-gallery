@@ -28,7 +28,7 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 * **2017-10-21:** Made some things a little more clear in the FAQ.
 
-* **2017-10-22:** Added a ["Useful Linkes"](#useful-links) section to
+* **2017-10-22:** Added a ["Useful Links"](#useful-links) section to
   the project description supplement.
 
 ## Project Description
