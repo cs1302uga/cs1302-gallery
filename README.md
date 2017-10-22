@@ -338,8 +338,11 @@ Below are some frequently asked questions related to this project.
        /* problematic code here */
    };
    Thread t = new Thread(r);
+   t.setDaemon(true);
    t.start();
    ```
+   The call to `t.setDaemon(true)` causes this thread to terminate prematurely
+   if the main JavaFx thread terminates first. 
    After the call to `t.start()`, both the exising JavaFX thread and the
    newly created thread are executing concurrently. You cannot assume 
    that statements in either thread execute in any predetermined order.
@@ -350,6 +353,7 @@ Below are some frequently asked questions related to this project.
        Thread t = new Thread(() -> {
            /* place problematic code here */
        });
+       t.setDaemon(true);
        t.start();
    };
    button.setOnAction(handler);
