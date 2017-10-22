@@ -353,7 +353,15 @@ Below are some frequently asked questions related to this project.
        t.start();
    };
    button.setOnAction(handler);
-   ```   
+   ```
+   
+   The solution presented above is probably the simplest. Alternatively, you 
+   can make use of some of the classes in the 
+   [`javafx.concurrent`](https://docs.oracle.com/javase/8/javafx/api/javafx/concurrent/package-summary.html) package, 
+   which provide, among other things, the ability to control the execution and 
+   track the progress of code that is deferred to another thread. For more information,
+   please see the [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/fx_concurrency.htm)
+   tutorial. 
 
 5. **What does "Not on FX application thread" mean and how do I fix it?**
 
