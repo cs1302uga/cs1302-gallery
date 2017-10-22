@@ -26,6 +26,8 @@ development on nike.
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
 
+* **2017-10-21:** Made some things a little more clear in the FAQ.
+
 ## Project Description
 
 Your goal is to implement a GUI application in Java using JavaFX 8 that displays a 
@@ -315,43 +317,51 @@ Below are some frequently asked questions related to this project.
    ask it to do. This can cause your GUI to hang/freeze (i.e., become unresponsive)
    when you have code blocks that take more than a few milliseconds. 
 
-   The way to solve this problem is through the basic use of threads.
+   The way to solve this problem is through a basic use of threads.
    The term *thread* refers to a single thread of execution, in which
-   code is executed in sequential order. When you launch your JavaFX
-   application, part of the application life-cycle is the creation of
-   a thread for your GUI. By default, any code executed by or in response
-   to your GUI components (e.g., the code for an event handler) takes place 
-   in this thread. If you do not want your program to hang, then you
-   will need to create a separate thread for your problematic code
-   snippets. This works because a Java program can have multiple threads
-   executing concurrently.
+   code is executed in sequential order. When you start a Java program,
+   you usually start with one thread that starts executing the `main`
+   method. This thread is usually called the "main" thread. When you launch 
+   your JavaFX application using the `Application.launch` method, part of 
+   the application life-cycle is the creation of a thread for your GUI 
+   called the "JavaFX Event Dispatch" thread. By default, any code 
+   executed by or in response to your GUI components (e.g., the code for an 
+   event handler) takes place in the JavaFX Event Dispatch Thread. If you 
+   do not want your program to hang, then you will need to create a 
+   separate thread for your problematic code snippets. This works because 
+   a Java program can have multiple threads executing concurrently. 
 
-   To create a thread, you need to instatiate a 
+   Although we have been using "problematic code" to describe the code 
+   snippet causing the problem, such a code snippet really represents some 
+   "task" that you want your application to perform without hanging. 
+   Therefore, I will try to use "task" throughout the remainder of this 
+   response.
+
+   To create a new thread, you need to instatiate a 
    [`Thread`](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) object
    with a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) 
-   implementation for your problematic code snippet. Since `Runnable` is
-   a functional interface, this process is simplified using a lambda
-   expression or method reference. Here is an example of how to create
-   and start a thread:
+   implementation for your task. Since `Runnable` is a functional interface, 
+   this process is simplified using a lambda expression or method reference. 
+   Here is an example idiom of how to create and start a new thread for a task:
    ```java
    Runnable r = () -> {
-       /* problematic code here */
+       /* task code here */
    };
    Thread t = new Thread(r);
    t.setDaemon(true);
    t.start();
    ```
    The call to `t.setDaemon(true)` prevents this newly created thread from
-   delaying program termination in the case where the main JavaFX thread terminates
-   first. After the call to `t.start()`, both the exising JavaFX thread and the
-   newly created thread are executing concurrently. You cannot assume 
-   that statements in either thread execute in any predetermined order.
-   When writing an event handler with problematic code, you might do
-   something like the following:
+   delaying program termination in the case where the either main thread
+   or JavaFX Event Dispatch thread terminates first. After the call to 
+   `t.start()`, both the JavaFX Event Dispatch Thread and the newly created 
+   thread are executing concurrently. You cannot assume that statements in 
+   either thread execute in any predetermined order. When writing an event 
+   handler that executes a task, you might do something like the following:
    ```java
    EventHandler<ActionEvent> handler = event -> {
        Thread t = new Thread(() -> {
-           /* place problematic code here */
+           /* place task code here */
        });
        t.setDaemon(true);
        t.start();
@@ -359,8 +369,8 @@ Below are some frequently asked questions related to this project.
    button.setOnAction(handler);
    ```
    
-   The solution presented above is probably the simplest. Alternatively, you 
-   can make use of some of the classes in the 
+   **Advanced:** The solution presented above is probably the simplest.
+   Alternatively, you can make use of some of the classes in the 
    [`javafx.concurrent`](https://docs.oracle.com/javase/8/javafx/api/javafx/concurrent/package-summary.html) package, 
    which provide, among other things, the ability to control the execution and 
    track the progress of code that is deferred to another thread. For more information,
@@ -372,7 +382,7 @@ Below are some frequently asked questions related to this project.
    Usually an `IllegalStateException` with the message "Not on FX application thread"
    means that you are trying to access or modify some node (i.e., a component
    or container) in the scene graph from a code snippet that is not executing
-   in the main JavaFX thread (see Q4 in this FAQ). If you want to fix this, then
+   in the JavaFX Event Dispatch thread (see Q4 in this FAQ). If you want to fix this, then
    the code snippet that interacts with the scene graph needs to be wrapped
    in a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
    implementation and passed to the static `runLater` method in 
@@ -386,20 +396,26 @@ Below are some frequently asked questions related to this project.
    Platform.runLater(r);
    ```
    The `runLater` method ensures that the code in your `Runnable` implementation 
-   executes in the main JavaFX thread. Here is a more complicated example that 
-   combines this scenario with the one described in Q4 of this FAQ:
+   executes in the JavaFX Event Dispatch thread. Here is a more complete example 
+   that combines this scenario with the one described in Q4 of this FAQ:
    ```java
    EventHandler<ActionEvent> handler = event -> {
        Thread t = new Thread(() -> {
-           /* some problematic code here */
+           /* some task code here */
            Platform.runLater(() -> { /* interact with scene graph */ });
-           /* perhaps more problematic code here */
+           /* perhaps more task code here */
        });
        t.start();
    };
    button.setOnAction(handler);
    ```
-   Of course, multiple calls to the `runLater` method can be used as needed.
+   While it might be tempting to place all of your task code in the
+   `Runnable` implementation provided to `runLater`, that is not a good idea
+   because it will be executed on the JavaFX Event Dispatch thread. If you
+   already writing code for another thread, it was likely to avoid having it
+   run on the JavaFX Event Dispatch Thread. Multiple calls to the `runLater` 
+   method can be used, as needed, to ensure only the code that interacts with 
+   the scene graph is executed in the JavaFX Event Dispatch thread.
 
 6. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
