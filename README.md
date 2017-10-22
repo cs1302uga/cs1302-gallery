@@ -352,8 +352,8 @@ Below are some frequently asked questions related to this project.
    t.start();
    ```
    The call to `t.setDaemon(true)` prevents this newly created thread from
-   delaying program termination in the case where the either main thread
-   or JavaFX Event Dispatch thread terminates first. After the call to 
+   delaying program termination in the case where either the main thread
+   or the JavaFX Event Dispatch thread terminates first. After the call to 
    `t.start()`, both the JavaFX Event Dispatch Thread and the newly created 
    thread are executing concurrently. You cannot assume that statements in 
    either thread execute in any predetermined order. When writing an event 
