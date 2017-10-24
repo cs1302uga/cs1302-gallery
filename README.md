@@ -28,8 +28,11 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 * **2017-10-21:** Made some things a little more clear in the FAQ.
 
-* **2017-10-22:** Added a ["Useful Links"](#useful-links) section to
-  the project description supplement. 
+* **2017-10-22:** Added a ["Useful Links"](#useful-links) section to the project
+  description supplement. 
+
+* **2017-10-24:** Updated the "Progress Bar" functional requirement to better
+  indicate that it is not merely aesthetic. 
 
 ## Project Description
 
@@ -126,7 +129,9 @@ clutter.
     images into memory, and updating the main content area of the application.
     Notably, the progress bar will be seen to progress when the application
     first starts (as images are gathered from the response to the default
-    query) and when the "Update Images" button is pressed.
+    query) and when the "Update Images" button is pressed. Please note that this
+    progress bar is not merely aesthetic. It should actually show the progress
+    of gathering individual images from the query response. 
 
 * **Extra Credit 1 (5 points):** Add a "Help" menu to the menu bar. This menu
   should contain one menu item labeled "About" that displays an "About YOUR-NAME"
@@ -136,12 +141,13 @@ clutter.
   be *application modal*, and it should be closable so that the user can return
   to the main part of the application. If you are doing both of the extra
   credit requirements, then please make the "Help" menu the right-most menu
-  in the menu bar.
 
 * **Extra Credit 2 (5 points):** Add a "Theme" menu to the menu bar that lets
   the user switch between different stylings for the application. In order to
   receive points for this requirement, you should support at least one theme
-  in addition to your application's default theme. 
+  in addition to your application's default theme. HINT: You may want to explore
+  having muliple CSS files for your application and loading/applying them as
+  needed to facilitate this requirement.
 
 ### Non-Functional Requirements
 
