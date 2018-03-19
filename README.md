@@ -2,7 +2,7 @@
 # CSCI 1302 - Gallery
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Fall 2017 CSCI 1302 classes
+assigned to the students in the Spring 2018 CSCI 1302 classes
 at the University of Georgia.
 
 **Please read the entirety of this file before
@@ -10,7 +10,7 @@ beginning your project.**
 
 ## Due Dates
 
-This project is **DUE SUN 2017-11-12 @ 11:55 PM EDT**.
+This project is **DUE SUN 2018-04-13 @ 11:55 PM EDT**.
 
 ## Academic Honesty
 
@@ -25,14 +25,6 @@ development on nike.
 
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
-
-* **2017-10-21:** Made some things a little more clear in the FAQ.
-
-* **2017-10-22:** Added a ["Useful Links"](#useful-links) section to the project
-  description supplement. 
-
-* **2017-10-24:** Updated the "Progress Bar" functional requirement to better
-  indicate that it is not merely aesthetic. 
 
 ## Project Description
 
