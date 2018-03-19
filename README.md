@@ -10,7 +10,7 @@ beginning your project.**
 
 ## Due Dates
 
-This project is **DUE SUN 2018-04-13 @ 11:55 PM EDT**.
+This project is **DUE FRI 2018-04-13 @ 11:55 PM EDT**.
 
 ## Academic Honesty
 
