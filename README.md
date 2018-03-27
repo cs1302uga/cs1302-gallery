@@ -448,7 +448,7 @@ Below are some frequently asked questions related to this project.
    ```java
    EventHandler<ActionEvent> handler = event -> System.out.println(LocalTime.now());
    KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), handler);
-   TimeLine timeline = new Timeline();
+   Timeline timeline = new Timeline();
    timeline.setCycleCount(Timeline.INDEFINITE);
    timeline.getKeyFrames().add(keyFrame);
    timeline.play();
