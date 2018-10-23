@@ -5,12 +5,23 @@ This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Fall 2018 CSCI 1302 classes
 at the University of Georgia.
 
+**DUE TUE 2018-11-06 @ 11:55 PM EDT**.
+
 **Please read the entirety of this file before
 beginning your project.** 
 
-## Due Dates
+## Table of Contents
 
-This project is **DUE TUE 2018-11-06 @ 11:55 PM EDT**.
+* [Academic Honesty](#academic-honesty)
+* [Updates](#updates)
+* [Project Description](#project-description)
+* [Project Requirements & Grading](#project-requirements--grading)
+  * [Functional Requirements](#functional-requirements)
+  * [Non-Functional Requirements](#non-functional-requirements)
+* [How to Download the Project](#how-to-download-the-project)
+* [Submission Instructions](#submission-instructions)
+* [Appendix - Usefule Links](#appendix---useful-links)
+* [Appendix - FAQ](#appendix---faq)
 
 ## Academic Honesty
 
@@ -68,6 +79,11 @@ clutter.
 * Develop a GUI for a software project (1302-LO7).
 * Implement exception-handling in a software project (1302-LO8).
 * Understand and apply langauge basics using an OOP language (1302-LO11).
+
+## Project Requirements & Grading
+
+This assignment is worth 100 points. The lowest possible grade is 0, and the 
+highest possible grade is 105 (due to extra credit).
 
 ### Functional Requirements
 
@@ -146,7 +162,7 @@ clutter.
 Points indicated for non-functional requirements are not added to the grade total
 if satisfied but are subtracted from the grade total if not satisfied.
 
-* **(100 points) Project Directory Structure:** The location of the default
+* **(100 points) Project Structure:** The location of the default
   package for the source code should be a direct subdirectory called `src/main/java`.
   When the project is compiled using Maven, the the default package for compiled 
   code should be `target/classes`. 
@@ -156,6 +172,8 @@ if satisfied but are subtracted from the grade total if not satisfied.
   ```
   $ mvn compile
   ```
+  
+  The driver class should be `cs1302.gallery.GalleryApp`.
 
 * **(100 points) Development Environment:** This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
@@ -242,7 +260,7 @@ each of the functional and non-functional requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
 an additional 10 points via extra credit. 
 
-## Getting/Updating Skeleton Code
+## How to Download the Project
 
 On Nike, execute the following terminal command in order to download the project
 files into sub-directory within your present working directory:
@@ -291,27 +309,25 @@ post to your instructor via the course Piazza as soon as possible. However,
 creating a post about something like this the day or night the project is due 
 is probably not the best idea.
 
-# Supplement
+# Appendix - Useful Links
 
-## Useful Links
-
-### JavaFX 8
+## JavaFX 8
 
 * [Package: `javafx`](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
 * [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html)
 * [Styling UI Controls with CSS](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/apply-css.htm)
 
-### Third Party APIs and Libraries
+## Third Party APIs and Libraries
 
 * [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
 * [Google Gson Library](https://github.com/google/gson)
 
-### Other
+## Other
 
 * [JavaScript Object Notation (JSON)](https://en.wikipedia.org/wiki/JSON)
 * [URL Encoding](https://en.wikipedia.org/wiki/Percent-encoding)
 
-## FAQ
+# Appendix - FAQ
 
 Below are some frequently asked questions related to this project.
 
