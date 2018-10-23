@@ -21,7 +21,7 @@ the Appendix.**
   * [Non-Functional Requirements](#non-functional-requirements)
 * [How to Download the Project](#how-to-download-the-project)
 * [Submission Instructions](#submission-instructions)
-* [Appendix - Usefule Links](#appendix---useful-links)
+* [Appendix - Useful Links](#appendix---useful-links)
 * [Appendix - FAQ](#appendix---faq)
 
 ## Academic Honesty
