@@ -320,7 +320,7 @@ Below are some frequently asked questions related to this project.
    to your `pom.xml` file. Search for `com.google.code.gson` on 
    [`Maven Central`](http://search.maven.org/) for the exact dependency
    information that needs to be added to your `pom.xml` file. At the time of
-   this writing, version `2.8.2` is the most recent version available and is
+   this writing, version `2.8.5` is the most recent version available and is
    considered stable. 
 
    The HTML Javadoc documentation for the Google Gson API can be found 
