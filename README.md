@@ -184,6 +184,12 @@ if satisfied but are subtracted from the grade total if not satisfied.
 * **(100 points) No Static Variables:** Use of static variables is 
   not allowed for this assignment. Static constants are allowed. 
   
+* **(100 points) No FXML or use of Scene Builder:** FXML and SceneBuilder
+  are advanced tools that are not currently covered in this course. Use of
+  either for this project is prohibited. Please note that the project is
+  not easier with these tools. In most cases, they actually make the
+  project harder, especially since those topics have not been covered.
+  
 * **(25 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding, 
   your application should not hang/freeze or crash during execution.
   
