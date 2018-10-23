@@ -126,9 +126,9 @@ highest possible grade is 105 (due to extra credit).
       to execute the search query specified in the query text field, gather
       the images associated with the query response, and update the images
       in the main content area of the application accordingly. If less than
-      twenty (20) images are gathered, then a dialog should be displayed to
+      twenty one (21) images are gathered, then a dialog should be displayed to
       the user with an appropriate error message, and the main content area
-      should not be updated. If twenty (20) or more images are gathered, 
+      should not be updated. If twenty one (21) or more images are gathered, 
       then the images not chosen for display in the main content area of the
       application should be remembered in order to facilitate the random
       replacement described for the main content of the application.
