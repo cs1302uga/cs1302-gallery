@@ -146,17 +146,94 @@ clutter.
 Points indicated for non-functional requirements are not added to the grade total
 if satisfied but are subtracted from the grade total if not satisfied.
 
-* **User-Friendly (5 points):** Except for reasonable delays resulting from X forwarding, 
+* **(100 points) Project Directory Structure:** The location of the default
+  package for the source code should be a direct subdirectory called `src/main/java`.
+  When the project is compiled using Maven, the the default package for compiled 
+  code should be `target/classes`. 
+  
+  If you follow this structure, then you might type the following to compile 
+  your code, assuming you are in the top-level project directory:
+  ```
+  $ mvn compile
+  ```
+
+* **(100 points) Development Environment:** This project must be implemented 
+  in Java 8, and it *must compile and run* correctly on Nike using the specific
+  version of Java 8 that is setup according to the instructions provided
+  by your instructor (usually provided in the first homework assignment).
+  
+* **(100 points) No Static Variables:** Use of static variables is 
+  not allowed for this assignment. Static constants are allowed. 
+  
+* **(25 points) User-Friendly Experience:** Except for reasonable delays resulting from X forwarding, 
   your application should not hang/freeze or crash during execution.
+  
+* **(25 points) Code Style Guidelines:** You should be consistent with the style 
+  aspect of your code in order to promote readability. Besides consistency, the
+  following conventions will be enforced:
+  
+  * **Reference type names are written in _UpperCamelCase_.** Class names are  
+    typically nouns or noun phrases. For example, `Character` or `ImmutableList`. 
+    Interface names may also be nouns or noun phrases (for example, `List`), but 
+    may sometimes be adjectives or adjective phrases instead (for example, 
+    `Readable`).
+  
+  * **Method names are written in _lowerCamelCase_.** Method names are also 
+    typically verbs or verb phrases. For example, `sendMessage` or `stop`.
+  
+  * **Braces are always used where optional.** Braces should be used with `if`, 
+    `else`, `for`, `do`, and `while` statements, even when the body is empty or 
+    contains only a single statement.
+    
+  * **Column limit: 100.** You should limit the number of characters, including
+    whitespace, on any given line to 100 characters. Except as noted below, any 
+    line that would exceed this limit must be manually line-wrapped in a
+    consistent manner. Exceptions to the column limit include:
+    
+    * Lines where obeying the column limit is not possible (for example, a long 
+      URL in Javadoc, or a long JSNI method reference).
+    * In `package` and `import` statements.
+    * Command line input examples in a comment that may be cut-and-pasted into 
+      a shell.
+      
+  * **Method height <= window height.** You should limit the number of lines for
+    a method so that the entire method can be seen on the screen at once. This
+    includes the line(s) with the method's signature and opening curly brace, all
+    lines in the body of the mthod (including blank lines), and the line with
+    the method's ending curly brace. 
+    
+    Of all the style guidelines, this is the probably the most subjective and 
+    hardest to grade because everyone might have a different window size due
+    to different terminal emulator and physical screen size configurations. 
+    Therefore, graders will be checking for compliance with the spirit
+    of this guideline, which is: methods that are too big and/or repetitive 
+    should be refactored to include propor looping constructs and/or broken
+    up into smaller methods to improve readability. 
 
-* **Javadoc Documentation (5 points):** Each method and class needs to be documented
-  using Javadoc comments. If a method overrides an inheritted method that is
-  already documented, then that method only needs a Javadoc comment if the
-  implementation differs from the existing documentation. 
+* **(25 points) Javadoc Documentation:** Each method and class needs to be fully
+  documented using Javadoc comments. Your comment should provide a description
+  of the method's functionality in the first sentence of the comment.  This sentence
+  needs to be a gramatically correct English sentence with proper punctuation. Further 
+  description can be provided in subsequent sentence. The basic formatting of Javadoc 
+  blocks is as seen in this example:
+  ```java
+  /**
+   * Multiple lines of Javadoc text are written here,
+   * wrapped normally...
+   */
+  public int method(String p1) { ... }
+  ```
+  ... or in this single-line example:
+  ```java
+  /** An especially short bit of Javadoc. */
+  ```
+  All method parameters and exceptions need to be documented.
+  More information about Javadoc can be found
+  [here](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javadoc.html).
 
-* **In-line Documentation (5 points):** Code blocks should be adequately documented
+* **(25 points) In-line Documentation:** Code blocks should be adequately documented
   using in-line comments. This is especially necessary when a block of code
-  is not immediately understood by a reader (e.g., the grader). 
+  is not immediately understood by a reader (e.g., yourself or the grader).
 
 ### Grading
 
