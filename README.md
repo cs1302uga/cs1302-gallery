@@ -8,7 +8,8 @@ at the University of Georgia.
 **DUE TUE 2018-11-06 @ 11:55 PM EDT**.
 
 **Please read the entirety of this file before
-beginning your project.** 
+beginning your project, including the FAQ in
+the Appendix.** 
 
 ## Table of Contents
 
