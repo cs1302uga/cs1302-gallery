@@ -232,7 +232,7 @@ if satisfied but are subtracted from the grade total if not satisfied.
     to different terminal emulator and physical screen size configurations. 
     Therefore, graders will be checking for compliance with the spirit
     of this guideline, which is: methods that are too big and/or repetitive 
-    should be refactored to include propor looping constructs and/or broken
+    should be refactored to include proper looping constructs and/or broken
     up into smaller methods to improve readability. 
 
 * **(25 points) Javadoc Documentation:** Each method and class needs to be fully
