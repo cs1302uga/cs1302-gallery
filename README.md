@@ -38,6 +38,8 @@ development on nike.
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
 
+* 2018-10-24 WED Updated the FAQ.
+
 ## Project Description
 
 Your goal is to implement a GUI application in Java using JavaFX 8 that displays a 
@@ -426,7 +428,7 @@ Below are some frequently asked questions related to this project.
    The HTML Javadoc documentation for the Google Gson API can be found 
    [here](https://google.github.io/gson/apidocs/).
 
-4. **How do I make my application to not/freeze hang when executing long running event handlers?**
+4. **How do I make my application not freeze/hang when executing long running event handlers?**
 
    For the most part, your GUI application is just like any other 
    Java application you have ever written. If a line of code takes a long time to
@@ -554,6 +556,26 @@ Below are some frequently asked questions related to this project.
    timeline.play();
    ```
    The `Timeline` object also hase a `pause` method to pause the execution of the timeline.
+   
+7. **How do I pass around objects effectively?**
+
+   From time to time, you may need to access one part of your app from another part of your app.
+   You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
+   of reference variales around, perhaps through constructors. If it were one or two variable, 
+   then it would not be a big deal. However, you are likely reading this question because you
+   are passing a lot variables around. Your first thought might be to make those variables 
+   static, but that is not good for a couple different reasons if you recall what it means for
+   a variable to be static and the non-functional requirements for this project.
+   
+   The reccommended strategy is to add all those variables to your driver class as instance variables
+   with getters and setters, then pass a reference to your driver object around as needed.
+   This way, you are only passing around one variable instead of many! In the other parts of your
+   app, simply call on the getter and setters methods to access and change the things you 
+   were previously passing around.
+   
+   Remember, if you are currently in your driver class's `start` method, then you can pass
+   a reference to the current driver object into a method using the `this` reference
+   variable. 
 
 Have a question? Please post it on the course Piazza.
 
