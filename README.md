@@ -84,7 +84,7 @@ clutter.
 ## Project Requirements & Grading
 
 This assignment is worth 100 points. The lowest possible grade is 0, and the 
-highest possible grade is 105 (due to extra credit).
+highest possible grade is 110 (due to extra credit).
 
 ### Functional Requirements
 
