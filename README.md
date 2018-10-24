@@ -474,20 +474,32 @@ Below are some frequently asked questions related to this project.
    ```
    The call to `t.setDaemon(true)` prevents this newly created thread from
    delaying program termination in the case where either the main thread
-   or the JavaFX Event Dispatch thread terminates first. After the call to 
+   or the JavaFX Event Dispatch thread terminate first. After the call to 
    `t.start()`, both the JavaFX Event Dispatch Thread and the newly created 
    thread are executing concurrently. You cannot assume that statements in 
    either thread execute in any predetermined order. When writing an event 
    handler that executes a task, you might do something like the following:
    ```java
    EventHandler<ActionEvent> handler = event -> {
-       Thread t = new Thread(() -> {
-           /* place task code here */
-       });
+       Runnable r = () -> {
+           /* task code here */
+       };
+       Thread t = new Thread(r);
        t.setDaemon(true);
        t.start();
    };
    button.setOnAction(handler);
+   ```
+   If you understand the code snippet above, then you might instead write it
+   more concisely as follows:
+   ```java
+   button.setOnAction(event -> {
+       Thread t = new Thread(() -> {
+           /* task code here */
+       });
+       t.setDaemon(true);
+       t.start();
+   });
    ```
    
    **Advanced:** The solution presented above is probably the simplest.
@@ -521,14 +533,33 @@ Below are some frequently asked questions related to this project.
    that combines this scenario with the one described in Q4 of this FAQ:
    ```java
    EventHandler<ActionEvent> handler = event -> {
+       Runnable r = () -> {
+           /* some task code here */
+           Platform.runLater(() -> { /* interact with scene graph */ });
+           /* perhaps more task code here */
+           Platform.runLater(() -> { /* interact with scene graph again */ });
+           /* perhaps even more task code here */
+       };
+       Thread t = new Thread(r);
+       t.setDaemon(true);
+       t.start();       
+   };
+   button.setOnAction(handler);
+   ```
+   If you understand the code snippet above, then you might instead write it
+   more concisely as follows:
+   ```java
+   button.setOnAction(event -> {
        Thread t = new Thread(() -> {
            /* some task code here */
            Platform.runLater(() -> { /* interact with scene graph */ });
            /* perhaps more task code here */
+           Platform.runLater(() -> { /* interact with scene graph again */ });
+           /* perhaps even more task code here */
        });
-       t.start();
-   };
-   button.setOnAction(handler);
+       t.setDaemon(true);
+       t.start();       
+   });
    ```
    While it might be tempting to place all of your task code in the
    `Runnable` implementation provided to `runLater`, that is not a good idea
