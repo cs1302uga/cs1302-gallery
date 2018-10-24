@@ -561,11 +561,11 @@ Below are some frequently asked questions related to this project.
 
    From time to time, you may need to access one part of your app from another part of your app.
    You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
-   of reference variales around, perhaps through constructors. If it were one or two variable, 
+   of reference variales around, perhaps through constructors. If it were one or two variables, 
    then it would not be a big deal. However, you are likely reading this question because you
-   are passing a lot variables around. Your first thought might be to make those variables 
-   static, but that is not good for a couple different reasons if you recall what it means for
-   a variable to be static and the non-functional requirements for this project.
+   are passing a lot of variables around. Your first thought might be to make those variables 
+   static, but that is not good for a couple different reasons--recall what it means for
+   a variable to be static as well as the non-functional requirements for this project.
    
    The reccommended strategy is to add all those variables to your driver class as instance variables
    with getters and setters, then pass a reference to your driver object around as needed.
