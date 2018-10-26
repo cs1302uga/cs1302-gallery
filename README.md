@@ -210,7 +210,8 @@ if satisfied but are subtracted from the grade total if not satisfied.
   
   * **Braces are always used where optional.** Braces should be used with `if`, 
     `else`, `for`, `do`, and `while` statements, even when the body is empty or 
-    contains only a single statement.
+    contains only a single statement. Single line lambda expressions are
+    permitted. 
     
   * **Column limit: 100.** You should limit the number of characters, including
     whitespace, on any given line to 100 characters. Except as noted below, any 
