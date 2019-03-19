@@ -2,10 +2,10 @@
 # CSCI 1302 - Gallery
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Fall 2018 CSCI 1302 classes
+assigned to the students in the Spring 2019 CSCI 1302 classes
 at the University of Georgia.
 
-**DUE TUE 2018-11-06 (NOV 6) @ 11:55 PM EDT**.
+**DUE FRI 2019-03-05 (MAR 5) @ 11:55 PM EDT**.
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
@@ -19,6 +19,7 @@ the Appendix.**
 * [Project Requirements & Grading](#project-requirements--grading)
   * [Functional Requirements](#functional-requirements)
   * [Non-Functional Requirements](#non-functional-requirements)
+  * [Absolute Requirements](#non-functional-requirements)
 * [How to Download the Project](#how-to-download-the-project)
 * [Submission Instructions](#submission-instructions)
 * [Appendix - Useful Links](#appendix---useful-links)
@@ -37,8 +38,6 @@ development on nike.
 
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
-
-* 2018-10-24 WED Updated the FAQ.
 
 ## Project Description
 
