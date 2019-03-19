@@ -1,6 +1,8 @@
 
 # CSCI 1302 - Gallery
 
+![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
+
 This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Spring 2019 CSCI 1302 classes
 at the University of Georgia.
