@@ -62,7 +62,9 @@ given instruction on all of the details needed to accomplish that goal. For exam
 even though working with things like images, threads, JSON, and the iTunes Search API 
 haven't been covered in class, you are going to need to lookup how to do these things 
 in order to complete this project. Starter code and a generously helpful [FAQ](#faq) 
-are provided.
+are provided. After actively eading through the main parts of this project description
+and taking notes, please read through the [FAQ](#faq) to see if it answers any of your
+questions.
 
 This project is also designed to help you better understand the usefulness of good
 class design. While you can technically write your entire JavaFX-based
@@ -74,6 +76,17 @@ If you find that you are writing a lot of code related to a specific component
 (e.g., setting styling, adding event handlers, etc.), then it's probably 
 a good idea to make a custom version of that component in order to reduce
 clutter. 
+
+We are also using this project to further introduce you to 
+[Maven](https://maven.apache.org/what-is-maven.html).
+As you are actively encouraged to create and document additional classes in order
+to create customized, reusable components (e.g., for dealing with the image views),
+it would be slightly tedious to use compile and run your code frequently.
+Instead, you can use Maven to more easily compile your code and handle dependencies
+(e.g., for the Gson library mentioned in the FAQ). Please see the
+"Project Structure" sub-section of the 
+[Absolute Requirements](#non-functional-requirements) section for an overview of
+what you can do with Maven.
 
 ### Learning Outcomes
 
@@ -191,7 +204,7 @@ point total. That is, they are all or nothing.
     contains only a single statement.
 	
   * **Block Indentation: 4 spaces.** Each time a new block or block-like construct 
-	is 	opened, the indent increases by four spaces. When the block ends, the indent 
+	is opened, the indent increases by four spaces. When the block ends, the indent 
 	returns to the previous indent level. The indent level applies to both code 
 	and comments throughout the block. 
 	
@@ -312,7 +325,20 @@ made to modify your submission to evaluate other requirements.
   $ mvn compile
   ```
   
-  The driver class should be `cs1302.gallery.GalleryApp`.
+  Additionally, a `Makefile` is provided so that you can type the following to
+  easily clean, compile, and run your code:
+  ```
+  $ make clean
+  ```
+  ```
+  $ make compile
+  ```
+  ```
+  $ make run
+  ```
+  
+  Your main application class should be `cs1302.gallery.GalleryApp`.
+  The driver class should be `cs1302.gallery.GalleryDriver`.
 
 * __Development Environment:__ This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
