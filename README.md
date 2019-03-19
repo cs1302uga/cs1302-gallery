@@ -1,4 +1,3 @@
-
 # CSCI 1302 - Gallery
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
