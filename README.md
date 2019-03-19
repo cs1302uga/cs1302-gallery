@@ -354,9 +354,6 @@ made to modify your submission to evaluate other requirements.
   compilation dependencies. You should remove any `.java` files that you
   do not need before submission. 
   
-* **No Static Variables:** Use of static variables is 
-  not allowed for this assignment. Static constants are allowed. 
-  
 * **No FXML or use of Scene Builder:** FXML and SceneBuilder
   are advanced tools that are not currently covered in this course. Use of
   either for this project is prohibited. Please note that the project is
