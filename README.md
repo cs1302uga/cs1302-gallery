@@ -315,7 +315,7 @@ it will result in an immediate zero for the assignment. In many cases, a violati
 will prevent the graders from evaluating your functional requirements. No attempts will be
 made to modify your submission to evaluate other requirements.
 
-* **(100 points) Project Structure:** The location of the default
+* **Project Structure:** The location of the default
   package for the source code should be a direct subdirectory called `src/main/java`.
   When the project is compiled using Maven, the the default package for compiled 
   code should be `target/classes`. 
@@ -341,7 +341,7 @@ made to modify your submission to evaluate other requirements.
   Your main application class should be `cs1302.gallery.GalleryApp`.
   The driver class should be `cs1302.gallery.GalleryDriver`.
 
-* __Development Environment:__ This project must be implemented 
+* **Development Environment:** This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
   version of Java 8 that is setup according to the instructions provided
   by your instructor. For Spring 2019, these instructions were posted on
@@ -354,10 +354,10 @@ made to modify your submission to evaluate other requirements.
   compilation dependencies. You should remove any `.java` files that you
   do not need before submission. 
   
-* **(100 points) No Static Variables:** Use of static variables is 
+* **No Static Variables:** Use of static variables is 
   not allowed for this assignment. Static constants are allowed. 
   
-* **(100 points) No FXML or use of Scene Builder:** FXML and SceneBuilder
+* **No FXML or use of Scene Builder:** FXML and SceneBuilder
   are advanced tools that are not currently covered in this course. Use of
   either for this project is prohibited. Please note that the project is
   not easier with these tools. In most cases, they actually make the
