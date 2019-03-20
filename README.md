@@ -320,14 +320,22 @@ made to modify your submission to evaluate other requirements.
   When the project is compiled using Maven, the the default package for compiled 
   code should be `target/classes`. 
   
-  If you follow this structure, then you might type the following to compile 
-  your code, assuming you are in the top-level project directory:
+  If you follow this structure, then you might type the following to clean, compile, 
+  and run your code using Maven, assuming you are in the top-level project directory:
+  ```
+  $ mvn clean
+  ```
   ```
   $ mvn compile
   ```
+  ```
+  $ export MAVEN_OPTS=-Dprism.order=sw;
+  $ mvn exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
+  ```
   
   Additionally, a `Makefile` is provided so that you can type the following to
-  easily clean, compile, and run your code:
+  easily clean, compile, and run your code using the 
+  [Make utility]()https://www.gnu.org/software/make/):
   ```
   $ make clean
   ```
@@ -337,22 +345,22 @@ made to modify your submission to evaluate other requirements.
   ```
   $ make run
   ```
+  Using `make run` will automatically add the `-Dprism.order=sw` when running
+  `mvn exec:java`.
   
   Your main application class should be `cs1302.gallery.GalleryApp`.
-  The driver class should be `cs1302.gallery.GalleryDriver`.
+  The driver class should be `cs1302.gallery.GalleryDriver`. 
+  Any additional `.java` files in your project are expected to fulfill all 
+  non-functional and absolute requirements, even if the main parts of the 
+  project do not use them. You may assume graders will compile your source 
+  code in an order that satisfies compilation dependencies. 
+  You should remove any `.java` files that you do not need before submission. 
 
 * **Development Environment:** This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
   version of Java 8 that is setup according to the instructions provided
   by your instructor. For Spring 2019, these instructions were posted on
   Piazza [@29](https://piazza.com/class/jpupoaxnvvs497?cid=29).
-  
-  If you decide to introduce additional `.java` files into your project,
-  then they are expected to fulfill all non-functional and absolute requirements, 
-  even if the main parts of the project do not use them. You may assume
-  graders will compile your source code in an order that satisfies
-  compilation dependencies. You should remove any `.java` files that you
-  do not need before submission. 
   
 * **No FXML or use of Scene Builder:** FXML and SceneBuilder
   are advanced tools that are not currently covered in this course. Use of
