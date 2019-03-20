@@ -20,7 +20,7 @@ the Appendix.**
 * [Project Requirements & Grading](#project-requirements--grading)
   * [Functional Requirements](#functional-requirements)
   * [Non-Functional Requirements](#non-functional-requirements)
-  * [Absolute Requirements](#non-functional-requirements)
+  * [Absolute Requirements](#absolute-requirements)
 * [How to Download the Project](#how-to-download-the-project)
 * [Submission Instructions](#submission-instructions)
 * [Appendix - Useful Links](#appendix---useful-links)
@@ -86,7 +86,7 @@ it would be slightly tedious to use compile and run your code frequently.
 Instead, you can use Maven to more easily compile your code and handle dependencies
 (e.g., for the Gson library mentioned in the FAQ). Please see the
 "Project Structure" sub-section of the 
-[Absolute Requirements](#non-functional-requirements) section for an overview of
+[Absolute Requirements](#absolute-requirements) section for an overview of
 what you can do with Maven.
 
 ### Learning Outcomes
@@ -448,6 +448,17 @@ is probably not the best idea.
 # Appendix - FAQ
 
 Below are some frequently asked questions related to this project.
+
+1. **Maven doesn't work!?**
+
+   You need to add the executable for Maven to your `PATH` environmental variable.
+   Add the following lines to the end of your `~/.bash_profile` file on Nike, then logout and login: 
+   ```
+   export MAVEN_HOME=/home/grads/mec/maven
+   export PATH=$MAVEN_HOME/bin:$PATH
+   ```
+   If done correctly, these changes should take effect every time you login to Nike.
+
 
 1. **How do I query the iTunes Search API?**
    
