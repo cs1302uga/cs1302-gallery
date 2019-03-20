@@ -465,7 +465,7 @@ Below are some frequently asked questions related to this project.
    This can be easily accomplished for you using the static `encode` method in
    [`URLEncoder`](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html).
 
-2. **How do I download the JSON result for a query?**
+1. **How do I download the JSON result for a query?**
 
    Suppose you have a `String` object referred to by `sUrl` containing the 
    URL for an iTunes Search API query. In order to download the result, you 
@@ -482,7 +482,7 @@ Below are some frequently asked questions related to this project.
    the JSON response using a third party library, then most support the
    use of the `InputStreamReader` directly.
 
-3. **How do I parse the JSON result for a query?**
+1. **How do I parse the JSON result for a query?**
 
    Parsing JSON can be tricky, and there are many options. Your instructor
    recommends using Google's [`Gson`](https://github.com/google/gson) library.
@@ -526,7 +526,83 @@ Below are some frequently asked questions related to this project.
    The HTML Javadoc documentation for the Google Gson API can be found 
    [here](https://google.github.io/gson/apidocs/).
 
-4. **How do I make my application not freeze/hang when executing long running event handlers?**
+1. **What does "local variables referenced from a lambda expression must**
+   **be final or effectively final" and how do I fix it?**
+   
+   Like local and anonymous classes, a lambda expression can only access local 
+   variables of the enclosing block that are `final` or effectively `final`.
+   That is, a variable local to method can only be involved in the body of
+   a lambda expression if it is either explicitly declared as `final` or if
+   its value does not change after initialization over the entire body of
+   the method. A variavble is local to a method (i.e., it's a local variable)
+   if it's declared inside of the method or if it's a parameter to the method.
+   Please note that this restriction applies to the variables themselves and
+   presents an interesting scenario in the case of local reference variables.
+   A local reference variable may remain effectively `final` even if the 
+   internal state of the object being referenced is changed so long as the
+   variable itself (i.e., the reference value) does not change.
+   
+   This problem can be usually be fixed by effectively making use of 
+   instance variables and/or writing methods that return an instance
+   of the interface being implemented via the lambda. For example,
+   consider the following scenario that results in the compile-time
+   error message ""local variables referenced from a lambda expression must
+   be final or effectively final":
+   
+   ```java
+   void someMethod() {
+       for (int i = 0; i < 10; ++i) {
+           EventHandler<ActionEvent> handler = e -> {
+	       // something involving i
+	       System.out.println(i);
+	   };
+       } // for
+   } // someMethod
+   ```
+   
+   The variable `i` is local to `someMethod` and neither `final` nor
+   effectively `final` because its value changes after each iteration
+   of the for-loop. In this scenario, an instance variable is unlikely
+   to be appropriate as the value of `i` itself does not need to be
+   accessible to the rest of the methods in the class. A suggested way
+   to fix this is to create a method that returns an object of the
+   interface being implemented by the lambda expression, ensuring that
+   `i` is effectively final in that method. Then, we can call that
+   method in `someMethod` instead of creating the lambda there directly.
+   For example:
+   
+   ```java
+   void createHandler(int i) {
+       EventHandler<ActionEvent> handler = e -> {
+	   // something involving i
+	   System.out.println(i);
+       };
+       return handler;
+   } // createHandler
+   ```
+   
+   ```java
+   void someMethod() {
+       for (int i = 0; i < 10; ++i) {
+           EventHandler<ActionEvent> handler = createHandler(i);
+       } // for
+   } // someMethod
+   ```
+   
+   In this new scenario, the variable `i` is an effectively final local variable
+   in the block enclosing the lambda in `createHandler`, thus avoiding the
+   problem described by the compiler. 
+   
+   Why is this an issue? Well, the big reason is that the language does not support it.
+   Why doesn't the language support it? I speculate that the reason has to do with
+   how local variables are managed internally in memory. As methods get called and
+   return they occupy and free up a region of memory called the program stack. It is
+   very likely that the region of memory used by the method that created the lambda
+   is freed up before the object created by the lambda is used. If the body of the
+   lambda expression attempts to change the value of the variable, then what does
+   that mean if the variable is not longer there!? 
+
+1. **How do I make my application not freeze/hang when executing long running event handlers?**
 
    For the most part, your GUI application is just like any other 
    Java application you have ever written. If a line of code takes a long time to
@@ -608,7 +684,7 @@ Below are some frequently asked questions related to this project.
    please see the [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/fx_concurrency.htm)
    tutorial. 
 
-5. **What does "Not on FX application thread" mean and how do I fix it?**
+1. **What does "Not on FX application thread" mean and how do I fix it?**
 
    Usually an `IllegalStateException` with the message "Not on FX application thread"
    means that you are trying to access or modify some node (i.e., a component
@@ -667,7 +743,7 @@ Below are some frequently asked questions related to this project.
    method can be used, as needed, to ensure only the code that interacts with 
    the scene graph is executed in the JavaFX Event Dispatch thread.
 
-6. **How do I make a code snippet execute repeatedly with a delay between executions?**
+1. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
    The easiest way to accomplish this in a JavaFX application is using the
    [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html) 
@@ -686,7 +762,7 @@ Below are some frequently asked questions related to this project.
    ```
    The `Timeline` object also hase a `pause` method to pause the execution of the timeline.
    
-7. **How do I pass around objects effectively?**
+1. **How do I pass around objects effectively?**
 
    From time to time, you may need to access one part of your app from another part of your app.
    You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
