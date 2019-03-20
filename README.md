@@ -534,7 +534,7 @@ Below are some frequently asked questions related to this project.
    That is, a variable local to method can only be involved in the body of
    a lambda expression if it is either explicitly declared as `final` or if
    its value does not change after initialization over the entire body of
-   the method. A variavble is local to a method (i.e., it's a local variable)
+   the method. A variable is local to a method (i.e., it's a local variable)
    if it's declared inside of the method or if it's a parameter to the method.
    Please note that this restriction applies to the variables themselves and
    presents an interesting scenario in the case of local reference variables.
@@ -546,7 +546,7 @@ Below are some frequently asked questions related to this project.
    instance variables and/or writing methods that return an instance
    of the interface being implemented via the lambda. For example,
    consider the following scenario that results in the compile-time
-   error message ""local variables referenced from a lambda expression must
+   error message "local variables referenced from a lambda expression must
    be final or effectively final":
    
    ```java
@@ -574,8 +574,8 @@ Below are some frequently asked questions related to this project.
    ```java
    void createHandler(int i) {
        EventHandler<ActionEvent> handler = e -> {
-	   // something involving i
-	   System.out.println(i);
+           // something involving i
+           System.out.println(i);
        };
        return handler;
    } // createHandler
