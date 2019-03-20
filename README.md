@@ -332,6 +332,9 @@ made to modify your submission to evaluate other requirements.
   $ export MAVEN_OPTS=-Dprism.order=sw;
   $ mvn exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
   ```
+  If you get a `mvn: command not found` error when attempting to execute
+  the `mvn` command, then please see the first question in the
+  [FAQ](#appendix---faq).
   
   Additionally, a `Makefile` is provided so that you can type the following to
   easily clean, compile, and run your code using the 
