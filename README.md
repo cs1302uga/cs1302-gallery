@@ -338,7 +338,7 @@ made to modify your submission to evaluate other requirements.
   
   Additionally, a `Makefile` is provided so that you can type the following to
   easily clean, compile, and run your code using the 
-  [Make utility]()https://www.gnu.org/software/make/):
+  [Make utility](https://www.gnu.org/software/make/):
   ```
   $ make clean
   ```
