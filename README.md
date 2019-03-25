@@ -87,7 +87,10 @@ Instead, you can use Maven to more easily compile your code and handle dependenc
 (e.g., for the Gson library mentioned in the FAQ). Please see the
 "Project Structure" sub-section of the 
 [Absolute Requirements](#absolute-requirements) section for an overview of
-what you can do with Maven.
+what you can do with Maven. While this project is already provided to you
+as a Maven project, you may still find is useful to read the
+[CSCI 1302 Maven Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/maven.md)
+to gain a better understanding of what Maven is.
 
 ### Learning Outcomes
 
@@ -109,8 +112,9 @@ highest possible grade is 110 (due to extra credit).
   listed below. They need to function as described. If a certain aspect of a component 
   (e.g., style or behavior) is not specified in these requirements, then that
   aspect is at the discretion of the implementor. The screenshot provided earlier 
-  in this project description is meant to serve as a reference. It is okay if
-  implementors deviate visually from screenshot. In addition to the required 
+  in this project description is meant to serve as a reference. 
+  **It is okay if implementors deviate visually from thr screenshot.** 
+  In addition to the required 
   components, implementors should feel free to add more components and/or 
   functionality as long they do not distract too heavily from the functionality
   of the required components. Here are the required components:
@@ -793,15 +797,21 @@ Below are some frequently asked questions related to this project.
    are passing a lot of variables around. Your first thought might be to make those variables 
    static, but that is not good for a couple different reasons--recall what it means for
    a variable to be static as well as the non-functional requirements for this project.
+   Using static variables as a "go to" solution is an example of an anti-pattern, i.e.,  a 
+   common response to a recurring problem that is usually ineffective and risks being highly 
+   counterproductive.
    
-   The reccommended strategy is to add all those variables to your driver class as instance variables
-   with getters and setters, then pass a reference to your driver object around as needed.
+   The reccommended strategy is to add all those variables to your `Application` subclass as 
+   instance variables, then create getters / setters and higher level methods that interact
+   with groups of variables in a controlled way. This will make the application object easier 
+   to work with, promote encapsulation, and help enforce self-governance of the object. 
+   When employing this strategy, you can then pass a reference to your application object around as needed.
    This way, you are only passing around one variable instead of many! In the other parts of your
-   app, simply call on the getter and setters methods to access and change the things you 
-   were previously passing around.
+   app (e.g., in custom components), simply call on the application object's methods to access and 
+   change the things you were previously passing around.
    
-   Remember, if you are currently in your driver class's `start` method, then you can pass
-   a reference to the current driver object into a method using the `this` reference
+   Remember, if you are currently in your application class's `start` method, then you can pass
+   a reference to the current application object into a method using the `this` reference
    variable. 
 
 Have a question? Please post it on the course Piazza.
