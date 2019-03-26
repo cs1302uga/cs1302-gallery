@@ -598,7 +598,7 @@ Below are some frequently asked questions related to this project.
    For example:
    
    ```java
-   void createHandler(int i) {
+   EventHandler<ActionEvent> createHandler(int i) {
        EventHandler<ActionEvent> handler = e -> {
            // something involving i
            System.out.println(i);
