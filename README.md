@@ -579,9 +579,9 @@ Below are some frequently asked questions related to this project.
    void someMethod() {
        for (int i = 0; i < 10; ++i) {
            EventHandler<ActionEvent> handler = e -> {
-	       // something involving i
-	       System.out.println(i);
-	   };
+               // something involving i
+               System.out.println(i);
+           };
        } // for
    } // someMethod
    ```
