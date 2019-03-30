@@ -113,7 +113,7 @@ highest possible grade is 110 (due to extra credit).
   (e.g., style or behavior) is not specified in these requirements, then that
   aspect is at the discretion of the implementor. The screenshot provided earlier 
   in this project description is meant to serve as a reference. 
-  **It is okay if implementors deviate visually from thr screenshot.** 
+  **It is okay if implementors deviate visually from the screenshot.** 
   In addition to the required 
   components, implementors should feel free to add more components and/or 
   functionality as long they do not distract too heavily from the functionality
