@@ -486,12 +486,13 @@ Below are some frequently asked questions related to this project.
    likely need to be parsed using a third party library in order to be used
    in your application. 
 
-   When constructing a query string in Java, take special care that the
-   search term is [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
+   When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
+   take special care that any values (e.g., the value of the `term` parameter) are
+   [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
    This can be easily accomplished for you using the static `encode` method in
    [`URLEncoder`](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html).
    You should use the non-deprecated overload of this method, supplying `"UTF-8"` for
-   the name of the character encoding as noted in the method's API documentation.
+   the name of the character encoding as noted in the method's API documentation. 
 
 1. **How do I download the JSON result for a query?**
 
