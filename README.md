@@ -490,6 +490,8 @@ Below are some frequently asked questions related to this project.
    search term is [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
    This can be easily accomplished for you using the static `encode` method in
    [`URLEncoder`](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html).
+   You should use the non-deprecated overload of this method, supplying `"UTF-8"` for
+   the name of the character encoding as noted in the method's API documentation.
 
 1. **How do I download the JSON result for a query?**
 
