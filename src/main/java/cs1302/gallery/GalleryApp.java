@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  */
 public class GalleryApp extends Application {
 
-    /** @inheritdoc */
+    /** {@inheritdoc} */
     @Override
     public void start(Stage stage) {
         HBox pane = new HBox();
