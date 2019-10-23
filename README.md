@@ -124,7 +124,7 @@ exhaustive list of steps that you may need to take to complete the project.
 **Backend:**
 
 - [ ] Create any custom component classes.
-- [ ] On paper, hash out how you might store the list or lists or image URLs.
+- [ ] On paper, hash out how you might store the list or lists of image URLs.
 - [ ] Write a method to retreive the JSON response string for a query to the iTunes 
       Search API based on a query string.
 - [ ] Write a method that returns a list of URL strings based on a JSON response
