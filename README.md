@@ -18,6 +18,7 @@ the Appendix.**
 * [Academic Honesty](#academic-honesty)
 * [Updates](#updates)
 * [Project Description](#project-description)
+* [Suggested Checklist](#suggested-checklist)
 * [Project Requirements & Grading](#project-requirements--grading)
   * [Functional Requirements](#functional-requirements)
   * [Non-Functional Requirements](#non-functional-requirements)
@@ -104,14 +105,37 @@ as a Maven project, you may still find is useful to read the
 [CSCI 1302 Maven Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/maven.md)
 to gain a better understanding of what Maven is.
 
-### Learning Outcomes
+## Suggested Checklist
 
-* Plan, design, implement, test, debug, and deploy a complete object-oriented
-  software solution in Linux/Unix environment (1302-LO1)
-* Utilitze inheritance and polymorphism in a software project (1302-LO3-LO4).
-* Develop a GUI for a software project (1302-LO7).
-* Implement exception-handling in a software project (1302-LO8).
-* Understand and apply langauge basics using an OOP language (1302-LO11).
+To help you with planning out this project, here are some suggested steps you can take that 
+your instructors believe believe will help you complete the project more easily. Some of the 
+items in this checklist may not make sense until you have read the entire project description,
+including the appendices. These steps are suggesions and, therefore, do not constitute an
+exaustive list of steps that you may need to take to complete the project.
+
+**Frontend:**
+
+- [ ] On paper, decompose the visual elements of your application to identify
+      some of the objects you may need.
+- [ ] On paper, draw the scene graph for your app.
+- [ ] Identify opportunities for the creation of custom components.
+- [ ] Write some of the code to make your app look like what it needs to look like.
+
+**Backend:**
+
+- [ ] Create any custom component classes.
+- [ ] On paper, hash out how you might store the list or lists or image URLs.
+- [ ] Write a method to retreive the JSON response string for a query to the iTunes 
+      Search API based on a query string.
+- [ ] Write a method that returns a list of URL strings based on a JSON response
+      string retrieved from the iTunes Search API.
+
+**Putting it all Together:**
+
+- [ ] Make the buttons work at a basic level (you can decide what basic is).
+- [ ] Make the progress bar work (requires careful consideration of the threading 
+      required by some of your app's event handlers).
+- [ ] Make the random-replacement work
 
 ## Project Requirements & Grading
 
