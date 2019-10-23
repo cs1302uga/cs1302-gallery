@@ -135,7 +135,7 @@ exaustive list of steps that you may need to take to complete the project.
 - [ ] Make the buttons work at a basic level (you can decide what basic is).
 - [ ] Make the progress bar work (requires careful consideration of the threading 
       required by some of your app's event handlers).
-- [ ] Make the random-replacement work
+- [ ] Make the random-replacement work.
 
 ## Project Requirements & Grading
 
