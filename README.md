@@ -108,10 +108,10 @@ to gain a better understanding of what Maven is.
 ## Suggested Checklist
 
 To help you with planning out this project, here are some suggested steps you can take that 
-your instructors believe believe will help you complete the project more easily. Some of the 
+your instructors believe will help you complete the project more easily. Some of the 
 items in this checklist may not make sense until you have read the entire project description,
 including the appendices. These steps are suggesions and, therefore, do not constitute an
-exaustive list of steps that you may need to take to complete the project.
+exhaustive list of steps that you may need to take to complete the project.
 
 **Frontend:**
 
