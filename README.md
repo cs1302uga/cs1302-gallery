@@ -14,6 +14,7 @@ the Appendix.**
 
 ## Table of Contents
 
+* [Learning Outcomes](#course-specific-learning-outcomes)
 * [Academic Honesty](#academic-honesty)
 * [Updates](#updates)
 * [Project Description](#project-description)
@@ -26,6 +27,17 @@ the Appendix.**
 * [Appendix - Useful Links](#appendix---useful-links)
 * [Appendix - FAQ](#appendix---faq)
 
+## Course-Specific Learning Outcomes
+
+* **LO1.d:**	Use shell commands to compile new and existing software solutions that
+are organized into multi-level packages and have external dependencies.
+* **LO2.e:** Utilize existing generic methods, interfaces, and classes in a software solution.
+* **LO3.a:** Create and update source code that adheres to established style guidelines.
+* **LO3.b:** Create class, interface, method, and inline documentation that satisfies a set of requirements.
+* **LO5.b:** Utilize a build tool such as Maven or Ant to create and manage a complex software solution involving external dependencies.
+* **LO7.a:** Design and implement a graphical user interface in a software project.
+* **LO7.c:** Use common abstract data types and structures, including lists, queues, arrays, and stacks in solving typical problems.
+  
 ## Academic Honesty
 
 You agree to the Academic Honesty policy as outlined in the course syllabus. 
