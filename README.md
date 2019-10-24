@@ -494,7 +494,7 @@ Below are some frequently asked questions related to this project.
    ```
    
    You can get a particular element in the array, which represents an individual result, 
-   using the `get` method as follows:
+   using the `get` method as follows, where `i` is an `int` containing an index value:
    ```java
    JsonObject result = results.get(i).getAsJsonObject();
    ```
