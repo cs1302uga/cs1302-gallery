@@ -120,6 +120,8 @@ exhaustive list of steps that you may need to take to complete the project.
 - [ ] On paper, draw the scene graph for your app.
 - [ ] Identify opportunities for the creation of custom components.
 - [ ] Write some of the code to make your app look like what it needs to look like.
+- [ ] Use Git to stage and commit your changes often; create and merge branches,
+      as needed.
 
 **Backend:**
 
@@ -129,6 +131,8 @@ exhaustive list of steps that you may need to take to complete the project.
       Search API based on a query string.
 - [ ] Write a method that returns a list of URL strings based on a JSON response
       string retrieved from the iTunes Search API.
+- [ ] Use Git to stage and commit your changes often; create and merge branches,
+      as needed.
 
 **Putting it all Together:**
 
@@ -136,6 +140,8 @@ exhaustive list of steps that you may need to take to complete the project.
 - [ ] Make the progress bar work (requires careful consideration of the threading 
       required by some of your app's event handlers).
 - [ ] Make the random-replacement work.
+- [ ] Use Git to stage and commit your changes often; create and merge branches,
+      as needed.
 
 ## Project Requirements & Grading
 
