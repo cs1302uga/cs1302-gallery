@@ -136,6 +136,9 @@ exhaustive list of steps that you may need to take to complete the project.
 
 **Putting it all Together:**
 
+- [ ] Consider using a list or array to help you access the various `ImageView`
+      objects in your scene; making new `ImageView` objects all the time is 
+      _not_ reccommended.
 - [ ] Make the buttons work at a basic level (you can decide what basic is).
 - [ ] Make the progress bar work (requires careful consideration of the threading 
       required by some of your app's event handlers).
@@ -395,8 +398,11 @@ Below are some frequently asked questions related to this project.
    export MAVEN_HOME=/usr/local/maven/apache-maven-3.6.1
    export PATH=$MAVEN_HOME/bin:$PATH
    ```
-   If done correctly, these changes should take effect every time you login to Nike.
-
+   If done correctly, these changes should take effect every time you login to Nike. If you do
+   not want to wait, then use the following command:
+   ```
+   $ source ~/.bash_profile
+   ```
 
 1. **How do I query the iTunes Search API?**
    
@@ -413,9 +419,11 @@ Below are some frequently asked questions related to this project.
    [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
    for more information.
 
-   Query results are returned in JavaScript Object Notation (JSON) and will
-   likely need to be parsed using a third party library in order to be used
-   in your application. 
+   The response, i.e., the results for a particular query, are returned as
+   a large string, formatted using JavaScript Object Notation (JSON). You _could_
+   perform string manipulation to retrieve pieces of information from this 
+   response string, however, we reccommend using a third party library called Gson
+   instead (more details on that later).  
 
    When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
    take special care that any values (e.g., the value of the `term` parameter) are
@@ -431,12 +439,12 @@ Below are some frequently asked questions related to this project.
    URL for an iTunes Search API query. In order to download the result, you 
    will need to create a [`URL`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
    object and a [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html) 
-   object as follows:
+   object as follows (exception handling may be needed):
    ```java
    URL url = new URL(sUrl);
    InputStreamReader reader = new InputStreamReader(url.openStream());
    ```
-   If you want the JSON response as a string, then you might use a
+   **If you want the JSON response as a string (_likely_),** then you might use a
    [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
    to access the individual lines of the response. If you're simply parsing
    the JSON response using a third party library, then most support the
@@ -444,8 +452,14 @@ Below are some frequently asked questions related to this project.
 
 1. **How do I parse the JSON result for a query?**
 
-   Parsing JSON can be tricky, and there are many options. Your instructor
+   Parsing JavaScript Object Notation (JSON) can be tricky, and there are many options. 
+   You _could_ perform string manipulation to retrieve the various pieces of information 
+   from this response string. However, your instructor
    recommends using Google's [`Gson`](https://github.com/google/gson) library.
+   **Before you continue,** please do some due dilligence and lookup JSON. Given a 
+   string formatted using JSON, various parts of the string are referred to as
+   _objects_, _arrays_, _elements_, etc. 
+   
    Let's assume you have an `InputStreamReader` object referred to by `reader`
    for the JSON response to the example query described in Q1 of this FAQ.
    First, you will need to create a [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html)
@@ -462,26 +476,46 @@ Below are some frequently asked questions related to this project.
    After that, you can traverse the response using the methods described in
    the Google Gson API. Since this is probably all very new to you, I
    recommend printing `je` to standard output and comparing it to the output
-   description provided by the iTunes Search API. Also, here is a short code
-   snippet (without error checking) that prints the art URLs associated with 
-   the JSON response for the example query:
+   description provided by the iTunes Search API. 
+   
+   To get the very first object in the response string, often referred to as
+   the _root_, we can use the following:
    ```java
    JsonObject root = je.getAsJsonObject();                      // root of response
-   JsonArray results = root.getAsJsonArray("results");          // "results" array
-   int numResults = results.size();                             // "results" array size
-   for (int i = 0; i < numResults; i++) {                       
-       JsonObject result = results.get(i).getAsJsonObject();    // object i in array
-       JsonElement artworkUrl100 = result.get("artworkUrl100"); // artworkUrl100 member
-       if (artworkUrl100 != null) {                             // member might not exist
-            String artUrl = artworkUrl100.getAsString();        // get member as string
-            System.out.println(artUrl);                         // print the string
-       } // if
-   } // for
    ```
    
+   According to [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/), 
+   the root element contains a
+   [`JsonArray`](https://google.github.io/gson/apidocs/com/google/gson/JsonArray.html)
+   called `results`. We can refer to this array using the following:
+   ```java
+   JsonArray results = root.getAsJsonArray("results");          // "results" array
+   int numResults = results.size();                             // "results" array size
+   ```
+   
+   You can get a particular element in the array, which represents an individual result, 
+   using the `get` method as follows:
+   ```java
+   JsonObject result = results.get(i).getAsJsonObject();
+   ```
+   
+   Again, according to the [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/), 
+   each individual result _may_ have an `artworkUrl100` attribute/member. To access this, 
+   you might do the following:
+   ```
+   JsonElement artworkUrl100 = result.get("artworkUrl100"); // artworkUrl100 member
+   ```
+   Be careful! If the `artworkUrl100` attribute/member may be null!
+   
+   That's it. If you want to access other parts of the response, you will need to combine
+   information gathered by reading both the [iTunes Search API documentation]
+   and the [Google Gson API documentation](https://google.github.io/gson/apidocs).
+   
+1. **How can I use Google Gson in my project?**
+   
    We have already added the Gson library to your project by adding its Maven dependency
-   to your `pom.xml` file. At the time of this writing, version `2.8.5` is the most 
-   recent version available and is considered stable. 
+   to your `pom.xml` file. At the time of this writing, version `2.8.5` is version
+   we are using and is considered a stable release. 
 
    The HTML Javadoc documentation for the Google Gson API can be found 
    [here](https://google.github.io/gson/apidocs/).
