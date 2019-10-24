@@ -472,8 +472,6 @@ Below are some frequently asked questions related to this project.
     ]
    }
    ```
-   
-   
 
    Parsing JavaScript Object Notation (JSON) can be tricky, and there are many options. 
    You _could_ perform string manipulation to retrieve the various pieces of information 
@@ -485,50 +483,58 @@ Below are some frequently asked questions related to this project.
    
    Let's assume you have an `InputStreamReader` object referred to by `reader`
    for the JSON response to the example query described in Q1 of this FAQ.
-   First, you will need to create a [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html)
-   object:
-   ```java
-   JsonParser jp = new JsonParser();
-   ```
-   Then, you can parse the JSON response using the `parse` method to return
-   the [`JsonElement`](https://google.github.io/gson/apidocs/com/google/gson/JsonElement.html)
-   object representing the root of the response:
-   ```java
-   JsonElement je = jp.parse(reader);
-   ```
-   After that, you can traverse the response using the methods described in
-   the Google Gson API. Since this is probably all very new to you, I
-   recommend printing `je` to standard output and comparing it to the output
-   description provided by the iTunes Search API. 
    
-   To get the very first object in the response string, often referred to as
-   the _root_, we can use the following:
-   ```java
-   JsonObject root = je.getAsJsonObject();                      // root of response
-   ```
+   1. First, you will need to create a [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html)
+      object:
+      ```java
+      JsonParser jp = new JsonParser();
+      ```
    
-   According to [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/), 
-   the root element contains a
-   [`JsonArray`](https://google.github.io/gson/apidocs/com/google/gson/JsonArray.html)
-   called `results`. We can refer to this array using the following:
-   ```java
-   JsonArray results = root.getAsJsonArray("results");          // "results" array
-   int numResults = results.size();                             // "results" array size
-   ```
+   1. Then, you can parse the JSON response using the `parse` method to return
+      the [`JsonElement`](https://google.github.io/gson/apidocs/com/google/gson/JsonElement.html)
+      object representing the root of the response. In the example above, think of this
+      as giving you access to that outer pair of curly braces. The code for this is,
+      where `reader` refers to an [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html)
+      object (see the previous FAQ question) that can be used to download the string:
+      ```java
+      JsonElement je = jp.parse(reader);
+      ```
    
-   You can get a particular element in the array, which represents an individual result, 
-   using the `get` method as follows, where `i` is an `int` containing an index value:
-   ```java
-   JsonObject result = results.get(i).getAsJsonObject();
-   ```
+   1. After that, you can traverse the response using the methods described in
+      the Google Gson API. Since this is probably all very new to you, I
+      recommend printing `je` to standard output and comparing it to the output
+      description provided by the iTunes Search API and the example above. 
    
-   Again, according to the [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/), 
-   each individual result _may_ have an `artworkUrl100` attribute/member. To access this, 
-   you might do the following:
-   ```
-   JsonElement artworkUrl100 = result.get("artworkUrl100"); // artworkUrl100 member
-   ```
-   Be careful! If the `artworkUrl100` attribute/member may be null!
+   1. Since the first element is a JSON _object_, you will want to convert the 
+      element to the appropriate datatype using a Gson method. The very first
+      element/object in a JSON response string is often called the _root_. 
+      Therefore, you might do the following to perform the conversion:
+      ```java
+      JsonObject root = je.getAsJsonObject();                      // root of response
+      ```
+   
+   1. According to [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/), 
+     the root element contains a
+     [`JsonArray`](https://google.github.io/gson/apidocs/com/google/gson/JsonArray.html)
+     called `results`. You can see it in the example string presented earlier! We can refer
+     to this array using the following:
+     ```java
+     JsonArray results = root.getAsJsonArray("results");          // "results" array
+     int numResults = results.size();                             // "results" array size
+     ```
+   1. You can get a particular element in the array, which represents an individual result, 
+      using the `get` method as follows, where `i` is an `int` containing an index value:
+      ```java
+      JsonObject result = results.get(i).getAsJsonObject();
+      ```
+   
+   1. Again, according to the [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/), 
+      each individual result _may_ have an `artworkUrl100` attribute/member. To access this, 
+      you might do the following:
+      ```
+      JsonElement artworkUrl100 = result.get("artworkUrl100"); // artworkUrl100 member
+      ```
+      Be careful! If the `artworkUrl100` attribute/member may be null!
    
    That's it. If you want to access other parts of the response, you will need to combine
    information gathered by reading both the [iTunes Search API documentation]
