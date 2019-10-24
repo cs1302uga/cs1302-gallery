@@ -431,7 +431,7 @@ Below are some frequently asked questions related to this project.
    
    | URL Component                     | Meaning                               |
    |-----------------------------------|---------------------------------------|
-   | `https://itunes.apple.com/search` | Base URL for the Search API           |
+   | `https://itunes.apple.com/search` | Endpoint URL for the Search API       |
    | `?`                               | Denotes the start of the query string |
    | `term=jack+johnson`               | Parameter `key=value` pair            |
    
@@ -454,7 +454,16 @@ Below are some frequently asked questions related to this project.
    a large string, formatted using JavaScript Object Notation (JSON). You _could_
    perform string manipulation to retrieve pieces of information from this 
    response string, however, we reccommend using a third party library called Gson
-   instead (more details on that later).  
+   instead (more details on that later).
+   
+   **See the String:** You can see the giant JSON-formatted string by visiting
+   one of your carefully constructed URLs for an iTunes Search API query. 
+   Some web browsers may display the string directly, while others may attempt to 
+   download it. You can see it on Nike using `wget` and `cat` 
+   (or use `less` if you want scrolling):
+   ```
+   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&media=music" | cat
+   ```
 
    **URL-Encoding:** When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
    take special care that any values (e.g., the value of the `term` parameter) are
