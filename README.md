@@ -213,7 +213,10 @@ highest possible grade is 110 (due to extra credit).
     first starts (as images are gathered from the response to the default
     query) and when the "Update Images" button is pressed. Please note that this
     progress bar is not merely aesthetic. It should actually show the progress
-    of gathering individual images from the query response. 
+    of downloading the individual images from the query response. In JavaFX,
+    an image represented by an `Image` object is usually downloaded when
+    then `Image` object is constructed; an associated `ImageView` is usually
+    not involved with the download.
 
 * **Extra Credit 1 (5 points):** Add a "Help" menu to the menu bar. This menu
   should contain one menu item labeled "About" that displays an "About YOUR-NAME"
@@ -415,11 +418,32 @@ Below are some frequently asked questions related to this project.
    
    In order query the iTunes Search API, you need to access the iTunes Search 
    API service via a carefully contructed URL. Here is a an example of a query
-   URL that searches for all Jack Johnson audio and video content (movies, 
+   URL that searches for all 
+   [Jack Johnson](https://en.wikipedia.org/wiki/Jack_Johnson_(musician))
+   audio and video content (movies, 
    podcasts, music, music videos, audiobooks, short films, and tv shows):
+   
    ```
    https://itunes.apple.com/search?term=jack+johnson
    ```
+   
+   Here is a breakdown of the URL:
+   
+   | URL Component                     | Meaning                               |
+   |-----------------------------------|---------------------------------------|
+   | `https://itunes.apple.com/search` | Base URL for the Search API           |
+   | `?`                               | Denotes the start of the query string |
+   | `term=jack+johnson`               | Parameter `key=value` pair            |
+   
+   In this example, only one parameter, `term`, is passed to the iTunes Search API,
+   with the URL-encoded value `jack johnson`. Additional parameters can be introduced
+   by separating them with the `&` character. Here is an example that specifically
+   requests only music-related media:
+   
+   ```
+   https://itunes.apple.com/search?term=jack+johnson&media=music
+   ```
+   
    While something similar the above URL is all you need for this project,
    the iTunes Search API has many options to help fine tune your query.
    Please see the 
@@ -432,7 +456,7 @@ Below are some frequently asked questions related to this project.
    response string, however, we reccommend using a third party library called Gson
    instead (more details on that later).  
 
-   When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
+   **URL-Encoding:** When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
    take special care that any values (e.g., the value of the `term` parameter) are
    [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
    This can be easily accomplished for you using the static `encode` method in
