@@ -216,7 +216,7 @@ highest possible grade is 110 (due to extra credit).
     of downloading the individual images from the query response. In JavaFX,
     an image represented by an `Image` object is usually downloaded when
     then `Image` object is constructed; an associated `ImageView` is usually
-    not involved with the download.
+    not involved with the actual download.
 
 * **Extra Credit 1 (5 points):** Add a "Help" menu to the menu bar. This menu
   should contain one menu item labeled "About" that displays an "About YOUR-NAME"
@@ -232,7 +232,9 @@ highest possible grade is 110 (due to extra credit).
   receive points for this requirement, you should support at least one theme
   in addition to your application's default theme. HINT: You may want to explore
   having muliple CSS files for your application and loading/applying them as
-  needed to facilitate this requirement.
+  needed to facilitate this requirement. Please see the
+  [Useful Links](#appendix---useful-links) appendix for reference material
+  regarding styling. 
 
 ### Non-Functional Requirements
 
@@ -297,11 +299,6 @@ made to modify your submission to evaluate other requirements.
   
   Your main application class should be `cs1302.gallery.GalleryApp`.
   The driver class should be `cs1302.gallery.GalleryDriver`. 
-  Any additional `.java` files in your project are expected to fulfill all 
-  non-functional and absolute requirements, even if the main parts of the 
-  project do not use them. You may assume graders will compile your source 
-  code in an order that satisfies compilation dependencies. 
-  You should remove any `.java` files that you do not need before submission. 
 
 * **Development Environment:** This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
@@ -851,6 +848,19 @@ Below are some frequently asked questions related to this project.
    Remember, if you are currently in your application class's `start` method, then you can pass
    a reference to the current application object into a method using the `this` reference
    variable. 
+
+1. **How do I access a local, non-downloaded resource (e.g., an image file) when the project is run using Maven?**
+
+   You should place local files under the `src/main/resources` directory (you may need to
+   create the `resources` directory). URLs prefixed with `file:` should be relative to that
+   directory. 
+   
+   Example:
+   
+   | Resource                         | URL                  |
+   |----------------------------------|----------------------|
+   | `src/main/resources/icon.png`    | `"file:icon.png"`    |
+   | `src/main/resources/foo/img.png` | `"file:foo/img.png"` |
 
 Have a question? Please post it on the course Piazza.
 
