@@ -851,16 +851,16 @@ Below are some frequently asked questions related to this project.
 
 1. **How do I access a local, non-downloaded resource (e.g., an image file) when the project is run using Maven?**
 
-   You should place local files under the `src/main/resources` directory (you may need to
-   create the `resources` directory). URLs prefixed with `file:` should be relative to that
-   directory. 
+   You should place local files under `resources` in your project directory (you may need to
+   create the `resources` directory). URLs prefixed with `file:` should be relative to your
+   project directory. 
    
    Example:
    
-   | Resource                         | URL                  |
-   |----------------------------------|----------------------|
-   | `src/main/resources/icon.png`    | `"file:icon.png"`    |
-   | `src/main/resources/foo/img.png` | `"file:foo/img.png"` |
+   | Resource                | URL                           |
+   |-------------------------|-------------------------------|
+   | `resources/icon.png`    | `"file:resources/icon.png"`   |
+   | `resources/foo/img.png` | `"file:resourcesfoo/img.png"` |
 
 Have a question? Please post it on the course Piazza.
 
