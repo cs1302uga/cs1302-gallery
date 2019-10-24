@@ -584,7 +584,7 @@ Below are some frequently asked questions related to this project.
 1. **How can I use Google Gson in my project?**
    
    We have already added the Gson library to your project by adding its Maven dependency
-   to your `pom.xml` file. At the time of this writing, version `2.8.6` is version
+   to your `pom.xml` file. At the time of this writing, version `2.8.6` is the version
    we are using and is considered a stable release. 
 
    The HTML Javadoc documentation for the Google Gson API can be found 
