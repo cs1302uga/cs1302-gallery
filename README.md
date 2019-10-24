@@ -113,6 +113,13 @@ items in this checklist may not make sense until you have read the entire projec
 including the appendices. These steps are suggesions and, therefore, do not constitute an
 exhaustive list of steps that you may need to take to complete the project.
 
+**Preparation:**
+
+- [ ] Read through the entire project description, including the appendices,
+      **and write down questions as you go.**
+- [ ] Read it again! This time, you may be able to answer some of your own
+      questions.
+
 **Frontend:**
 
 - [ ] On paper, decompose the visual elements of your application to identify
