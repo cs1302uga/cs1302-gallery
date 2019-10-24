@@ -849,7 +849,7 @@ Below are some frequently asked questions related to this project.
    a reference to the current application object into a method using the `this` reference
    variable. 
 
-1. **How do I access a local, non-downloaded resource (e.g., an image file) when the project is run using Maven?**
+1. **How do I access a local, non-downloaded resource (e.g., an image file)?**
 
    You should place local files under `resources` in your project directory (you may need to
    create the `resources` directory). URLs prefixed with `file:` should be relative to your
