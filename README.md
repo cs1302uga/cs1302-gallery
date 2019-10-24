@@ -753,7 +753,7 @@ Below are some frequently asked questions related to this project.
    Usually an `IllegalStateException` with the message "Not on FX application thread"
    means that you are trying to access or modify some node (i.e., a component
    or container) in the scene graph from a code snippet that is not executing
-   in the JavaFX Event Dispatch thread (see Q4 in this FAQ). If you want to fix this, then
+   in the JavaFX Event Dispatch thread (see Q7 in this FAQ). If you want to fix this, then
    the code snippet that interacts with the scene graph needs to be wrapped
    in a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
    implementation and passed to the static `runLater` method in 
