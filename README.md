@@ -512,7 +512,7 @@ Below are some frequently asked questions related to this project.
    _objects_, _arrays_, _elements_, etc. 
    
    Let's assume you have an `InputStreamReader` object referred to by `reader`
-   for the JSON response to the example query described in Q1 of this FAQ.
+   for the JSON response to the example query described in another question in this FAQ.
    
    1. First, you will need to create a [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html)
       object:
