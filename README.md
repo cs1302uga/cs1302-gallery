@@ -514,9 +514,9 @@ Below are some frequently asked questions related to this project.
    Let's assume you have an `InputStreamReader` object referred to by `reader`
    for the JSON response to the example query described in another question in this FAQ.
       
-   1. You can parse the JSON response using the static `parse` method 
-      [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html) to return
-      the [`JsonElement`](https://google.github.io/gson/apidocs/com/google/gson/JsonElement.html)
+   1. You can parse the JSON response using the static `parse` method found in the
+      [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html) class.
+      The method returns a reference to a [`JsonElement`](https://google.github.io/gson/apidocs/com/google/gson/JsonElement.html)
       object representing the root of the response. In the example above, think of this
       as giving you access to that outer pair of curly braces. The code for this is,
       where `reader` refers to an [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html)
