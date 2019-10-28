@@ -576,7 +576,7 @@ Below are some frequently asked questions related to this project.
    
    That's it. If you want to access other parts of the response, you will need to combine
    information gathered by reading both the [iTunes Search API documentation]
-   and the [Google Gson API documentation](https://google.github.io/gson/apidocs).
+   and the [Google Gson API documentation](https://www.javadoc.io/doc/com.google.code.gson/gson).
    
 1. **How can I use Google Gson in my project?**
    
@@ -585,7 +585,7 @@ Below are some frequently asked questions related to this project.
    we are using and is considered a stable release. 
 
    The HTML Javadoc documentation for the Google Gson API can be found 
-   [here](https://google.github.io/gson/apidocs/).
+   [here](https://www.javadoc.io/doc/com.google.code.gson/gson).
 
 1. **What does "local variables referenced from a lambda expression must**
    **be final or effectively final" and how do I fix it?**
@@ -712,30 +712,7 @@ Below are some frequently asked questions related to this project.
    or the JavaFX Event Dispatch thread terminate first. After the call to 
    `t.start()`, both the JavaFX Event Dispatch Thread and the newly created 
    thread are executing concurrently. You cannot assume that statements in 
-   either thread execute in any predetermined order. When writing an event 
-   handler that executes a task, you might do something like the following:
-   ```java
-   EventHandler<ActionEvent> handler = event -> {
-       Runnable r = () -> {
-           /* task code here */
-       };
-       Thread t = new Thread(r);
-       t.setDaemon(true);
-       t.start();
-   };
-   button.setOnAction(handler);
-   ```
-   If you understand the code snippet above, then you might instead write it
-   more concisely as follows:
-   ```java
-   button.setOnAction(event -> {
-       Thread t = new Thread(() -> {
-           /* task code here */
-       });
-       t.setDaemon(true);
-       t.start();
-   });
-   ```
+   either thread execute in any predetermined order.
    
    **Note:** Using a daemon thread may not be desirable when writing data to a 
    file or database as the JVM may terminate the thread before it's finished.
