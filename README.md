@@ -513,15 +513,9 @@ Below are some frequently asked questions related to this project.
    
    Let's assume you have an `InputStreamReader` object referred to by `reader`
    for the JSON response to the example query described in another question in this FAQ.
-   
-   1. First, you will need to create a [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html)
-      object:
       
-      ```java
-      JsonParser jp = new JsonParser();
-      ```
-   
-   1. Then, you can parse the JSON response using the `parse` method to return
+   1. You can parse the JSON response using the static `parse` method 
+      [`JsonParser`](https://google.github.io/gson/apidocs/com/google/gson/JsonParser.html) to return
       the [`JsonElement`](https://google.github.io/gson/apidocs/com/google/gson/JsonElement.html)
       object representing the root of the response. In the example above, think of this
       as giving you access to that outer pair of curly braces. The code for this is,
@@ -529,7 +523,7 @@ Below are some frequently asked questions related to this project.
       object (see the previous FAQ question) that can be used to download the string:
       
       ```java
-      JsonElement je = jp.parse(reader);
+      JsonElement je = JsonParser.parse(reader);
       ```
    
    1. After that, you can traverse the response using the methods described in
