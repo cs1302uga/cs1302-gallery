@@ -481,7 +481,7 @@ Below are some frequently asked questions related to this project.
    URL url = new URL(sUrl);
    InputStreamReader reader = new InputStreamReader(url.openStream());
    ```
-   **If you want the JSON response as a string (_likely_),** then you might use a
+   **If you want the JSON response as a string (_not likely_),** then you might use a
    [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
    to access the individual lines of the response. If you're simply parsing
    the JSON response using a third party library, then most support the
