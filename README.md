@@ -755,21 +755,7 @@ Below are some frequently asked questions related to this project.
    };
    button.setOnAction(handler);
    ```
-   If you understand the code snippet above, then you might instead write it
-   more concisely as follows:
-   ```java
-   button.setOnAction(event -> {
-       Thread t = new Thread(() -> {
-           /* some task code here */
-           Platform.runLater(() -> { /* interact with scene graph */ });
-           /* perhaps more task code here */
-           Platform.runLater(() -> { /* interact with scene graph again */ });
-           /* perhaps even more task code here */
-       });
-       t.setDaemon(true);
-       t.start();       
-   });
-   ```
+   
    While it might be tempting to place all of your task code in the
    `Runnable` implementation provided to `runLater`, that is not a good idea
    because it will be executed on the JavaFX Event Dispatch thread. If you
