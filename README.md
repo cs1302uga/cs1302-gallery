@@ -737,6 +737,9 @@ Below are some frequently asked questions related to this project.
    });
    ```
    
+   **Note:** Using a daemon thread may not be desirable when writing data to a 
+   file or database as the JVM may terminate the thread before it's finished.
+   
    **Advanced:** The solution presented above is probably the simplest.
    Alternatively, you can make use of some of the classes in the 
    [`javafx.concurrent`](https://docs.oracle.com/javase/8/javafx/api/javafx/concurrent/package-summary.html) package, 
