@@ -55,6 +55,10 @@ section below in order to do your development on nike. Furthermore, you must adh
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
 
+* **WED 2019-10-30:** User-Friendly Experience Requirement updated to include information about
+  window dimensions and potential local program execution by TA graders. No changes were made
+  to the skeleton code. 
+
 ## Project Description
 
 Your goal is to implement a GUI application in Java using JavaFX 8 that displays a 
@@ -249,9 +253,9 @@ point total. That is, they are all or nothing.
   
 * **(20 points) User-Friendly Experience:** 
   The windows of your application should not exceed a pixel dimension of 1280 (width) by 720 (height).
-  Except for reasonable delays resulting
-  from X forwarding, your application should not hang/freeze or crash during 
-  execution.
+  Except for reasonable delays resulting X forwarding, your application should not 
+  hang/freeze or crash during execution. If a grader encounters lag, then they will 
+  try to run your application locally using Oracle Java 8.
   
 * **(20 points) Code Style Guidelines:** You should be consistent with the style 
   aspect of your code in order to promote readability. Every `.java` file that
