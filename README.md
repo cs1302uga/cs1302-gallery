@@ -247,7 +247,9 @@ point total. That is, they are all or nothing.
   is not appropriate for this assignment. However, static constants 
   and static utility and/or test methods are perfectly fine.
   
-* **(20 points) User-Friendly Experience:** Except for reasonable delays resulting
+* **(20 points) User-Friendly Experience:** 
+  The windows of your application should not exceed a pixel dimension of 1280 (width) by 720 (height).
+  Except for reasonable delays resulting
   from X forwarding, your application should not hang/freeze or crash during 
   execution.
   
