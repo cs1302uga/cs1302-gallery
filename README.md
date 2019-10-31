@@ -297,12 +297,12 @@ made to modify your submission to evaluate other requirements.
   ```
   ```
   $ export MAVEN_OPTS=-Dprism.order=sw;
-  $ mvn exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
+  $ mvn -e exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
   ```
   
   The following may also work to run the program:
   ```
-  $ mvn -Dprism.order=sw exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
+  $ mvn -e -Dprism.order=sw exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
   ```
   
   If you get a `mvn: command not found` error when attempting to execute
