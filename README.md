@@ -251,7 +251,7 @@ point total. That is, they are all or nothing.
   is not appropriate for this assignment. However, static constants 
   and static utility and/or test methods are perfectly fine.
   
-* **(20 points) User-Friendly Experience:** 
+* **(10 points) User-Friendly Experience:** 
   The windows of your application should not exceed a pixel dimension of 1280 (width) by 720 (height).
   Except for reasonable delays resulting X forwarding, your application should not 
   hang/freeze or crash during execution. If a grader encounters lag, then they will 
