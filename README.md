@@ -829,10 +829,10 @@ Below are some frequently asked questions related to this project.
    
    Example:
    
-   | Resource                | URL                           |
-   |-------------------------|-------------------------------|
-   | `resources/icon.png`    | `"file:resources/icon.png"`   |
-   | `resources/foo/img.png` | `"file:resourcesfoo/img.png"` |
+   | Resource                | URL                            |
+   |-------------------------|--------------------------------|
+   | `resources/icon.png`    | `"file:resources/icon.png"`    |
+   | `resources/foo/img.png` | `"file:resources/foo/img.png"` |
 
 Have a question? Please post it on the course Piazza.
 
