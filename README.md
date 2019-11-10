@@ -731,6 +731,8 @@ Below are some frequently asked questions related to this project.
    please see the [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/fx_concurrency.htm)
    tutorial. 
 
+<a id="not-on-fx-application-thread" />
+
 1. **What does "Not on FX application thread" mean and how do I fix it?**
 
    Usually an `IllegalStateException` with the message "Not on FX application thread"
