@@ -36,7 +36,7 @@
           <source>${java.version}</source>
           <target>${java.version}</target>
           <compilerArgs>
-            <arg>-Xlint:all</arg>
+            <arg>-Xlint</arg>
           </compilerArgs>
         </configuration>
       </plugin>
