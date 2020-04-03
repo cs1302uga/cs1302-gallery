@@ -216,21 +216,21 @@ highest possible grade is 110 (due to extra credit).
       
     * Please note that **this progress bar is not merely aesthetic**. It 
       should actually show the progress of downloading the individual images
-      from the query response. In JavaFX,  
+      from the query response.   
       
-      * In JavaFX, an image is represented by an [`Image`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html)
-        object. When an `Image` object is constructed with content loaded from a
-        specified url (e.g., using the [`Image(String)`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html#Image-java.lang.String-)
-        constructor, that is when the image data is downloaded. Here is a code
-        snippet to consider: 
-        ```java
-        String bradUrl = "http://csweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg";
-        final Image bradImage = new Image(bradUrl);                 // first line
-        Platform.runLater(() -> someImageView.setImage(bradImage)); // second line
-        ```
-        The first line will take some time to download but does not modify the scene graph;
-        however, the second line will take very little time but needs to run on the FX Application Thread 
-        since it modifies the scene graph.
+    * In JavaFX, an image is represented by an [`Image`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html)
+      object. When an `Image` object is constructed with content loaded from a
+      specified url (e.g., using the [`Image(String)`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html#Image-java.lang.String-)
+      constructor, that is when the image data is downloaded. Here is a code
+      snippet to consider: 
+      ```java
+      String bradUrl = "http://csweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg";
+      final Image bradImage = new Image(bradUrl);                 // first line
+      Platform.runLater(() -> someImageView.setImage(bradImage)); // second line
+      ```
+      The first line will take some time to download but does not modify the scene graph;
+      however, the second line will take very little time but needs to run on the FX Application Thread 
+      since it modifies the scene graph.
         
 * **Extra Credit 1 (5 points):** Add a "Help" menu to the menu bar. This menu
   should contain one menu item labeled "About" that displays an "About YOUR-NAME"
