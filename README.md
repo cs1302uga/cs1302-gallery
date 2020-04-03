@@ -183,7 +183,7 @@ highest possible grade is 110 (due to extra credit).
     that is not currently being displayed (assuming more than 20 images are
     gathered from the response to the search query).
     
-    * As mentioned, images gathered via querying the iTunes Search API. We have included
+    * As mentioned, images are gathered by querying the iTunes Search API. We have included
       information [here](#query-how) on how to programmatically perform such
       a query. A query result should contain multiple artwork URLs that you can 
       use to download images. Only a distinct set of URLs should used if there
@@ -244,16 +244,16 @@ highest possible grade is 110 (due to extra credit).
         
 * **Extra Credit 1 (5 points):** Add a "Help" menu to the menu bar. This menu
   should contain one menu item labeled "About" that displays an "About YOUR-NAME"
-  window (where YOUR-NAME is replaced with your name). This window should
+  stage (where YOUR-NAME is replaced with your name). The scene in this stage should
   contain an image of you as well as your name, email, and the version number
-  for your application (version can be whatever you want). This window should
+  for your application (version can be whatever you want). This stage should
   be *application modal*, and it should be closable so that the user can return
   to the main part of the application. If you are doing both of the extra
   credit requirements, then please make the "Help" menu the right-most menu
 
 * **Extra Credit 2 (5 points):** Add a "Theme" menu to the menu bar that lets
   the user switch between different stylings for the application. In order to
-  receive points for this requirement, you should support at least one theme
+  receive points for this requirement, you should support at least two themes
   in addition to your application's default theme. HINT: You may want to explore
   having muliple CSS files for your application and loading/applying them as
   needed to facilitate this requirement. Please see the
@@ -305,7 +305,9 @@ made to modify your submission to evaluate other requirements.
   When the project is compiled using Maven, the the default package for compiled 
   code should be `target/classes`. The classes in the starter code are in
   the `cs1302.gallery` package. **Any additional classes that you create should
-  be located in or under the `cs1302.gallery` package.**
+  be located in or under the `cs1302.gallery` package.** 
+  The main application class should be `cs1302.gallery.GalleryApp`, and the 
+  driver class should be `cs1302.gallery.GalleryDriver`.
   
   If you follow this structure, then you might type the following to clean, compile, 
   and run your code using Maven, assuming you are in the top-level project directory:
@@ -325,13 +327,14 @@ made to modify your submission to evaluate other requirements.
   $ mvn -e -Dprism.order=sw exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
   ```
   
+  Of course, you proably put the line above 
+  [in a script](https://github.com/cs1302uga/cs1302-tutorials/blob/master/scripts/scripts.md) 
+  so that you do not have to type it out every time.
+  
   If you get a `mvn: command not found` error when attempting to execute
   the `mvn` command, then please see the first question in the
   [FAQ](#appendix---faq).
   
-  Your main application class should be `cs1302.gallery.GalleryApp`.
-  The driver class should be `cs1302.gallery.GalleryDriver`. 
-
 * **Development Environment:** This project must be implemented 
   in Java 8, and it *must compile and run* correctly on Nike using the specific
   version of Java 8 that is setup according to the instructions provided
@@ -392,14 +395,6 @@ While in your project's parent directory, execute the following command:
 
 ```
 $ submit cs1302-gallery cs1302a
-```
-
-It is also a good idea to email a copy to yourself. To do this, simply execute 
-the following command, replacing the email address with your email address:
-
-```
-$ tar zcvf cs1302-gallery.tar.gz cs1302-gallery
-$ mutt -s "[cs1302] cs1302-gallery" -a cs1302-gallery.tar.gz -- your@email.com < /dev/null
 ```
 
 If you have any problems submitting your project then please send a private
@@ -513,10 +508,11 @@ Below are some frequently asked questions related to this project.
    object and a [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html) 
    object as follows (exception handling may be needed):
    ```java
+   String sUrl = // from a query
    URL url = new URL(sUrl);
    InputStreamReader reader = new InputStreamReader(url.openStream());
    ```
-   **If you want the JSON response as a string (_not likely_),** then you might use a
+   **If you want the JSON response as a string (_not likely!_),** then you might use a
    [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
    to access the individual lines of the response. If you're simply parsing
    the JSON response using a third party library, then most support the
@@ -601,11 +597,13 @@ Below are some frequently asked questions related to this project.
       JsonElement artworkUrl100 = result.get("artworkUrl100"); // artworkUrl100 member
       ```
       
-      Be careful! If the `artworkUrl100` attribute/member may be null!
+      Be careful! If the `artworkUrl100` attribute/member may be `null`!
    
    That's it. If you want to access other parts of the response, you will need to combine
-   information gathered by reading both the [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
-   and the [Google Gson API documentation](https://www.javadoc.io/doc/com.google.code.gson/gson).
+   information gathered by reading both the 
+   [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
+   and the 
+   [Google Gson API documentation](https://www.javadoc.io/doc/com.google.code.gson/gson).
    
 1. **How can I use Google Gson in my project?**
    
@@ -680,10 +678,10 @@ Below are some frequently asked questions related to this project.
    ```
    
    In this new scenario, the variable `i` is an effectively final local variable
-   in the block enclosing the lambda in `createHandler`, thus avoiding the
+   in the block enclosing the lambda expression in `createHandler`, thus avoiding the
    problem described by the compiler. 
    
-   Why is this an issue? Well, the big reason is that the language does not support it.
+   **Why is this an issue?** Well, the big reason is that the language does not support it.
    Why doesn't the language support it? I speculate that the reason has to do with
    how local variables are managed internally in memory. As methods get called and
    return they occupy and free up a region of memory called the program stack. It is
@@ -758,6 +756,10 @@ Below are some frequently asked questions related to this project.
         * here
         */
     });
+    ```
+    Or, if you have written a method for your task, then it looks even nicer:
+    ```java
+    runNow(() -> myTaskMethod());
     ```
 
 1. <a id="not-on-fx-application-thread" />**What does "Not on FX application thread" mean and how do I fix it?**
