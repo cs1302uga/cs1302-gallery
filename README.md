@@ -746,7 +746,7 @@ Below are some frequently asked questions related to this project.
    **Note:** Using a daemon thread may not be desirable when writing data to a 
    file or database as the JVM may terminate the thread before it's finished.
    
-   **From the Reading:** You are free to use the `runNow` method from the
+   **From the Reading:** <a id="runNow"/> You are free to use the `runNow` method from the
    [Brief Introduction to Java Threads](https://github.com/cs1302uga/cs1302-tutorials/blob/master/threads/brief-intro-threads.md)
    reading (please attribute the reading in your Javadoc comment). This method
    wraps the lines above into a single method so that you can write the
@@ -780,7 +780,9 @@ Below are some frequently asked questions related to this project.
    ```
    The `runLater` method ensures that the code in your `Runnable` implementation 
    executes in the JavaFX Application Thread. Here is a more complete example 
-   that combines this scenario with the one described in Q4 of this FAQ:
+   that combines this scenario with the one described in Q4 of this FAQ using the
+   [`runNow`](#runNow) method to create and start a daemon thread for the overall
+   task:
    ```java
    EventHandler<ActionEvent> handler = event -> {
        runNow(() -> {
