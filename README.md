@@ -591,7 +591,7 @@ Below are some frequently asked questions related to this project.
       Be careful! If the `artworkUrl100` attribute/member may be null!
    
    That's it. If you want to access other parts of the response, you will need to combine
-   information gathered by reading both the [iTunes Search API documentation]
+   information gathered by reading both the [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
    and the [Google Gson API documentation](https://www.javadoc.io/doc/com.google.code.gson/gson).
    
 1. **How can I use Google Gson in my project?**
@@ -696,9 +696,9 @@ Below are some frequently asked questions related to this project.
    method. This thread is usually called the "main" thread. When you launch 
    your JavaFX application using the `Application.launch` method, part of 
    the application life-cycle is the creation of a thread for your GUI 
-   called the "JavaFX Event Dispatch" thread. By default, any code 
+   called the "JavaFX Application Thread". By default, any code 
    executed by or in response to your GUI components (e.g., the code for an 
-   event handler) takes place in the JavaFX Event Dispatch Thread. If you 
+   event handler) takes place in the JavaFX Application Thread. If you 
    do not want your program to hang, then you will need to create a 
    separate thread for your problematic code snippets. This works because 
    a Java program can have multiple threads executing concurrently. 
@@ -725,28 +725,34 @@ Below are some frequently asked questions related to this project.
    ```
    The call to `t.setDaemon(true)` prevents this newly created thread from
    delaying program termination in the case where either the main thread
-   or the JavaFX Event Dispatch thread terminate first. After the call to 
-   `t.start()`, both the JavaFX Event Dispatch Thread and the newly created 
+   or the JavaFX Application Thread terminate first. After the call to 
+   `t.start()`, both the JavaFX Application Thread and the newly created 
    thread are executing concurrently. You cannot assume that statements in 
    either thread execute in any predetermined order.
    
    **Note:** Using a daemon thread may not be desirable when writing data to a 
    file or database as the JVM may terminate the thread before it's finished.
    
-   **Advanced:** The solution presented above is probably the simplest.
-   Alternatively, you can make use of some of the classes in the 
-   [`javafx.concurrent`](https://docs.oracle.com/javase/8/javafx/api/javafx/concurrent/package-summary.html) package, 
-   which provide, among other things, the ability to control the execution and 
-   track the progress of code that is deferred to another thread. For more information,
-   please see the [Concurrency in JavaFX](https://docs.oracle.com/javase/8/javafx/interoperability-tutorial/fx_concurrency.htm)
-   tutorial. 
+   **From the Reading:** You are free to use the `runNow` method from the
+   [Brief Introduction to Java Threads](https://github.com/cs1302uga/cs1302-tutorials/blob/master/threads/brief-intro-threads.md)
+   reading (please attribute the reading in your Javadoc comment). This method
+   wraps the lines above into a single method so that you can write the
+   following instead:
+   ```java
+   runNow(() -> {
+       /* task
+        * code
+        * here
+        */
+    });
+    ```
 
 1. <a id="not-on-fx-application-thread" />**What does "Not on FX application thread" mean and how do I fix it?**
 
    Usually an `IllegalStateException` with the message "Not on FX application thread"
    means that you are trying to access or modify some node (i.e., a component
    or container) in the scene graph from a code snippet that is not executing
-   in the JavaFX Event Dispatch thread (see Q7 in this FAQ). If you want to fix this, then
+   in the JavaFX Application Thread (see Q7 in this FAQ). If you want to fix this, then
    the code snippet that interacts with the scene graph needs to be wrapped
    in a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
    implementation and passed to the static `runLater` method in 
@@ -760,31 +766,37 @@ Below are some frequently asked questions related to this project.
    Platform.runLater(r);
    ```
    The `runLater` method ensures that the code in your `Runnable` implementation 
-   executes in the JavaFX Event Dispatch thread. Here is a more complete example 
+   executes in the JavaFX Application Thread. Here is a more complete example 
    that combines this scenario with the one described in Q4 of this FAQ:
    ```java
    EventHandler<ActionEvent> handler = event -> {
-       Runnable r = () -> {
-           /* some task code here */
+       runNow(() -> {
+           /* some 
+            * task code 
+            * here 
+            */
            Platform.runLater(() -> { /* interact with scene graph */ });
-           /* perhaps more task code here */
+           /* perhaps
+            * more task code 
+            * here 
+            */
            Platform.runLater(() -> { /* interact with scene graph again */ });
-           /* perhaps even more task code here */
-       };
-       Thread t = new Thread(r);
-       t.setDaemon(true);
-       t.start();       
+           /* perhaps 
+            * even more task code 
+            * here 
+            */
+       });      
    };
    button.setOnAction(handler);
    ```
    
    While it might be tempting to place all of your task code in the
    `Runnable` implementation provided to `runLater`, that is not a good idea
-   because it will be executed on the JavaFX Event Dispatch thread. If you
+   because it will be executed on the JavaFX Application Thread. If you
    already writing code for another thread, it was likely to avoid having it
-   run on the JavaFX Event Dispatch Thread. Multiple calls to the `runLater` 
+   run on the JavaFX Application Thread. Multiple calls to the `runLater` 
    method can be used, as needed, to ensure only the code that interacts with 
-   the scene graph is executed in the JavaFX Event Dispatch thread.
+   the scene graph is executed in the JavaFX Application Thread.
 
 1. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
@@ -804,6 +816,7 @@ Below are some frequently asked questions related to this project.
    timeline.play();
    ```
    The `Timeline` object also hase a `pause` method to pause the execution of the timeline.
+   Remember, JavaFX event handlers are executed on the JavaFX Application Thread.
    
 1. **How do I pass around objects effectively?**
 
