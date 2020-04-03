@@ -176,12 +176,19 @@ highest possible grade is 110 (due to extra credit).
     application gracefully when clicked by the user.
 
   * **Main Content (30 points):** The main content of the application is a collection
-    of twenty (20) images gathered via querying the iTunes Search API. The
+    of twenty (20) artwork images gathered via querying the iTunes Search API. The
     initial set of images should correspond to some default query. If the
     application is in "play mode", then every two (2) seconds, a random image 
     that is currently being displayed should be replaced with a random image 
     that is not currently being displayed (assuming more than 20 images are
     gathered from the response to the search query).
+    
+    * As mentioned, images gathered via querying the iTunes Search API. We have included
+      information [here](#query-how) on how to programmatically perform such
+      a query. A query result should contain multiple artwork URLs that you can 
+      use to download images. Only a distinct set of URLs should used if there
+      are any duplicates. Implementers are not expected to handle situations
+      where two distinct URLs refer to identical images. 
 
   * **Toolbar (50 points):** The application needs to have a toolbar that 
     contains the following components:
@@ -198,13 +205,16 @@ highest possible grade is 110 (due to extra credit).
     * *Update Images Button (30 points):* This button should cause the application 
       to execute the search query specified in the query text field, gather
       the images associated with the query response, and update the images
-      in the main content area of the application accordingly. If less than
-      twenty one (21) images are gathered, then a dialog should be displayed to
-      the user with an appropriate error message, and the main content area
-      should not be updated. If twenty one (21) or more images are gathered, 
-      then the images not chosen for display in the main content area of the
-      application should be remembered in order to facilitate the random
-      replacement described for the main content of the application.
+      in the main content area of the application accordingly. 
+      
+      * If less than twenty one (21) distinct artwork image URLs are gathered, then a
+        dialog should be displayed to the user with an appropriate error message, 
+        and the main content area should not be updated. 
+        
+      * If twenty one (21) or more distinct artwork images are gathered, then the 
+        images not chosen for display in the main content area of the application 
+        should be saved in a list in order to facilitate the random replacement 
+        described for the main content of the application.
 
   * **Progress Bar (10 points):** The application needs to have a progress bar 
     that indicates the progress of querying the iTunes Search API, loading the
@@ -433,7 +443,7 @@ Below are some frequently asked questions related to this project.
    $ source ~/.bash_profile
    ```
 
-1. **How do I query the iTunes Search API?**
+1. <a id="query-how" />**How do I query the iTunes Search API?**
    
    In order query the iTunes Search API, you need to access the iTunes Search 
    API service via a carefully contructed URL. Here is a an example of a query
@@ -443,7 +453,7 @@ Below are some frequently asked questions related to this project.
    podcasts, music, music videos, audiobooks, short films, and tv shows):
    
    ```
-   https://itunes.apple.com/search?term=jack+johnson
+   https://itunes.apple.com/search?term=jack+johnson&limit=50
    ```
    
    Here is a breakdown of the URL:
@@ -453,6 +463,8 @@ Below are some frequently asked questions related to this project.
    | `https://itunes.apple.com/search` | Endpoint URL for the Search API       |
    | `?`                               | Denotes the start of the query string |
    | `term=jack+johnson`               | Parameter `key=value` pair            |
+   | `&`                               | Denotes that an additional parameter is to follow |
+   | `limit=50`                        | Parameter `key=value` pair            |
    
    In this example, only one parameter, `term`, is passed to the iTunes Search API,
    with the URL-encoded value `jack johnson`. Additional parameters can be introduced
@@ -460,10 +472,10 @@ Below are some frequently asked questions related to this project.
    requests only music-related media:
    
    ```
-   https://itunes.apple.com/search?term=jack+johnson&media=music
+   https://itunes.apple.com/search?term=jack+johnson&limit=50&media=music
    ```
    
-   While something similar the above URL is all you need for this project,
+   While something similar to the above URL is all you need for this project,
    the iTunes Search API has many options to help fine tune your query.
    Please see the 
    [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
@@ -484,7 +496,8 @@ Below are some frequently asked questions related to this project.
    $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&media=music" | cat
    ```
 
-   **URL-Encoding:** When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
+   **URL-Encoding:** You may have noticed that we said `jack+johnson` is the URL-encoded
+   value for `"jack johnson"`. When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
    take special care that any values (e.g., the value of the `term` parameter) are
    [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
    This can be easily accomplished for you using the static `encode` method in
