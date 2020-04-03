@@ -1,4 +1,4 @@
-# CSCI 1302 - Gallery v2019.fa
+# CSCI 1302 - Gallery v2020.sp
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
@@ -6,7 +6,7 @@ This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Fall 2019 CSCI 1302 classes
 at the University of Georgia.
 
-**DUE MON 2019-11-11 (NOV 11) @ 11:55 PM EDT**
+**DUE TUE 2020-04-28 (APR 28) @ 11:55 PM EDT**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
@@ -55,10 +55,6 @@ section below in order to do your development on nike. Furthermore, you must adh
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
 
-* **WED 2019-10-30:** User-Friendly Experience Requirement updated to include information about
-  window dimensions and potential local program execution by TA graders. No changes were made
-  to the skeleton code. 
-
 ## Project Description
 
 Your goal is to implement a GUI application in Java using JavaFX 8 that displays a 
@@ -99,7 +95,7 @@ We are also using this project to further introduce you to
 [Maven](https://maven.apache.org/what-is-maven.html).
 As you are actively encouraged to create and document additional classes in order
 to create customized, reusable components (e.g., for dealing with the image views),
-it would be slightly tedious to use compile and run your code frequently.
+it would be slightly tedious to compile and run your code frequently.
 Instead, you can use Maven to more easily compile your code and handle dependencies
 (e.g., for the Gson library mentioned in the FAQ). Please see the
 "Project Structure" sub-section of the 
