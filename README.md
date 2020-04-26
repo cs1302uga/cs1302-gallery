@@ -814,6 +814,44 @@ Below are some frequently asked questions related to this project.
    run on the JavaFX Application Thread. Multiple calls to the `runLater` 
    method can be used, as needed, to ensure only the code that interacts with 
    the scene graph is executed in the JavaFX Application Thread.
+   
+   **PROTIP:** If the lambda expression that you pass into `Platform.runLater` uses a local
+   variable, then we **strongly suggest** you refactor the call into its own method
+   in order to guarantee that the local variable is final or effectively final when
+   used in the lambda expression. Here is an example snippet that might be problematic:
+   
+   ```java
+   Platform.runLater(() -> progressBar.setProgress(0));
+   for (int i = 0; i < n; i++) {
+       // some task
+       // code here
+       Platform.runLater(() -> progressBar.setProgress(1.0 * i / n)); // OH NO!
+   } // for
+   Platform.runLater(() -> progressBar.setProgress(1));
+   ```
+   
+   An earlier FAQ question dealt with why the code above is an issue for the compiler.
+   While the suggested solution there will also work here, this simplified approach
+   may be more approachable for students. Simply create a method that performs 
+   the desire `Platform.runLater`:
+   
+   ```java
+   private void setProgress(final double progress) {
+       Platform.runLater(() -> progressBar.setProgress(progress));
+   } // setProgress
+   ```
+   
+   With that method present, we can simplify the original snippet:
+   
+   ```java
+   setProgress(0);
+   for (int i = 0; i < n; i++) {
+       // some task
+       // code here
+       setProgress(1.0 * i / n); // NICE!
+   } // for
+   setProgress(1);
+   ```
 
 1. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
