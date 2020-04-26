@@ -833,7 +833,7 @@ Below are some frequently asked questions related to this project.
    An earlier FAQ question dealt with why the code above is an issue for the compiler.
    While the suggested solution there will also work here, this simplified approach
    may be more approachable for students. Simply create a method that performs 
-   the desire `Platform.runLater`:
+   the desired `Platform.runLater`:
    
    ```java
    private void setProgress(final double progress) {
