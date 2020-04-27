@@ -815,7 +815,7 @@ Below are some frequently asked questions related to this project.
    method can be used, as needed, to ensure only the code that interacts with 
    the scene graph is executed in the JavaFX Application Thread.
    
-   **PROTIP:** If the lambda expression that you pass into `Platform.runLater` uses a local
+   <a name="progress-tip">**PROTIP:**</a> If the lambda expression that you pass into `Platform.runLater` uses a local
    variable, then we **strongly suggest** you refactor the call into its own method
    in order to guarantee that the local variable is final or effectively final when
    used in the lambda expression. Here is an example snippet that might be problematic:
