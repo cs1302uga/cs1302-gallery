@@ -855,7 +855,7 @@ Below are some frequently asked questions related to this project.
 
 1. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
-   The easiest way to accomplish this in a JavaFX application is using the
+   <a name="timeline">The</a> easiest way to accomplish this in a JavaFX application is using the
    [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html) 
    and [`KeyFrame`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/KeyFrame.html) 
    classes. Here is an example that prints the current time (using 
