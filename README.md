@@ -1,4 +1,6 @@
-# CSCI 1302 - Gallery v2020.sp
+# CSCI 1302 - Gallery v2020.fa
+
+![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
@@ -6,7 +8,7 @@ This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Fall 2019 CSCI 1302 classes
 at the University of Georgia.
 
-**DUE TUE 2020-04-28 (APR 28) @ 11:55 PM EDT**
+**DUE TUE 2020-11-20 (NOV 20) @ 11:55 PM EDT**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
@@ -47,7 +49,7 @@ fork this repository on GitHub if you have an account. Doing so will more than
 likely make your copy of the project publicly visible. Please follow the 
 instructions contained in the 
 [How to Download the Project](#how-to-download-the-project)
-section below in order to do your development on nike. Furthermore, you must adhere
+section below in order to do your development on odin. Furthermore, you must adhere
  to the copyright notice and licensing information at the bottom of this document.
 
 ## Updates
@@ -57,7 +59,7 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 ## Project Description
 
-Your goal is to implement a GUI application in Java using JavaFX 8 that displays a 
+Your goal is to implement a GUI application in Java using JavaFX 11 that displays a 
 gallery of images based on the results of a search query to the 
 [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching).
 This will require you to lookup things in Javadoc and apply your knowledge of
@@ -228,9 +230,9 @@ highest possible grade is 110 (due to extra credit).
       should actually show the progress of downloading the individual images
       from the query response.   
       
-    * In JavaFX, an image is represented by an [`Image`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html)
+    * In JavaFX, an image is represented by an [`Image`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/image/Image.html)
       object. When an `Image` object is constructed with content loaded from a
-      specified url (e.g., using the [`Image(String)`](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/image/Image.html#Image-java.lang.String-)
+      specified url (e.g., using the [`Image(String)`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/image/Image.html#%3Cinit%3E(java.lang.String))
       constructor, that is when the image data is downloaded. Here is a code
       snippet to consider: 
       ```java
@@ -275,7 +277,7 @@ point total. That is, they are all or nothing.
   The windows of your application should not exceed a pixel dimension of 1280 (width) by 720 (height).
   Except for reasonable delays resulting X forwarding, your application should not 
   hang/freeze or crash during execution. If a grader encounters lag, then they will 
-  try to run your application locally using Oracle Java 8.
+  try to run your application locally using the same version of Java/JavaFX that's used on Odin.
   
 * **(20 points) Code Style Guidelines:** You should be consistent with the style 
   aspect of your code in order to promote readability. Every `.java` file that
@@ -287,7 +289,7 @@ point total. That is, they are all or nothing.
   
   **NOTE:** The [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide)
   includes instructions on how to use the `checkstyle` program to check
-  your code for compliance on Nike.  
+  your code for compliance on Odin.  
 
 * **In-line Documentation (10 points):** Code blocks should be adequately documented
   using in-line comments. This is especially necessary when a block of code
@@ -336,8 +338,8 @@ made to modify your submission to evaluate other requirements.
   [FAQ](#appendix---faq).
   
 * **Development Environment:** This project must be implemented 
-  in Java 8, and it *must compile and run* correctly on Nike using the specific
-  version of Java 8 that is setup according to the instructions provided
+  in Java 11, and it *must compile and run* correctly on Odin using the specific
+  version of Java 11 that is setup according to the instructions provided
   by your instructor. For this requirement, the term *compile* should be 
   interpreted as *compile with no errors or warnings*.
   
@@ -356,14 +358,14 @@ made to modify your submission to evaluate other requirements.
 
 ### Grading
 
-The graders will compile and run your code on Nike using Maven. They will test
+The graders will compile and run your code on Odin using Maven. They will test
 each of the functional and non-functional requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
 an additional 10 points via extra credit. 
 
 ## How to Download the Project
 
-On Nike, execute the following terminal command in order to download the project
+On Odin, execute the following terminal command in order to download the project
 files into sub-directory within your present working directory:
 
 ```
@@ -375,7 +377,7 @@ your present working directory that contains the project files.
 
 If any updates to the project files are announced by your instructor, you can
 merge those changes into your copy by changing into your project's directory
-on Nike and issuing the following terminal command:
+on Odin and issuing the following terminal command:
 
 ```
 $ git pull
@@ -386,9 +388,9 @@ your instructor.
 
 ## Submission Instructions
 
-You will be submitting your project via Nike before the deadline indicated
+You will be submitting your project via Odin before the deadline indicated
 near the top of this document. Make sure your project files
-are on <code>nike.cs.uga.edu</code>. Change into the parent directory of your
+are on <code>odin.cs.uga.edu</code>. Change into the parent directory of your
 project directory. If you've followed the instructions provided in this document, 
 then the name of your project directory is likely <code>cs1302-gallery</code>. 
 While in your project's parent directory, execute the following command: 
@@ -404,10 +406,10 @@ is probably not the best idea.
 
 # Appendix - Useful Links
 
-## JavaFX 8
+## JavaFX 11
 
-* [Package: `javafx`](https://docs.oracle.com/javase/8/javafx/api/toc.htm)
-* [JavaFX CSS Reference Guide](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/doc-files/cssref.html)
+* [JavaFX Bookmarks](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md)
+* [JavaFX CSS Reference Guide](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/doc-files/cssref.html)
 * [Styling UI Controls with CSS](https://docs.oracle.com/javase/8/javafx/user-interface-tutorial/apply-css.htm)
 
 ## Third Party APIs and Libraries
@@ -427,12 +429,12 @@ Below are some frequently asked questions related to this project.
 1. **Maven doesn't work!?**
 
    You need to add the executable for Maven to your `PATH` environmental variable.
-   Add the following lines to the end of your `~/.bash_profile` file on Nike, then logout and login: 
+   Add the following lines to the end of your `~/.bash_profile` file on Odin, then logout and login: 
    ```
    export MAVEN_HOME=/usr/local/maven/apache-maven-3.6.1
    export PATH=$MAVEN_HOME/bin:$PATH
    ```
-   If done correctly, these changes should take effect every time you login to Nike. If you do
+   If done correctly, these changes should take effect every time you login to Odin. If you do
    not want to wait, then use the following command:
    ```
    $ source ~/.bash_profile
@@ -485,7 +487,7 @@ Below are some frequently asked questions related to this project.
    **See the String:** You can see the giant JSON-formatted string by visiting
    one of your carefully constructed URLs for an iTunes Search API query. 
    Some web browsers may display the string directly, while others may attempt to 
-   download it. You can see it on Nike using `wget` and `cat` 
+   download it. You can see it on Odin using `wget` and `cat` 
    (or use `less` if you want scrolling):
    ```
    $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&media=music" | cat
@@ -496,7 +498,7 @@ Below are some frequently asked questions related to this project.
    take special care that any values (e.g., the value of the `term` parameter) are
    [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
    This can be easily accomplished for you using the static `encode` method in
-   [`URLEncoder`](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html).
+   [`URLEncoder`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URLEncoder.html).
    You should use the non-deprecated overload of this method, supplying `"UTF-8"` for
    the name of the character encoding as noted in the method's API documentation. 
 
@@ -504,8 +506,8 @@ Below are some frequently asked questions related to this project.
 
    Suppose you have a `String` object referred to by `sUrl` containing the 
    URL for an iTunes Search API query. In order to download the result, you 
-   will need to create a [`URL`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-   object and a [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html) 
+   will need to create a [`URL`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
+   object and a [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html) 
    object as follows (exception handling may be needed):
    ```java
    String sUrl = // from a query
@@ -513,7 +515,7 @@ Below are some frequently asked questions related to this project.
    InputStreamReader reader = new InputStreamReader(url.openStream());
    ```
    **If you want the JSON response as a string (_not likely!_),** then you might use a
-   [`BufferedReader`](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
+   [`BufferedReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html)
    to access the individual lines of the response. If you're simply parsing
    the JSON response using a third party library, then most support the
    use of the `InputStreamReader` directly.
@@ -550,7 +552,7 @@ Below are some frequently asked questions related to this project.
       The method returns a reference to a [`JsonElement`](https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.6/com.google.gson/com/google/gson/JsonElement.html)
       object representing the root of the response. In the example above, think of this
       as giving you access to that outer pair of curly braces. The code for this is,
-      where `reader` refers to an [`InputStreamReader`](https://docs.oracle.com/javase/8/docs/api/?java/io/InputStreamReader.html)
+      where `reader` refers to an [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html)
       object (see the previous FAQ question) that can be used to download the string:
       
       ```java
@@ -721,8 +723,8 @@ Below are some frequently asked questions related to this project.
    response.
 
    To create a new thread, you need to instatiate a 
-   [`Thread`](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) object
-   with a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) 
+   [`Thread`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html) object
+   with a [`Runnable`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html) 
    implementation for your task. Since `Runnable` is a functional interface, 
    this process is simplified using a lambda expression or method reference. 
    Here is an example idiom of how to create and start a new thread for a task:
@@ -769,9 +771,9 @@ Below are some frequently asked questions related to this project.
    or container) in the scene graph from a code snippet that is not executing
    in the JavaFX Application Thread (see Q7 in this FAQ). If you want to fix this, then
    the code snippet that interacts with the scene graph needs to be wrapped
-   in a [`Runnable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html)
+   in a [`Runnable`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html)
    implementation and passed to the static `runLater` method in 
-   [`Platform`](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Platform.html).
+   [`Platform`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/application/Platform.html).
    Since `Runnable` is a functional interface, this process is simplified using
    a lambda expression or method reference. Here is a basic example:
    ```java
@@ -856,12 +858,12 @@ Below are some frequently asked questions related to this project.
 1. **How do I make a code snippet execute repeatedly with a delay between executions?**
 
    <a name="timeline">The</a> easiest way to accomplish this in a JavaFX application is using the
-   [`Timeline`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/Timeline.html) 
-   and [`KeyFrame`](https://docs.oracle.com/javase/8/javafx/api/javafx/animation/KeyFrame.html) 
+   [`Timeline`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/animation/Timeline.html) 
+   and [`KeyFrame`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/animation/KeyFrame.html) 
    classes. Here is an example that prints the current time (using 
-   [`LocalTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)) to 
+   [`LocalTime`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalTime.html)) to 
    standard output every two (2) seconds (specified using
-   [`Duration`](https://docs.oracle.com/javase/8/javafx/api/javafx/util/Duration.html)), indefinitely:
+   [`Duration`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html), indefinitely:
    ```java
    EventHandler<ActionEvent> handler = event -> System.out.println(LocalTime.now());
    KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), handler);
