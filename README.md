@@ -8,7 +8,7 @@ This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Fall 2019 CSCI 1302 classes
 at the University of Georgia.
 
-**DUE TUE 2020-11-20 (NOV 20) @ 11:55 PM EDT**
+**DUE FRI 2020-11-20 (NOV 20) @ 11:55 PM EDT**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
