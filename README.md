@@ -8,7 +8,15 @@ This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Fall 2020 CSCI 1302 classes
 at the University of Georgia.
 
-**DUE FRI 2020-11-20 (NOV 20) @ 11:55 PM EDT**
+## Deadline Options
+
+There are different deadline options for this project. Students who perform their
+final submission via the `submit` command before the date/times listed below
+automatically receive the associated Submission-Based (SB) extra credit. The late 
+penalty does not start applying until after the final date listed. 
+
+* **THU 2020-11-19 (NOV 19) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **DUE FRI 2020-11-20 (NOV 20) @ 11:55 PM EDT (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
@@ -158,7 +166,7 @@ exhaustive list of steps that you may need to take to complete the project.
 ## Project Requirements & Grading
 
 This assignment is worth 100 points. The lowest possible grade is 0, and the 
-highest possible grade is 110 (due to extra credit).
+highest possible grade is 115 (due to extra credit).
 
 ### Functional Requirements
 
@@ -243,7 +251,7 @@ highest possible grade is 110 (due to extra credit).
       The first line will take some time to download but does not modify the scene graph;
       however, the second line will take very little time but needs to run on the FX Application Thread 
       since it modifies the scene graph.
-        
+ 
 * **Extra Credit 1 (5 points):** Add a "Help" menu to the menu bar. This menu
   should contain one menu item labeled "About" that displays an "About YOUR-NAME"
   stage (where YOUR-NAME is replaced with your name). The scene in this stage should
@@ -252,15 +260,6 @@ highest possible grade is 110 (due to extra credit).
   be *application modal*, and it should be closable so that the user can return
   to the main part of the application. If you are doing both of the extra
   credit requirements, then please make the "Help" menu the right-most menu
-
-* **Extra Credit 2 (5 points):** Add a "Theme" menu to the menu bar that lets
-  the user switch between different stylings for the application. In order to
-  receive points for this requirement, you should support at least two themes
-  in addition to your application's default theme. HINT: You may want to explore
-  having muliple CSS files for your application and loading/applying them as
-  needed to facilitate this requirement. Please see the
-  [Useful Links](#appendix---useful-links) appendix for reference material
-  regarding styling. 
 
 ### Non-Functional Requirements
 
