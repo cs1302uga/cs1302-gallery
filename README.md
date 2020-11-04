@@ -16,7 +16,7 @@ automatically receive the associated Submission-Based (SB) extra credit. The lat
 penalty does not start applying until after the final date listed. 
 
 * **THU 2020-11-19 (NOV 19) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **DUE FRI 2020-11-20 (NOV 20) @ 11:55 PM EDT (`+0` SB Extra Credit)**
+* **FRI 2020-11-20 (NOV 20) @ 11:55 PM EDT (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
