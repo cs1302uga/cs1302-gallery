@@ -65,6 +65,19 @@ section below in order to do your development on odin. Furthermore, you must adh
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
 
+* **2020-11-12-THU:** 
+
+  * [`dc58484`](https://github.com/cs1302uga/cs1302-gallery/commit/dc58484e98df87dd72712297e9bd471c8424a320):
+    Added a `.gitignore` to help prevent Git from tracking compiled
+    files; it's not necessary to have Git track them because they can be generated simply
+    by compiling. 
+  * [`9a9c720`](https://github.com/cs1302uga/cs1302-gallery/commit/9a9c72022422f5496bf884354acda39ef1334bc6):
+    Modified the `pom.xml` to include the `exec.mainClass` property as described in 
+    [Piazza @875](https://piazza.com/class/kdgd9zazmukew?cid=875). This update also udpates the
+    configuration of the `maven-compiler-plugin` so that Maven uses the `-Xlint` option
+    when compiling. You can see the entire updated POM 
+    [here](pom.xml).
+
 ## Project Description
 
 Your goal is to implement a GUI application in Java using JavaFX 11 that displays a 
@@ -328,13 +341,15 @@ made to modify your submission to evaluate other requirements.
   $ mvn -e -Dprism.order=sw exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
   ```
   
-  Of course, you proably put the line above 
+  If the `exec.mainClass` property is set appropriately (to `cs1302.gallery.GalleryDriver`) 
+  in your POM, then the following may also work:
+  ```
+  $ mvn -e -Dprism.order=sw exec:java
+  ```
+  
+  Of course, you proably put one of the lines above 
   [in a script](https://github.com/cs1302uga/cs1302-tutorials/blob/master/scripts/scripts.md) 
   so that you do not have to type it out every time.
-  
-  If you get a `mvn: command not found` error when attempting to execute
-  the `mvn` command, then please see the first question in the
-  [FAQ](#appendix---faq).
   
 * **Development Environment:** This project must be implemented 
   in Java 11, and it *must compile and run* correctly on Odin using the specific
@@ -424,20 +439,6 @@ is probably not the best idea.
 # Appendix - FAQ
 
 Below are some frequently asked questions related to this project.
-
-1. **Maven doesn't work!?**
-
-   You need to add the executable for Maven to your `PATH` environmental variable.
-   Add the following lines to the end of your `~/.bash_profile` file on Odin, then logout and login: 
-   ```
-   export MAVEN_HOME=/usr/local/maven/apache-maven-3.6.1
-   export PATH=$MAVEN_HOME/bin:$PATH
-   ```
-   If done correctly, these changes should take effect every time you login to Odin. If you do
-   not want to wait, then use the following command:
-   ```
-   $ source ~/.bash_profile
-   ```
 
 1. <a id="query-how" />**How do I query the iTunes Search API?**
    
