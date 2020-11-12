@@ -65,7 +65,7 @@ section below in order to do your development on odin. Furthermore, you must adh
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
 
-* **2020-11-12-THU:** 
+* **2020-11-12-THU:** You can incorporate the updates described below using `git pull origin master`:
 
   * [`dc58484`](https://github.com/cs1302uga/cs1302-gallery/commit/dc58484e98df87dd72712297e9bd471c8424a320):
     Added a `.gitignore` to help prevent Git from tracking compiled
@@ -73,10 +73,10 @@ through **Piazza** and **eLC** so please keep a lookout for them.
     by compiling. 
   * [`9a9c720`](https://github.com/cs1302uga/cs1302-gallery/commit/9a9c72022422f5496bf884354acda39ef1334bc6):
     Modified the `pom.xml` to include the `exec.mainClass` property as described in 
-    [Piazza @875](https://piazza.com/class/kdgd9zazmukew?cid=875). This update also udpates the
+    [Piazza @875](https://piazza.com/class/kdgd9zazmukew?cid=875). This update also updates the
     configuration of the `maven-compiler-plugin` so that Maven uses the `-Xlint` option
     when compiling. You can see the entire updated POM 
-    [here](pom.xml).
+    [here](https://github.com/cs1302uga/cs1302-gallery/blob/master/pom.xml).
 
 ## Project Description
 
