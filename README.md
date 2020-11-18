@@ -410,7 +410,7 @@ then the name of your project directory is likely <code>cs1302-gallery</code>.
 While in your project's parent directory, execute the following command: 
 
 ```
-$ submit cs1302-gallery cs1302a
+$ submit cs1302-gallery csci-1302
 ```
 
 If you have any problems submitting your project then please send a private
