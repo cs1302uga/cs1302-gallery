@@ -492,6 +492,11 @@ Below are some frequently asked questions related to this project.
    ```
    $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&media=music" | cat
    ```
+   If you want to see formatted JSON output (i.e., properly tabbled, newlines added, etc.),
+   then you might pipe the output of `wget` into the Python `json.tool` module instead:
+   ```
+   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&media=music" | python3 -m json.tool
+   ```
 
    **URL-Encoding:** You may have noticed that we said `jack+johnson` is the URL-encoded
    value for `"jack johnson"`. When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
