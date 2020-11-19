@@ -880,7 +880,7 @@ Below are some frequently asked questions related to this project.
    The `Timeline` object also hase a `pause` method to pause the execution of the timeline.
    Remember, JavaFX event handlers are executed on the JavaFX Application Thread.
    
-1. **How do I pass around objects effectively?**
+1. <a id="obj-pass"/>**How do I pass around objects effectively?**
 
    From time to time, you may need to access one part of your app from another part of your app.
    You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
