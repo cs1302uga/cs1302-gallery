@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>cs1302.gallery</groupId>
-  <artifactId>cs1302-gallery</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <groupId>cs1302.arcade</groupId>
+  <artifactId>cs1302-arcade</artifactId>
+  <version>3.0-SNAPSHOT</version>
 
-  <name>cs1302-gallery</name>
+  <name>cs1302-arcade</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -16,7 +16,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <exec.mainClass>cs1302.gallery.GalleryDriver</exec.mainClass>
+    <exec.mainClass>cs1302.arcade.ArcadeDriver</exec.mainClass>
   </properties>
 
   <dependencies>
