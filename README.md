@@ -1,11 +1,11 @@
-# CSCI 1302 - Gallery v2020.fa
+# CSCI 1302 - Gallery v2021.sp
 
 ![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Fall 2020 CSCI 1302 classes
+assigned to the students in the Spring 2021 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
