@@ -1,6 +1,6 @@
 # CSCI 1302 - Gallery v2021.sp
 
-![Approved for: Fall 2020](https://img.shields.io/badge/Approved%20for-Fall%202020-blueviolet)
+![Approved for: Spring 2021](https://img.shields.io/badge/Approved%20for-Spring%202021-success)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
@@ -15,8 +15,9 @@ final submission via the `submit` command before the date/times listed below
 automatically receive the associated Submission-Based (SB) extra credit. The late 
 penalty does not start applying until after the final date listed. 
 
-* **THU 2020-11-19 (NOV 19) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **FRI 2020-11-20 (NOV 20) @ 11:55 PM EDT (`+0` SB Extra Credit)**
+* **FRI 2021-04-16 (APR 16) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **SAT 2021-04-17 (APR 17) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **SUN 2021-04-18 (APR 18) @ 11:55 PM EDT (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
@@ -65,19 +66,6 @@ section below in order to do your development on odin. Furthermore, you must adh
 Updates will be posted here. You will be informed about any changes 
 through **Piazza** and **eLC** so please keep a lookout for them.
 
-* **2020-11-12-THU:** You can incorporate the updates described below using `git pull origin master`:
-
-  * [`dc58484`](https://github.com/cs1302uga/cs1302-gallery/commit/dc58484e98df87dd72712297e9bd471c8424a320):
-    Added a `.gitignore` to help prevent Git from tracking compiled
-    files; it's not necessary to have Git track them because they can be generated simply
-    by compiling. 
-  * [`9a9c720`](https://github.com/cs1302uga/cs1302-gallery/commit/9a9c72022422f5496bf884354acda39ef1334bc6):
-    Modified the `pom.xml` to include the `exec.mainClass` property as described in 
-    [Piazza @875](https://piazza.com/class/kdgd9zazmukew?cid=875). This update also updates the
-    configuration of the `maven-compiler-plugin` so that Maven uses the `-Xlint` option
-    when compiling. You can see the entire updated POM 
-    [here](https://github.com/cs1302uga/cs1302-gallery/blob/master/pom.xml).
-
 ## Project Description
 
 Your goal is to implement a GUI application in Java using JavaFX 11 that displays a 
@@ -106,9 +94,9 @@ questions.
 This project is also designed to help you better understand the usefulness of good
 class design. While you can technically write your entire JavaFX-based
 GUI application entirely in the `start` method, this will make your code messy, 
-hard to read, possibly redundant, and likely more prone to errors.
-Before you write any code, you should plan out your application's scene graph
-(i.e., the containment hierarchy), and design custom components as needed.
+hard to read, possibly redundant, likely more prone to errors, and it wouldn't pass
+a style audit. Before you write any code, you should plan out your application's 
+scene graph (i.e., the containment hierarchy), and design custom components as needed.
 If you find that you are writing a lot of code related to a specific component
 (e.g., setting styling, adding event handlers, etc.), then it's probably 
 a good idea to make a custom version of that component in order to reduce
@@ -168,7 +156,8 @@ exhaustive list of steps that you may need to take to complete the project.
 
 - [ ] Consider using a list or array to help you access the various `ImageView`
       objects in your scene; making new `ImageView` objects all the time is 
-      _not_ reccommended.
+      _not_ reccommended. Remember, the `ImageView` objects are like the picture
+      frames. You wouldn't toss out a picture frame every time you changed the picture.
 - [ ] Make the buttons work at a basic level (you can decide what basic is).
 - [ ] Make the progress bar work (requires careful consideration of the threading 
       required by some of your app's event handlers).
@@ -189,10 +178,9 @@ highest possible grade is 115 (due to extra credit).
   aspect is at the discretion of the implementor. The screenshot provided earlier 
   in this project description is meant to serve as a reference. 
   **It is okay if implementors deviate visually from the screenshot.** 
-  In addition to the required 
-  components, implementors should feel free to add more components and/or 
-  functionality as long they do not distract too heavily from the functionality
-  of the required components. Here are the required components:
+  In addition to the required components, implementors should feel free to add 
+  more components and/or functionality as long they do not distract too heavily 
+  from the functionality of the required components. Here are the required components:
 
   * **Menu (10 points):** The application needs to have a menu bar with a "File" menu. The
     only menu item that is required is one labeled "Exit" that exits your
@@ -256,16 +244,18 @@ highest possible grade is 115 (due to extra credit).
       specified url (e.g., using the [`Image(String)`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/image/Image.html#%3Cinit%3E(java.lang.String))
       constructor, that is when the image data is downloaded. Here is a code
       snippet to consider: 
+      
       ```java
       String bradUrl = "http://csweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg";
       final Image bradImage = new Image(bradUrl);                 // first line
       Platform.runLater(() -> someImageView.setImage(bradImage)); // second line
       ```
+      
       The first line will take some time to download but does not modify the scene graph;
       however, the second line will take very little time but needs to run on the FX Application Thread 
       since it modifies the scene graph.
  
-* **Extra Credit 1 (5 points):** Add a "Help" menu to the menu bar. This menu
+* **Extra Credit Opportunity (5 points):** Add a "Help" menu to the menu bar. This menu
   should contain one menu item labeled "About" that displays an "About YOUR-NAME"
   stage (where YOUR-NAME is replaced with your name). The scene in this stage should
   contain an image of you as well as your name, email, and the version number
@@ -325,6 +315,7 @@ made to modify your submission to evaluate other requirements.
   
   If you follow this structure, then you might type the following to clean, compile, 
   and run your code using Maven, assuming you are in the top-level project directory:
+  
   ```
   $ mvn clean
   ```
