@@ -338,7 +338,7 @@ made to modify your submission to evaluate other requirements.
   $ mvn -e -Dprism.order=sw exec:java
   ```
   
-  Of course, you proably put one of the lines above 
+  Of course, you probably put one of the lines above 
   [in a script](https://github.com/cs1302uga/cs1302-tutorials/blob/master/scripts/scripts.md) 
   so that you do not have to type it out every time.
   
@@ -399,6 +399,13 @@ are on <code>odin.cs.uga.edu</code>. Change into the parent directory of your
 project directory. If you've followed the instructions provided in this document, 
 then the name of your project directory is likely <code>cs1302-gallery</code>. 
 While in your project's parent directory, execute the following command: 
+
+```
+$ find cs1302-gallery -type f -name "*.java" | xargs check1302
+```
+
+If there are style guide violations, then fix them and retest your code! Once
+you have no style guide violations, you can submit using the following command:
 
 ```
 $ submit cs1302-gallery csci-1302
