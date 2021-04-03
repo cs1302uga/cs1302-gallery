@@ -87,7 +87,7 @@ given instruction on all of the details needed to accomplish that goal. For exam
 even though working with things like images, threads, JSON, and the iTunes Search API 
 haven't been covered in class, you are going to need to lookup how to do these things 
 in order to complete this project. Starter code and a generously helpful [FAQ](#faq) 
-are provided. After actively eading through the main parts of this project description
+are provided. After actively reading through the main parts of this project description
 and taking notes, please read through the [FAQ](#faq) to see if it answers any of your
 questions.
 
