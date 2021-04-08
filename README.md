@@ -338,6 +338,11 @@ made to modify your submission to evaluate other requirements.
   $ mvn -e -Dprism.order=sw exec:java
   ```
   
+  If you utilize daemon threads in your application, then the `-Dexec.cleanupDaemonThreads=false` option
+  may also need to be added to honor the usual expectation that daemon threads do not block program
+  termination. If you find that a daemon thread is preventing your app from terminating gracefully
+  (or at all), then definitely use `-Dexec.cleanupDaemonThreads=false`. 
+  
   Of course, you probably put one of the lines above 
   [in a script](https://github.com/cs1302uga/cs1302-tutorials/blob/master/scripts/scripts.md) 
   so that you do not have to type it out every time.
