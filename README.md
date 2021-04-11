@@ -871,7 +871,7 @@ Below are some frequently asked questions related to this project.
    classes. Here is an example that prints the current time (using 
    [`LocalTime`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalTime.html)) to 
    standard output every two (2) seconds (specified using
-   [`Duration`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html), indefinitely:
+   [`Duration`](https://openjfx.io/javadoc/11/javafx.base/javafx/util/Duration.html), indefinitely:
    ```java
    EventHandler<ActionEvent> handler = event -> System.out.println(LocalTime.now());
    KeyFrame keyFrame = new KeyFrame(Duration.seconds(2), handler);
