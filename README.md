@@ -231,9 +231,13 @@ highest possible grade is 115 (due to extra credit).
     that indicates the progress of querying the iTunes Search API, loading the
     images into memory, and updating the main content area of the application.
     
-    * Notably, the progress bar will be seen to progress when the application
+    * Notably, the progress bar will be seen to progress when ~~the application
       first starts (as images are gathered from the response to the default
-      query) and when the "Update Images" button is pressed. 
+      query) and when~~ the "Update Images" button is pressed. 
+      
+      - Please see [Piazza @1668](https://piazza.com/class/kjivfwynz9g4zq?cid=1668)
+        for information regarding the part of the requirement above that's
+        been struck. 
       
     * Please note that **this progress bar is not merely aesthetic**. It 
       should actually show the progress of downloading the individual images
