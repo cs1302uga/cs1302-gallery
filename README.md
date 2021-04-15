@@ -265,8 +265,8 @@ highest possible grade is 115 (due to extra credit).
   contain an image of you as well as your name, email, and the version number
   for your application (version can be whatever you want). This stage should
   be *application modal*, and it should be closable so that the user can return
-  to the main part of the application. If you are doing both of the extra
-  credit requirements, then please make the "Help" menu the right-most menu
+  to the main part of the application. Please make sure the "Help" menu is the 
+  right-most menu.
 
 ### Non-Functional Requirements
 
