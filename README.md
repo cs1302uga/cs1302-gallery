@@ -488,7 +488,7 @@ Below are some frequently asked questions related to this project.
    The response, i.e., the results for a particular query, are returned as
    a large string, formatted using JavaScript Object Notation (JSON). You _could_
    perform string manipulation to retrieve pieces of information from this 
-   response string, however, we reccommend using a third party library called Gson
+   response string, however, we recommend using a third party library called Gson
    instead (more details on that later).
    
    **See the String:** You can see the giant JSON-formatted string by visiting
