@@ -387,7 +387,7 @@ made to modify your submission to evaluate other requirements.
   termination. If you find that a daemon thread is preventing your app from terminating gracefully
   (or at all), then definitely use `-Dexec.cleanupDaemonThreads=false`. 
   
-  Of course, you probably put one of the lines above 
+  We encourage you to include one or more of the lines above 
   [in a script](https://github.com/cs1302uga/cs1302-tutorials/blob/master/scripts/scripts.md) 
   so that you do not have to type it out every time.
   
