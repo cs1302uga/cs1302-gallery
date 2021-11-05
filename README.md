@@ -334,7 +334,7 @@ point total. That is, they are all or nothing.
   requirements, this requirement is all or nothing. 
   
   **NOTE:** The [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide)
-  includes instructions on how to use the `checkstyle` program to check
+  includes instructions on how to use the `check1302` program to check
   your code for compliance on Odin.  
 
 * **In-line Documentation (10 points):** Code blocks should be adequately documented
