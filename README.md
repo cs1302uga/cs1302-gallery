@@ -197,12 +197,22 @@ highest possible grade is 115 (due to extra credit).
     * As mentioned, images are gathered by querying the iTunes Search API. We have included
       information [here](#query-how) on how to programmatically perform such
       a query. A query result should contain multiple artwork URLs that you can 
-      use to download images. Only a distinct set of URLs should used if there
+      use to download images. 
+	  
+    * Only a distinct set of URLs should used if there
       are any duplicates. Implementers are not expected to handle situations
-      where two distinct URLs refer to identical images. 
+      where two distinct URLs refer to identical images.
 
-  * **Toolbar (50 points):** The application needs to have a toolbar that 
-    contains the following components:
+  * **Toolbar (50 points):** The application needs to have a toolbar. 
+  
+    **What is a toolbar?** A toolbar is a strip of components that allow a user
+	to perform related actions in an application. In JavaFX, a toolbar can
+	be implemented in several different ways, most of which involve some
+	kind of 
+	[layout pane](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md#re-layout-panes). 
+
+	**What to include:** Your toolbar, however implemented, must contain at least the 
+	following components:
 
     * *Play/Pause Button (10 points):* This button should allow the user to 
       pause and resume the random image replacement described for the main 
@@ -231,21 +241,25 @@ highest possible grade is 115 (due to extra credit).
     that indicates the progress of querying the iTunes Search API, loading the
     images into memory, and updating the main content area of the application.
     
-    * Notably, the progress bar will be seen to progress when ~~the application
-      first starts (as images are gathered from the response to the default
-      query) and when~~ the "Update Images" button is pressed. 
-      
-      - Please see [Piazza @1668](https://piazza.com/class/kjivfwynz9g4zq?cid=1668)
-        for information regarding the part of the requirement above that's
-        been struck. 
+    * Ideally, the progress bar will be seen by users of the application to 
+	  progress in two different scenarios:
+	  
+	  1. when the application first starts and images are gathered from the 
+	     response to the default query; and 
+		 
+	  2. when the "Update Images" button is pressed and images are gathered
+	     from the response to query constructed using the user's input. 
+	  
+	  **You are required to handle situation (2),** and you are encouraged
+      to handle situation (1) if time permits.
       
     * Please note that **this progress bar is not merely aesthetic**. It 
       should actually show the progress of downloading the individual images
-      from the query response.   
+      from the query response.
       
     * In JavaFX, an image is represented by an [`Image`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/image/Image.html)
       object. When an `Image` object is constructed with content loaded from a
-      specified url (e.g., using the [`Image(String)`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/image/Image.html#%3Cinit%3E(java.lang.String))
+      specified URL (e.g., using the [`Image(String)`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/image/Image.html#%3Cinit%3E(java.lang.String))
       constructor, that is when the image data is downloaded. Here is a code
       snippet to consider: 
       
@@ -255,7 +269,7 @@ highest possible grade is 115 (due to extra credit).
       Platform.runLater(() -> someImageView.setImage(bradImage)); // second line
       ```
       
-      The first line will take some time to download but does not modify the scene graph;
+      In the example above, the first line will take some time to download but does not modify the scene graph;
       however, the second line will take very little time but needs to run on the FX Application Thread 
       since it modifies the scene graph.
  
