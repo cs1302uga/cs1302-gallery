@@ -457,7 +457,7 @@ Below are some frequently asked questions related to this project.
    podcasts, music, music videos, audiobooks, short films, and tv shows):
    
    ```
-   https://itunes.apple.com/search?term=jack+johnson&limit=50
+   https://itunes.apple.com/search?term=jack+johnson&limit=200
    ```
    
    Here is a breakdown of the URL:
@@ -468,7 +468,7 @@ Below are some frequently asked questions related to this project.
    | `?`                               | Denotes the start of the query string |
    | `term=jack+johnson`               | Parameter `key=value` pair            |
    | `&`                               | Denotes that an additional parameter is to follow |
-   | `limit=50`                        | Parameter `key=value` pair            |
+   | `limit=200`                       | Parameter `key=value` pair            |
    
    In this example, only one parameter, `term`, is passed to the iTunes Search API,
    with the URL-encoded value `jack johnson`. Additional parameters can be introduced
@@ -476,7 +476,7 @@ Below are some frequently asked questions related to this project.
    requests only music-related media:
    
    ```
-   https://itunes.apple.com/search?term=jack+johnson&limit=50&media=music
+   "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music"
    ```
    
    While something similar to the above URL is all you need for this project,
@@ -497,22 +497,32 @@ Below are some frequently asked questions related to this project.
    download it. You can see it on Odin using `wget` and `cat` 
    (or use `less` if you want scrolling):
    ```
-   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&media=music" | cat
+   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | cat
    ```
    If you want to see formatted JSON output (i.e., properly tabbled, newlines added, etc.),
    then you might pipe the output of `wget` into the Python `json.tool` module instead:
    ```
-   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&media=music" | python3 -m json.tool
+   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq "."
    ```
 
    **URL-Encoding:** You may have noticed that we said `jack+johnson` is the URL-encoded
    value for `"jack johnson"`. When constructing a URL query string (i.e., anything after the `?` in a URL) in Java, 
    take special care that any values (e.g., the value of the `term` parameter) are
    [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
-   This can be easily accomplished for you using the static `encode` method in
+   
+   URL-encoding is easily accomplished for you using the static `encode` method in
    [`URLEncoder`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URLEncoder.html).
    You should use the non-deprecated overload of this method, supplying `"UTF-8"` for
-   the name of the character encoding as noted in the method's API documentation. 
+   the name of the character encoding as noted in the method's API documentation.
+   Here is an example that URL-encodes `"jack johnson"` into something that can be used
+   in a URL query string:
+   
+   ```java
+   URLEncoder.encode("jack johnson", "UTF-8"); // returns "jack+johnson"
+   ```
+   
+   **IMPORTANT:** To be clear, you do **NOT** need to URL-encode the entire URL string; you only
+   need to URL-encode the parameter values.
 
 1. **How do I download the JSON result for a query?**
 
