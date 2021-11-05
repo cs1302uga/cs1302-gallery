@@ -1,11 +1,11 @@
-# CSCI 1302 - Gallery v2021.sp
+# CSCI 1302 - Gallery v2021.fa
 
-![Approved for: Spring 2021](https://img.shields.io/badge/Approved%20for-Spring%202021-success)
+![Approved for: Fall 2021](https://img.shields.io/badge/Approved%20for-Fall%202021-success)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Spring 2021 CSCI 1302 classes
+assigned to the students in the Fall 2021 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -15,9 +15,9 @@ final submission via the `submit` command before the date/times listed below
 automatically receive the associated Submission-Based (SB) extra credit. The late 
 penalty does not start applying until after the final date listed. 
 
-* **MON 2021-04-19 (APR 19) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **TUE 2021-04-20 (APR 20) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **WED 2021-04-21 (APR 21) @ 11:55 PM EDT (`+0` SB Extra Credit)**
+* **FRI 2021-11-19 (NOV 19) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **SAT 2021-11-20 (NOV 20) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **SUN 2021-11-21 (NOV 21) @ 11:55 PM EDT (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
