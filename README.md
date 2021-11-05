@@ -399,7 +399,8 @@ made to modify your submission to evaluate other requirements.
   
   If you decide to introduce additional `.java` files into your project,
   then they are expected to fulfill all non-functional and absolute requirements, 
-  even if the main parts of the project do not use them. You may assume
+  even if the main parts of the project do not use them. This includes, but
+  is not limited to the code style requirements. You may assume
   graders will compile your source code in an order that satisfies
   compilation dependencies. You should remove any `.java` files that you
   do not need before submission.
