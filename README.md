@@ -1,6 +1,6 @@
 # CSCI 1302 - Gallery v2021.fa
 
-![Approved for: Fall 2021](https://img.shields.io/badge/Approved%20for-Fall%202021-success)
+![Approved for: Fall 2021](https://img.shields.io/badge/Approved%20for-Fall%202021-blue)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
