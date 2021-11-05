@@ -220,22 +220,47 @@ highest possible grade is 115 (due to extra credit).
       to reflect the current application mode (i.e., play vs. pause).
 
     * *Query Text Field (10 points):* This component should allow the user to 
-      enter in a search query for the iTunes Search API. Its initial contents 
-      should correspond to some default query. 
+      enter in a **term** that your application will use when it queries the 
+	  iTunes Search API. Its initial contents should correspond to some default term 
+	  of your choosing (e.g., `"jack johnson"`).
 
     * *Update Images Button (30 points):* This button should cause the application 
-      to execute the search query specified in the query text field, gather
-      the images associated with the query response, and update the images
-      in the main content area of the application accordingly. 
+      to query the iTunes Search API using the URL-encoded version of the term
+	  provided by the user in the query text field, download the images associated with
+	  the query response, then update the images in the main content area of the 
+	  application accordingly. 
+	  
+	  * Instructions for how to query to iTunes Search API are provided
+	    [here](#query-how), including a description of the parameters 
+		you can provide when performing a query. When your application performs
+		a search query, **only the following parameters should be used:**
+		
+        | Parameter | Value                                                     |
+        |-----------|-----------------------------------------------------------|
+		| `term`    | URL-encoded version of the **term** provided by the user. |
+		| `limit`   | `"200"`                                                   |
+		| `media`   | `"music"`                                                 |
       
-      * If less than twenty one (21) distinct artwork image URLs are gathered, then a
-        dialog should be displayed to the user with an appropriate error message, 
-        and the main content area should not be updated. 
+	  * If the application is currently in **play mode**, then it should temporarily
+	    be placed into **pause mode** while query process is taking place, then
+		places back into **play mode** once the query process is finished.
+		
+      * If **less than twenty one (21)** distinct artwork image URLs are available 
+	    in the query response, then an alert dialog should be displayed to the 
+		user with an appropriate error message. In this scenario, the images in
+		the main content area should not be updated, and the application should
+		resume in whatever mode it was in when the user clicked the "Update Images"
+		button.
         
-      * If twenty one (21) or more distinct artwork images are gathered, then the 
-        images not chosen for display in the main content area of the application 
-        should be saved in a list in order to facilitate the random replacement 
-        described for the main content of the application.
+      * If **twenty one (21) or more** distinct artwork image URLs are available in
+	    the query response, then all the images associated with those distinct URLs
+		should be downloaded, and references to those downloaded images should be 
+		stored in some kind of list. In this scenario, the main content area should 
+		be updated to immediately display 20 of the downloaded images, and the
+		application should resume in whatever mode it was in when the user clicked 
+		the "Update Images" button. The remaining images should not be omitted as 
+		they will be needed to facilitate the "random replacement" described 
+		elsewhere in this document.
 
   * **Progress Bar (10 points):** The application needs to have a progress bar 
     that indicates the progress of querying the iTunes Search API, loading the
@@ -273,12 +298,13 @@ highest possible grade is 115 (due to extra credit).
       however, the second line will take very little time but needs to run on the FX Application Thread 
       since it modifies the scene graph.
  
-* **Extra Credit Opportunity (5 points):** Add a "Help" menu to the menu bar. This menu
-  should contain one menu item labeled "About" that displays an "About YOUR-NAME"
-  stage (where YOUR-NAME is replaced with your name). The scene in this stage should
-  contain an image of you as well as your name, email, and the version number
-  for your application (version can be whatever you want). This stage should
-  be *application modal*, and it should be closable so that the user can return
+* **Extra Credit Opportunity (10 points):** Add a "Help" menu to the menu bar. This menu
+  should contain one menu item labeled "About" that displays a stage or alert dialog
+  titled "About YOUR-NAME" (where YOUR-NAME is replaced with your name). The scene or
+  content of this stage or alert dialog should display an image of you as well as 
+  your name, email, and the version number for your application 
+  (version can be whatever you want). The stage or alert dialog should be 
+  *application modal*, and it should be closable so that the user can return
   to the main part of the application. Please make sure the "Help" menu is the 
   right-most menu.
 
@@ -471,7 +497,7 @@ Below are some frequently asked questions related to this project.
    podcasts, music, music videos, audiobooks, short films, and tv shows):
    
    ```
-   https://itunes.apple.com/search?term=jack+johnson&limit=200
+   https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music
    ```
    
    Here is a breakdown of the URL:
@@ -483,21 +509,17 @@ Below are some frequently asked questions related to this project.
    | `term=jack+johnson`               | Parameter `key=value` pair            |
    | `&`                               | Denotes that an additional parameter is to follow |
    | `limit=200`                       | Parameter `key=value` pair            |
+   | `&`                               | Denotes that an additional parameter is to follow |
+   | `media=music`                     | Parameter `key=value` pair            |
    
-   In this example, only one parameter, `term`, is passed to the iTunes Search API,
-   with the URL-encoded value `jack johnson`. Additional parameters can be introduced
-   by separating them with the `&` character. Here is an example that specifically
-   requests only music-related media:
+   In this example, the parameters `term`, `limit`, and `media` are passed
+   to the iTunes Search API along with their URL-encoded values (e.g., the user might
+   enter the term `"jack johnson"` into the query text field, but the URL-encoded
+   version `"jack+johnson"` is what is used in the URL string).
    
-   ```
-   "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music"
-   ```
-   
-   While something similar to the above URL is all you need for this project,
-   the iTunes Search API has many options to help fine tune your query.
-   Please see the 
-   [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
-   for more information.
+   If you want to read more about each parameter in the query URL, then refer to their
+   entries in the 
+   [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/). 
 
    The response, i.e., the results for a particular query, are returned as
    a large string, formatted using JavaScript Object Notation (JSON). You _could_
