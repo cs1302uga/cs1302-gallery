@@ -168,7 +168,7 @@ exhaustive list of steps that you may need to take to complete the project.
 ## Project Requirements & Grading
 
 This assignment is worth 100 points. The lowest possible grade is 0, and the 
-highest possible grade is 115 (due to extra credit).
+highest possible grade is 120 (due to extra credit).
 
 ### Functional Requirements
 
