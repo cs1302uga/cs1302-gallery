@@ -176,10 +176,11 @@ highest possible grade is 120 (due to extra credit).
   listed below. They need to function as described. If a certain aspect of a component 
   (e.g., style or behavior) is not specified in these requirements, then that
   aspect is at the discretion of the implementor. The screenshot provided earlier 
-  in this project description is meant to serve as a reference. 
-  **It is okay if implementors deviate visually from the screenshot.** 
-  In addition to the required components, implementors should feel free to add 
-  more components and/or functionality as long they do not distract too heavily 
+  in this project description is meant to serve as a reference.
+  **It is okay if implementors deviate visually from the screenshot.** You should
+  setup the application's scene graph in whatever way makes most sense to you and meets 
+  the requirements. In addition to the required components, implementors should feel  
+  free to add more components and/or functionality as long they do not distract too heavily 
   from the functionality of the required components. Here are the required components:
 
   * **Menu (10 points):** The application needs to have a menu bar with a "File" menu. The
