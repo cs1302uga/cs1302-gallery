@@ -460,7 +460,7 @@ then the name of your project directory is likely <code>cs1302-gallery</code>.
 While in your project's parent directory, execute the following command: 
 
 ```
-$ find cs1302-gallery -type f -name "*.java" | xargs check1302
+$ check1302 cs1302-gallery
 ```
 
 If there are style guide violations, then fix them and retest your code! Once
