@@ -363,21 +363,25 @@ made to modify your submission to evaluate other requirements.
   ```
   $ mvn clean
   ```
+  
   ```
   $ mvn compile
   ```
+  
   ```
   $ export MAVEN_OPTS=-Dprism.order=sw;
   $ mvn -e exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
   ```
   
   The following may also work to run the program:
+  
   ```
   $ mvn -e -Dprism.order=sw exec:java -Dexec.mainClass="cs1302.gallery.GalleryDriver"
   ```
   
   If the `exec.mainClass` property is set appropriately (to `cs1302.gallery.GalleryDriver`) 
   in your POM, then the following may also work:
+  
   ```
   $ mvn -e -Dprism.order=sw exec:java
   ```
@@ -386,6 +390,10 @@ made to modify your submission to evaluate other requirements.
   may also need to be added to honor the usual expectation that daemon threads do not block program
   termination. If you find that a daemon thread is preventing your app from terminating gracefully
   (or at all), then definitely use `-Dexec.cleanupDaemonThreads=false`. 
+  
+  ```
+  $ mvn -e -Dprism.order=sw exec:java -Dexec.cleanupDaemonThreads=false
+  ```
   
   We encourage you to include one or more of the lines above 
   [in a script](https://github.com/cs1302uga/cs1302-tutorials/blob/master/scripts/scripts.md) 
