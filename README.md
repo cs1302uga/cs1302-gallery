@@ -425,7 +425,7 @@ made to modify your submission to evaluate other requirements.
 The graders will compile and run your code on Odin using Maven. They will test
 each of the functional and non-functional requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
-an additional 15 points via extra credit. 
+up to an additional 20 points via extra credit.
 
 ## How to Download the Project
 
