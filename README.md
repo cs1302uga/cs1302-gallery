@@ -243,8 +243,8 @@ highest possible grade is 120 (due to extra credit).
 		| `media`   | `"music"`                                                 |
       
 	  * If the application is currently in **play mode**, then it should temporarily
-	    be placed into **pause mode** while query process is taking place, then
-		places back into **play mode** once the query process is finished.
+	    be placed into **pause mode** while the query process is taking place, then
+	    placed back into **play mode** once the query process is finished.
 		
       * If **less than twenty one (21)** distinct artwork image URLs are available 
 	    in the query response, then an alert dialog should be displayed to the 
