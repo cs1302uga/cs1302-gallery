@@ -15,9 +15,9 @@ final submission via the `submit` command before the date/times listed below
 automatically receive the associated Submission-Based (SB) extra credit. The late 
 penalty does not start applying until after the final date listed. 
 
-* **FRI 2021-11-19 (NOV 19) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **SAT 2021-11-20 (NOV 20) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **SUN 2021-11-21 (NOV 21) @ 11:55 PM EDT (`+0` SB Extra Credit)**
+* ~~**FRI 2021-11-19 (NOV 19) @ 11:55 PM EST (`+10` SB Extra Credit)**~~
+* ~~**SAT 2021-11-20 (NOV 20) @ 11:55 PM EST (`+5` SB Extra Credit)**~~
+* ~~**SUN 2021-11-21 (NOV 21) @ 11:55 PM EDT (`+0` SB Extra Credit)**~~
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
