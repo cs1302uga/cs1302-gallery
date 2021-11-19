@@ -19,10 +19,6 @@ penalty does not start applying until after the final date listed.
 * **MON 2021-11-22 (NOV 22) @ 11:55 PM EST (`+5` SB Extra Credit)**
 * **TUE 2021-11-23 (NOV 23) @ 11:55 PM EDT (`+0` SB Extra Credit)**
 
-* ~~**FRI 2021-11-19 (NOV 19) @ 11:55 PM EST (`+10` SB Extra Credit)**~~
-* ~~**SAT 2021-11-20 (NOV 20) @ 11:55 PM EST (`+5` SB Extra Credit)**~~
-* ~~**SUN 2021-11-21 (NOV 21) @ 11:55 PM EDT (`+0` SB Extra Credit)**~~
-
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
 the Appendix.** 
