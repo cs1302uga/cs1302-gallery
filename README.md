@@ -572,21 +572,48 @@ Below are some frequently asked questions related to this project.
 
 1. **How do I download the JSON result for a query?**
 
-   Suppose you have a `String` object referred to by `sUrl` containing the 
+   Suppose you have a `String` object referred to by `url` containing the 
    URL for an iTunes Search API query. In order to download the result, you 
-   will need to create a [`URL`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
-   object and a [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html) 
-   object as follows (exception handling may be needed):
+   will need to first prepare 
+   [`URI`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URI.html),
+   [`HttpClient`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html), and
+   [`HttpRequest`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpRequest.html)
+   objects as follows (exception handling may be needed):
+
    ```java
-   String sUrl = // from a query
-   URL url = new URL(sUrl);
-   InputStreamReader reader = new InputStreamReader(url.openStream());
+   URI endpoint = URI.create(url);
+   HttpClient client = HttpClient.newHttpClient();
+   HttpRequest request = HttpRequest.newBuilder().uri(endpoint).build();
    ```
-   **If you want the JSON response as a string (_not likely!_),** then you might use a
-   [`BufferedReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html)
-   to access the individual lines of the response. If you're simply parsing
-   the JSON response using a third party library, then most support the
-   use of the `InputStreamReader` directly.
+   
+   Now you can use the client's `send` method to send the request and receive a
+   response ([`HttpResponse`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.html))
+   that contains the query result in its body. When using the client's `send` method, a
+   `BodyHandler` must be supplied to indicate the format of the response body.
+   Here is an example that uses [`BodyHandlers.ofString()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.BodyHandlers.html#ofString()) 
+   to indicate that we want the response body as a string (exception handling may be needed):
+   
+   ```java
+   HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+   String result = response.body();
+   System.out.println(result);
+   ```
+   
+   If you are passing the result to another library for parsing (e.g., Google's GSON library),
+   then you should indicate that you want the response body as an 
+   [`InputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html) using
+   [`BodyHandlers.ofInputStream()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.BodyHandlers.html#ofInputStream())
+   so that you can supply the library with an 
+   [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html)
+   for more efficient processing:
+   
+   ```java
+   HttpResponse<InputStream> response = client.send(request, BodyHandlers.ofInputStream());
+   InputStreamReader reader = new InputStreamReader(response.body());
+   ```
+   
+   **SUGGESTION:** Create a single `HttpClient` object in your application. You can use
+   it to send multiple requests.
 
 1. **How do I parse the JSON result for a query?**
 
