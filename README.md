@@ -572,21 +572,61 @@ Below are some frequently asked questions related to this project.
 
 1. **How do I download the JSON result for a query?**
 
-   Suppose you have a `String` object referred to by `sUrl` containing the 
-   URL for an iTunes Search API query. In order to download the result, you 
-   will need to create a [`URL`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
-   object and a [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html) 
-   object as follows (exception handling may be needed):
+   To download the result of an iTunes Search API query, we reccommend that you use the
+   HTTP client ([`HttpClient`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html))
+   and other related classes in the `java.net` and `java.net.http` packages. 
+   The `HttpClient` class is used to send *requests* 
+   ([`HttpRequest`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpRequest.html))
+   to servers on the web and retrieve their *responses* 
+   ([`HttpResponse`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.html)). 
+   Creating an HTTP client is as easy as calling `HttpClient.newHttpClient()`:
+   
    ```java
-   String sUrl = // from a query
-   URL url = new URL(sUrl);
-   InputStreamReader reader = new InputStreamReader(url.openStream());
+   HttpClient client = HttpClient.newHttpClient();
    ```
-   **If you want the JSON response as a string (_not likely!_),** then you might use a
-   [`BufferedReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html)
-   to access the individual lines of the response. If you're simply parsing
-   the JSON response using a third party library, then most support the
-   use of the `InputStreamReader` directly.
+   
+   Now, let's assume a variable named `url` refers to a URL string for an 
+   iTunes Search API query. To prepare a request based on that URL, construct
+   a `URI` object based on the URL, then build an `HttpRequest` object using
+   that `URI`. Here is an example:
+   
+   ```java
+   // assume: url = "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music";
+   URI endpoint = URI.create(url);
+   HttpRequest request = HttpRequest.newBuilder().uri(endpoint).build();
+   ```
+   
+   Now that a request is prepared, you can use the client's `send` method to 
+   actually send the request and receive a response. If a request is
+   successful and the response includes any content, then that content
+   is accessible as the response's *body*. Here is an example that uses 
+   [`BodyHandlers.ofString()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.BodyHandlers.html#ofString()) 
+   in a call to `send` so that the response body is returned as a string 
+   (exception handling may be needed):
+   
+   ```java
+   HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+   String result = response.body();
+   System.out.println(result);
+   ```
+   
+   **SUGGESTION:** If you intend to pass the entirety of a response body
+   to another library for processing or parsing (e.g., Google's GSON library), then
+   you should not get the body as a string! Instead, use
+   [`BodyHandlers.ofInputStream()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpResponse.BodyHandlers.html#ofInputStream())
+   in your call to `send` to have it return an
+   [`InputStream`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html)
+   that can be used to create an 
+   [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html)
+   for more efficient processing. Here is an example (exception handling may be needed):
+   
+   ```java
+   HttpResponse<InputStream> response = client.send(request, BodyHandlers.ofInputStream());
+   InputStreamReader reader = new InputStreamReader(response.body());
+   ```
+   
+   **SUGGESTION:** You only need one `HttpClient` in your application. You can use
+   it multiple times to send different requests.
 
 1. **How do I parse the JSON result for a query?**
 
