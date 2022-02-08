@@ -557,7 +557,7 @@ Below are some frequently asked questions related to this project.
    [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
    
    URL-encoding is easily accomplished for you using the static `encode` method in
-   [`URLEncoder`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URLEncoder.html).
+   [`URLEncoder`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URLEncoder.html).
    You should use the non-deprecated overload of this method, supplying `"UTF-8"` for
    the name of the character encoding as noted in the method's API documentation.
    Here is an example that URL-encodes `"jack johnson"` into something that can be used
@@ -574,8 +574,8 @@ Below are some frequently asked questions related to this project.
 
    Suppose you have a `String` object referred to by `sUrl` containing the 
    URL for an iTunes Search API query. In order to download the result, you 
-   will need to create a [`URL`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
-   object and a [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html) 
+   will need to create a [`URL`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URL.html)
+   object and a [`InputStreamReader`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/InputStreamReader.html) 
    object as follows (exception handling may be needed):
    ```java
    String sUrl = // from a query
@@ -583,7 +583,7 @@ Below are some frequently asked questions related to this project.
    InputStreamReader reader = new InputStreamReader(url.openStream());
    ```
    **If you want the JSON response as a string (_not likely!_),** then you might use a
-   [`BufferedReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html)
+   [`BufferedReader`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedReader.html)
    to access the individual lines of the response. If you're simply parsing
    the JSON response using a third party library, then most support the
    use of the `InputStreamReader` directly.
@@ -620,7 +620,7 @@ Below are some frequently asked questions related to this project.
       The method returns a reference to a [`JsonElement`](https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.6/com.google.gson/com/google/gson/JsonElement.html)
       object representing the root of the response. In the example above, think of this
       as giving you access to that outer pair of curly braces. The code for this is,
-      where `reader` refers to an [`InputStreamReader`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStreamReader.html)
+      where `reader` refers to an [`InputStreamReader`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/InputStreamReader.html)
       object (see the previous FAQ question) that can be used to download the string:
       
       ```java
@@ -791,8 +791,8 @@ Below are some frequently asked questions related to this project.
    response.
 
    To create a new thread, you need to instatiate a 
-   [`Thread`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html) object
-   with a [`Runnable`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html) 
+   [`Thread`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html) object
+   with a [`Runnable`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html) 
    implementation for your task. Since `Runnable` is a functional interface, 
    this process is simplified using a lambda expression or method reference. 
    Here is an example idiom of how to create and start a new thread for a task:
@@ -839,7 +839,7 @@ Below are some frequently asked questions related to this project.
    or container) in the scene graph from a code snippet that is not executing
    in the JavaFX Application Thread (see Q7 in this FAQ). If you want to fix this, then
    the code snippet that interacts with the scene graph needs to be wrapped
-   in a [`Runnable`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runnable.html)
+   in a [`Runnable`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html)
    implementation and passed to the static `runLater` method in 
    [`Platform`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/application/Platform.html).
    Since `Runnable` is a functional interface, this process is simplified using
@@ -929,7 +929,7 @@ Below are some frequently asked questions related to this project.
    [`Timeline`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/animation/Timeline.html) 
    and [`KeyFrame`](https://openjfx.io/javadoc/11/javafx.graphics/javafx/animation/KeyFrame.html) 
    classes. Here is an example that prints the current time (using 
-   [`LocalTime`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalTime.html)) to 
+   [`LocalTime`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalTime.html)) to 
    standard output every two (2) seconds (specified using
    [`Duration`](https://openjfx.io/javadoc/11/javafx.base/javafx/util/Duration.html), indefinitely:
    ```java
