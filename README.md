@@ -144,10 +144,10 @@ exhaustive list of steps that you may need to take to complete the project.
 **Backend:**
 
 - [ ] Create any custom component classes.
-- [ ] On paper, hash out how you might store the list or lists of image URLs.
+- [ ] On paper, hash out how you might store the list or lists of image URIs.
 - [ ] Write a method to retreive the JSON response string for a query to the iTunes
       Search API based on a query string.
-- [ ] Write a method that returns a list of URL strings based on a JSON response
+- [ ] Write a method that returns a list of URI strings based on a JSON response
       string retrieved from the iTunes Search API.
 - [ ] Use Git to stage and commit your changes often; create and merge branches,
       as needed.
@@ -197,12 +197,12 @@ highest possible grade is 120 (due to extra credit).
 
     * As mentioned, images are gathered by querying the iTunes Search API. We have included
       information [here](#query-how) on how to programmatically perform such
-      a query. A query result should contain multiple artwork URLs that you can
-      use to download images.
+      a query. A query response should contain multiple results, each with its own
+      artwork URI (named `artworkUrl100`) that you can use to download the images.
 
-    * Only a distinct set of URLs should used if there
+    * Only a distinct set of URIs should used if there
       are any duplicates. Implementers are not expected to handle situations
-      where two distinct URLs refer to identical images.
+      where two distinct URIs refer to identical images.
 
   * **Toolbar (50 points):** The application needs to have a toolbar.
 
@@ -246,15 +246,15 @@ highest possible grade is 120 (due to extra credit).
 	    be placed into **pause mode** while the query process is taking place, then
 	    placed back into **play mode** once the query process is finished.
 
-      * If **less than twenty one (21)** distinct artwork image URLs are available
+      * If **less than twenty one (21)** distinct artwork image URIs are available
 	    in the query response, then an alert dialog should be displayed to the
 		user with an appropriate error message. In this scenario, the images in
 		the main content area should not be updated, and the application should
 		resume in whatever mode it was in when the user clicked the "Update Images"
 		button.
 
-      * If **twenty one (21) or more** distinct artwork image URLs are available in
-	    the query response, then all the images associated with those distinct URLs
+      * If **twenty one (21) or more** distinct artwork image URIs are available in
+	    the query response, then all the images associated with those distinct URIs
 		should be downloaded, and references to those downloaded images should be
 		stored in some kind of list. In this scenario, the main content area should
 		be updated to immediately display 20 of the downloaded images, and the
@@ -285,7 +285,7 @@ highest possible grade is 120 (due to extra credit).
 
     * In JavaFX, an image is represented by an [`Image`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/image/Image.html)
       object. When an `Image` object is constructed with content loaded from a
-      specified URL (e.g., using the [`Image(String)`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/image/Image.html#%3Cinit%3E(java.lang.String))
+      specified URI (e.g., using the [`Image(String)`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/image/Image.html#%3Cinit%3E(java.lang.String))
       constructor, that is when the image data is downloaded. Here is a code
       snippet to consider:
 
@@ -498,7 +498,7 @@ Below are some frequently asked questions related to this project.
 1. <a id="query-how" />**How do I query the iTunes Search API?**
 
    In order query the iTunes Search API, you need to access the iTunes Search
-   API service via a carefully contructed URL. Here is a an example of a query
+   API service via a carefully contructed URI. Here is a an example of a query
    URI that searches for all
    [Jack Johnson](https://en.wikipedia.org/wiki/Jack_Johnson_(musician))
    audio and video content (movies,
@@ -523,7 +523,7 @@ Below are some frequently asked questions related to this project.
    In this example, the parameters `term`, `limit`, and `media` are passed
    to the iTunes Search API along with their URL-encoded values (e.g., the user might
    enter the term `"jack johnson"` into the query text field, but the URL-encoded
-   version `"jack+johnson"` is what is used in the URL string).
+   version `"jack+johnson"` is what is used in the URI string).
 
    If you want to read more about each parameter in the query URI, then refer to their
    entries in the
@@ -554,7 +554,7 @@ Below are some frequently asked questions related to this project.
    ```
 
    **URL-Encoding:** You may have noticed that we said `jack+johnson` is the URL-encoded
-   value for `"jack johnson"`. When constructing a URL query string (i.e., anything after the `?` in a URL) in Java,
+   value for `"jack johnson"`. When constructing a URI query string (i.e., anything after the `?` in a URL or URI) in Java,
    take special care that any values (e.g., the value of the `term` parameter) are
    [URL-encoded](https://en.wikipedia.org/wiki/Percent-encoding).
 
@@ -564,7 +564,7 @@ Below are some frequently asked questions related to this project.
    for the character encoding as seen in the
    [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
    Here is an example that URL-encodes `"jack johnson"` into something that can be used
-   in a URL query string:
+   in a URI query string:
 
    ```java
    URLEncoder.encode("jack johnson", StandardCharsets.UTF_8); // returns "jack+johnson"
@@ -909,12 +909,12 @@ Below are some frequently asked questions related to this project.
 1. **How do I access a local, non-downloaded resource (e.g., an image file)?**
 
    You should place local files under `resources` in your project directory (you may need to
-   create the `resources` directory). URLs prefixed with `file:` should be relative to your
+   create the `resources` directory). URIs or URLs prefixed with `file:` should be relative to your
    project directory.
 
    Example:
 
-   | Resource                | URL                            |
+   | Resource                | URI/URL                        |
    |-------------------------|--------------------------------|
    | `resources/icon.png`    | `"file:resources/icon.png"`    |
    | `resources/foo/img.png` | `"file:resources/foo/img.png"` |
