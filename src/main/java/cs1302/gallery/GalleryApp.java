@@ -27,17 +27,44 @@ public class GalleryApp extends Application {
         .setPrettyPrinting()                          // enable nice output when printing
         .create();                                    // builds and returns a Gson object
 
+    private Stage stage;
+    private Scene scene;
+    private HBox root;
+
+    /**
+     * Constructs a {@code GalleryApp} object}.
+     */
+    public GalleryApp() {
+        this.stage = null;
+        this.scene = null;
+        this.root = new HBox();
+    } // GalleryApp
+
+    /** {@inheritDoc} */
+    @Override
+    public void init() {
+        // feel free to modify this method
+        System.out.println("init() called");
+    } // init
+
     /** {@inheritDoc} */
     @Override
     public void start(Stage stage) {
-        HBox pane = new HBox();
-        Scene scene = new Scene(pane);
-        stage.setMaxWidth(640);
-        stage.setMaxHeight(480);
-        stage.setTitle("GalleryApp!");
-        stage.setScene(scene);
-        stage.sizeToScene();
-        stage.show();
+        this.stage = stage;
+        this.scene = new Scene(this.root);
+        this.stage.setOnCloseRequest(event -> Platform.exit());
+        this.stage.setTitle("GalleryApp!");
+        this.stage.setScene(this.scene);
+        this.stage.sizeToScene();
+        this.stage.show();
+        Platform.runLater(() -> this.stage.setResizable(false));
     } // start
+
+    /** {@inheritDoc} */
+    @Override
+    public void stop() {
+        // feel free to modify this method
+        System.out.println("stop() called");
+    } // stop
 
 } // GalleryApp
