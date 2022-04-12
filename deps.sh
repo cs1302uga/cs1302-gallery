@@ -8,3 +8,17 @@ jdeps -verbose:class \
       --module-path ${DEPS} \
       target/classes \
     | grep -v Warning
+
+echo ""
+echo "Checking for openStream()..."
+if grep -R "\.openStream" src; then
+    echo "Per the project description, use of the openStream() method"
+    echo "provided by java.net.URL is not allowed."
+fi
+
+echo ""
+echo "Checking for JsonArray, JsonElement, JsonObject, and JsonParser..."
+if grep -R -E "Json(Array|Element|Object|Parser)" src; then
+    echo "Per the project description, use of JsonArray, JsonElement,"
+    echo "JsonObject, and JsonParser is not allowed."
+fi
