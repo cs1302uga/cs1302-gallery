@@ -1,3 +1,5 @@
+package cs1302.gallery;
+
 /**
  * Represents a result in a response from the iTunes Search API. This is
  * used by Gson to create an object from the JSON response body. This class
