@@ -497,12 +497,16 @@ Below are some frequently asked questions related to this project.
    entries in the
    [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
 
-   The response, i.e., the results for a particular query, are returned as
-   a large string, formatted using JavaScript Object Notation (JSON). You _could_
+   The body of the response, i.e., the content of a request to the iTunes Search API, is simply
+   a string that is formatted using JavaScript Object Notation (JSON). You _could_
    perform string manipulation to retrieve pieces of information from this
-   response string, however, in this project, you should parse it using a `Gson`
+   JSON-formatted string, however, in this project, you should parse it using a `Gson`
    object's `fromJson` method as described in the
    [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst).
+   A complete example that illustrates how to download and parse the JSON-formatted
+   string for a query to the iTunes Search API is also provided in the
+   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst)
+   (see `cs1302.web/cs1302.web.Example3` under "Complete Examples").
 
    **See the String:** You can see the giant JSON-formatted string by visiting
    one of your carefully constructed URLs for an iTunes Search API query.
@@ -541,43 +545,21 @@ Below are some frequently asked questions related to this project.
    **IMPORTANT:** To be clear, you do **NOT** need to URL-encode the entire URI string; you only
    need to URL-encode the parameter values.
 
-1. **How do I download the JSON result for a query?**
+1. **How do I download and parse the JSON-formatted response body for a query?**
 
     Instructions that describe how to download content from a URI into a string
     are provided in the
     [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
-    That reading even includes an example that downloads the JSON-formatted
-    string from the iTunes Search API.
+    That reading includes a complete example that illustrates how to download and parse the JSON-formatted
+    string for a query to the iTunes Search API (see `cs1302.web/cs1302.web.Example3` under "Complete Examples").
+    Classes to model the search response and results are already provided with
+    this project's starter code:
 
-1. **How do I parse the JSON result for a query?**
+    * [`cs1302.gallery.ItunesResponse`](src/main/java/cs1302/gallery/ItunesResponse.java)
+    * [`cs1302.gallery.ItunesResult`](src/main/java/cs1302/gallery/ItunesResult.java)
 
-   Here is an example of a single long string, formatted using JSON, that was retrieved
-   using code similar to what was presented in the previous FAQ question (as presented,
-   it is quite unweildly):
-
-   ```json
-   {
-    "resultCount":2,
-    "results": [
-      {"wrapperType":"track", "kind":"song", "artistId":909253, "collectionId":1440857781, "trackId":1440857786, "artistName":"Jack Johnson", "collectionName":"In Between Dreams (Bonus Track Version)", "trackName":"Better Together", "collectionCensoredName":"In Between Dreams (Bonus Track Version)", "trackCensoredName":"Better Together", "artistViewUrl":"https://music.apple.com/us/artist/jack-johnson/909253?uo=4", "collectionViewUrl":"https://music.apple.com/us/album/better-together/1440857781?i=1440857786&uo=4", "trackViewUrl":"https://music.apple.com/us/album/better-together/1440857781?i=1440857786&uo=4", "previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview118/v4/94/25/9c/94259c23-84ee-129d-709c-577186cbe211/mzaf_5653537699505456197.plus.aac.p.m4a", "artworkUrl30":"https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/24/46/97/24469731-f56f-29f6-67bd-53438f59ebcb/source/30x30bb.jpg", "artworkUrl60":"https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/24/46/97/24469731-f56f-29f6-67bd-53438f59ebcb/source/60x60bb.jpg", "artworkUrl100":"https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/24/46/97/24469731-f56f-29f6-67bd-53438f59ebcb/source/100x100bb.jpg", "collectionPrice":9.99, "trackPrice":1.29, "releaseDate":"2005-03-01T12:00:00Z", "collectionExplicitness":"notExplicit", "trackExplicitness":"notExplicit", "discCount":1, "discNumber":1, "trackCount":15, "trackNumber":1, "trackTimeMillis":207679, "country":"USA", "currency":"USD", "primaryGenreName":"Rock", "isStreamable":true},
-      {"wrapperType":"track", "kind":"song", "artistId":909253, "collectionId":1440857781, "trackId":1440857795, "artistName":"Jack Johnson", "collectionName":"In Between Dreams (Bonus Track Version)", "trackName":"Banana Pancakes", "collectionCensoredName":"In Between Dreams (Bonus Track Version)", "trackCensoredName":"Banana Pancakes", "artistViewUrl":"https://music.apple.com/us/artist/jack-johnson/909253?uo=4", "collectionViewUrl":"https://music.apple.com/us/album/banana-pancakes/1440857781?i=1440857795&uo=4", "trackViewUrl":"https://music.apple.com/us/album/banana-pancakes/1440857781?i=1440857795&uo=4", "previewUrl":"https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview118/v4/51/ba/f8/51baf8ca-e417-56e8-d6e1-4f02634e451c/mzaf_5766837215935557210.plus.aac.p.m4a", "artworkUrl30":"https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/24/46/97/24469731-f56f-29f6-67bd-53438f59ebcb/source/30x30bb.jpg", "artworkUrl60":"https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/24/46/97/24469731-f56f-29f6-67bd-53438f59ebcb/source/60x60bb.jpg", "artworkUrl100":"https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/24/46/97/24469731-f56f-29f6-67bd-53438f59ebcb/source/100x100bb.jpg", "collectionPrice":9.99, "trackPrice":1.29, "releaseDate":"2005-03-01T12:00:00Z", "collectionExplicitness":"notExplicit", "trackExplicitness":"notExplicit", "discCount":1, "discNumber":1, "trackCount":15, "trackNumber":3, "trackTimeMillis":191854, "country":"USA", "currency":"USD", "primaryGenreName":"Rock", "isStreamable":true}
-    ]
-   }
-   ```
-
-   Parsing JavaScript Object Notation (JSON) can be tricky, and there are many options.
-   You _could_ perform string manipulation to retrieve the various pieces of information
-   from this response string. However, for this project, you should use
-   Google's [`Gson`](https://github.com/google/gson) library. **Before you continue,**
-   please do some due dilligence and lookup JSON. You should also read both
-   the [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst)
-   and the [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst),
-   since they contain examples that combine the downloading and parsing of data retrived
-   from a URI. Classes to model the search response and results are already provided with
-   this project's starter code:
-
-   * [`cs1302.gallery.ItunesResponse`](src/main/java/cs1302/gallery/ItunesResponse.java)
-   * [`cs1302.gallery.ItunesResult`](src/main/java/cs1302/gallery/ItunesResult.java)
+    If you call `GSON.fromJson` inside your `GalleryApp.java` file, then use `ItunesResponse.class`
+    for the second argument.
 
 1. **How can I use Google Gson in my project?**
 
