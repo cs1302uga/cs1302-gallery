@@ -184,7 +184,9 @@ highest possible grade is 120 (due to extra credit).
   considered as part of the project requirements.** To access the mockup, you can click on the
   image below or the link below the image.
 
-  [![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/mockup_thumb.png)](https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1)
+  <p align="center">
+  <a href="https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1"><img src="https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/mockup_thumb.png"></a>
+  </p>
 
   * [Entire Mockup](https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1)
   * [Mockup Slideshow](https://www.figma.com/proto/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C1.08&scaling=min-zoom&starting-point-node-id=1%3A3&show-proto-sidebar=1)
