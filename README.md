@@ -683,17 +683,17 @@ Below are some frequently asked questions related to this project.
    this process is simplified using a lambda expression or method reference.
    Here is an example idiom of how to create and start a new thread for a task:
    ```java
-   Runnable r = () -> {
+   Runnable task = () -> {
        /* task code here */
    };
-   Thread t = new Thread(r);
-   t.setDaemon(true);
-   t.start();
+   Thread taskThread = new Thread(task);
+   taskThread.setDaemon(true);
+   taskThread.start();
    ```
-   The call to `t.setDaemon(true)` prevents this newly created thread from
+   The call to `taskThread.setDaemon(true)` prevents this newly created thread from
    delaying program termination in the case where either the main thread
    or the JavaFX Application Thread terminate first. After the call to
-   `t.start()`, both the JavaFX Application Thread and the newly created
+   `taskThread.start()`, both the JavaFX Application Thread and the newly created
    thread are executing concurrently. You cannot assume that statements in
    either thread execute in any predetermined order.
 
@@ -731,37 +731,13 @@ Below are some frequently asked questions related to this project.
    Since `Runnable` is a functional interface, this process is simplified using
    a lambda expression or method reference. Here is a basic example:
    ```java
-   Runnable r = () -> {
+   Runnable sceneTask = () -> {
        /* place code interacting with scene graph here */
    };
-   Platform.runLater(r);
+   Platform.runLater(sceneTask);
    ```
    The `runLater` method ensures that the code in your `Runnable` implementation
-   executes in the JavaFX Application Thread. Here is a more complete example
-   that combines this scenario with the one described in Q4 of this FAQ using the
-   [`runNow`](#runNow) method to create and start a daemon thread for the overall
-   task:
-   ```java
-   EventHandler<ActionEvent> handler = event -> {
-       runNow(() -> {
-           /* some
-            * task code
-            * here
-            */
-           Platform.runLater(() -> { /* interact with scene graph */ });
-           /* perhaps
-            * more task code
-            * here
-            */
-           Platform.runLater(() -> { /* interact with scene graph again */ });
-           /* perhaps
-            * even more task code
-            * here
-            */
-       });
-   };
-   button.setOnAction(handler);
-   ```
+   executes in the JavaFX Application Thread.
 
    While it might be tempting to place all of your task code in the
    `Runnable` implementation provided to `runLater`, that is not a good idea
