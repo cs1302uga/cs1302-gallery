@@ -5,7 +5,7 @@
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Fall 2021 CSCI 1302 classes
+assigned to the students in the Spring 2022 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
