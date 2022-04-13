@@ -179,6 +179,13 @@ highest possible grade is 120 (due to extra credit).
   free to add more components and/or functionality as long they do not distract too heavily
   from the functionality of the required components. Here are the required components:
 
+  Before we break down the points, here is a link to some mockups that contain notes
+  about the app's required functionality:
+
+  [![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/mockup_thumb.png)](https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1)
+
+  https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1
+
   * **Menu (10 points):** The application needs to have a menu bar with a "File" menu. The
     only menu item that is required is one labeled "Exit" that exits your
     application gracefully when clicked by the user.
