@@ -179,138 +179,101 @@ highest possible grade is 120 (due to extra credit).
   free to add more components and/or functionality as long they do not distract too heavily
   from the functionality of the required components. Here are the required components:
 
-  Before we break down the points, here is a link to some mockups that contain notes
-  about the app's required functionality:
+  Before we break down the points, please see the mockup below, which contain notes
+  about the app's required functionality. To access the mockup, you can click on the
+  image below or the link below the image.
 
   [![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/mockup_thumb.png)](https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1)
 
   https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1
 
-  * **Menu (10 points):** The application needs to have a menu bar with a "File" menu. The
-    only menu item that is required is one labeled "Exit" that exits your
-    application gracefully when clicked by the user.
+  Here are some details about the required elements:
 
-  * **Main Content (30 points):** The main content of the application is a collection
-    of twenty (20) artwork images gathered via querying the iTunes Search API. The
-    initial set of images should correspond to some default query. If the
-    application is in "play mode", then every two (2) seconds, a random image
-    that is currently being displayed should be replaced with a random image
-    that is not currently being displayed (assuming more than 20 images are
-    gathered from the response to the search query).
-
-    * As mentioned, images are gathered by querying the iTunes Search API. We have included
-      information [here](#query-how) on how to programmatically perform such
-      a query. A query response should contain multiple results, each with its own
-      artwork URI (named `artworkUrl100`) that you can use to download the images.
-
-    * Only a distinct set of URIs should used if there
-      are any duplicates. Implementers are not expected to handle situations
-      where two distinct URIs refer to identical images.
-
-  * **Toolbar (50 points):** The application needs to have a toolbar.
-
-    **What is a toolbar?** A toolbar is a strip of components that allow a user
-	to perform related actions in an application. In JavaFX, a toolbar can
-	be implemented in several different ways, most of which involve some
-	kind of
-	[layout pane](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md#re-layout-panes).
-
-	**What to include:** Your toolbar, however implemented, must contain at least the
-	following components:
+  * **Search Bar (60):** The app  must have an area near the top that contains
+    a play/pause button, a component for users to enter a search term, a component
+    for users to select a media type, and a "Get Images" button. Additional
+    details are provided in the mockup.
 
     * *Play/Pause Button (10 points):* This button should allow the user to
-      pause and resume the random image replacement described for the main
-      content of the application. The button text should change, as needed,
-      to reflect the current application mode (i.e., play vs. pause).
+      enter and leave "play" mode, the semantics of which are described
+      later under "Random Replacement." The button text should change, as needed,
+      to reflect whether the app is "play" mode.
 
-    * *Query Text Field (10 points):* This component should allow the user to
+    * *Query Term Field (10 points):* This component should allow the user to
       enter in a **term** that your application will use when it queries the
 	  iTunes Search API. Its initial contents should correspond to some default term
 	  of your choosing (e.g., `"jack johnson"`).
 
-    * *Update Images Button (30 points):* This button should cause the application
+    * *Query Media Type Dropdown (10 points):* This component should allow the user to
+      select a **media** type that your application will use when it queries the
+	  iTunes Search API. This dropdown should default to having "music" selected.
+
+    * *Get Images Button (30 points):* This button should cause the application
       to query the iTunes Search API using the URL-encoded version of the term
-	  provided by the user in the query text field, download the images associated with
-	  the query response, then update the images in the main content area of the
-	  application accordingly.
+      and media type provided by the user, then update the "Main Content" area
+      accordingly and/or show an alert (if a problem is encountered).
 
 	  * Instructions for how to query to iTunes Search API are provided
 	    [here](#query-how), including a description of the parameters
 		you can provide when performing a query. When your application performs
 		a search query, **only the following parameters should be used:**
 
-        | Parameter | Value                                                     |
-        |-----------|-----------------------------------------------------------|
-		| `term`    | URL-encoded version of the **term** provided by the user. |
-		| `limit`   | `"200"`                                                   |
-		| `media`   | `"music"`                                                 |
+        | Parameter | Value                                                           |
+        |-----------|-----------------------------------------------------------------|
+        | `term`    | URL-encoded version of the **term** provided by the user.       |
+        | `media`   | URL-encoded version of the **media** type provided by the user. |
+        | `limit`   | `"200"`                                                         |
 
-	  * If the application is currently in **play mode**, then it should temporarily
-	    be placed into **pause mode** while the query process is taking place, then
-	    placed back into **play mode** once the query process is finished.
+      * Only a distinct set of URIs should used if there
+        are any duplicates. Implementers are not expected to handle situations
+        where two distinct URIs refer to identical images.
 
       * If **less than twenty one (21)** distinct artwork image URIs are available
 	    in the query response, then an alert dialog should be displayed to the
 		user with an appropriate error message. In this scenario, the images in
-		the main content area should not be updated, and the application should
-		resume in whatever mode it was in when the user clicked the "Update Images"
-		button.
+		the main content area should not be updated.
 
       * If **twenty one (21) or more** distinct artwork image URIs are available in
 	    the query response, then all the images associated with those distinct URIs
-		should be downloaded, and references to those downloaded images should be
-		stored in some kind of list. In this scenario, the main content area should
-		be updated to immediately display 20 of the downloaded images, and the
-		application should resume in whatever mode it was in when the user clicked
-		the "Update Images" button. The remaining images should not be omitted as
-		they will be needed to facilitate the "random replacement" described
-		elsewhere in this document.
+		should be downloaded. After all the downloads are complete, the main content
+		area should be updated to display the first 20 downloaded images. The
+        remaining images should not be omitted as they will be needed to facilitate
+        the "random replacement" described elsewhere in this document.
 
-  * **Progress Bar (10 points):** The application needs to have a progress bar
-    that indicates the progress of querying the iTunes Search API, loading the
-    images into memory, and updating the main content area of the application.
+  * **Message Bar (10):** The app must have an area near the top that
+    provides initial instructions to a user, then gets updated over time,
+    as the user interacts with the app. Additional details are provided in the
+    mockup.
 
-    * Ideally, the progress bar will be seen by users of the application to
-	  progress in two different scenarios:
+  * **Main Content (10):** The app must have an area near its center that displays
+    a collection of twenty (20) artwork images. The initial set of images are all
+    the same defult image (`"file:resources/default.png"`), but users can change them
+    using the "Update Images" button. Additional details are provided in the
+    mockup.
 
-	  1. when the application first starts and images are gathered from the
-	     response to the default query; and
+    * Images are gathered by querying the iTunes Search API. We have included
+      information [here](#query-how) on how to programmatically perform such
+      a query. A query response may contain multiple results, each with its own
+      artwork URI (named `artworkUrl100`) that you can use to download the images.
 
-	  2. when the "Update Images" button is pressed and images are gathered
-	     from the response to query constructed using the user's input.
+  * **Status Bar (10)** The app must have an area near the botton that contains
+    a functional progress bar and a message indicating that images are provided
+    by the iTunes Search API. Additional details are provided in the mockup.
 
-	  **You are required to handle situation (2),** and you are encouraged
-      to handle situation (1) if time permits.
+    * *Progress Bar (10 points):* The application needs to have a progress bar
+      that indicates the progress of downloading all the images once a distinct
+      set of image URIs is determined for a query response. Please note that
+      **this progress bar is not merely aesthetic**. It should actually show the
+      progress of downloading the individual images.
 
-    * Please note that **this progress bar is not merely aesthetic**. It
-      should actually show the progress of downloading the individual images
-      from the query response.
-
-    * In JavaFX, an image is represented by an [`Image`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/image/Image.html)
-      object. When an `Image` object is constructed with content loaded from a
-      specified URI (e.g., using the [`Image(String)`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/image/Image.html#%3Cinit%3E(java.lang.String))
-      constructor, that is when the image data is downloaded. Here is a code
-      snippet to consider:
-
-      ```java
-      String bradUrl = "http://csweb.cs.uga.edu/~mec/cs1302/gui/brad.jpg";
-      final Image bradImage = new Image(bradUrl);                 // first line
-      Platform.runLater(() -> someImageView.setImage(bradImage)); // second line
-      ```
-
-      In the example above, the first line will take some time to download but does not modify the scene graph;
-      however, the second line will take very little time but needs to run on the FX Application Thread
-      since it modifies the scene graph.
-
-* **Extra Credit Opportunity (10 points):** Add a "Help" menu to the menu bar. This menu
-  should contain one menu item labeled "About" that displays a stage or alert dialog
-  titled "About YOUR-NAME" (where YOUR-NAME is replaced with your name). The scene or
-  content of this stage or alert dialog should display an image of you as well as
-  your name, email, and the version number for your application
-  (version can be whatever you want). The stage or alert dialog should be
-  *application modal*, and it should be closable so that the user can return
-  to the main part of the application. Please make sure the "Help" menu is the
-  right-most menu.
+  * **Random Replacement (10):** The app must allow users to enter into a "play" mode
+    after images are successfully gathered. While in play mode, the app reandomly
+    replaces one of the displayed images with an already downloded image. Users
+    should be able to turn off "play" mode once they start it, either by clicking
+    "Pause" (changes to button to "Play" and stops the replacements) or by
+    clicking the "Update Images" button. Whenever the play/pause button displays
+    "Play" and is enabled, a user should be able to click the play/pause button
+    to enter "play" mode. Additional details are provided in the mockup.
 
 ### Non-Functional Requirements
 
