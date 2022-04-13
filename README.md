@@ -180,7 +180,8 @@ highest possible grade is 120 (due to extra credit).
   from the functionality of the required components. Here are the required components:
 
   Before we break down the points, please see the mockup below, which contain notes
-  about the app's required functionality. To access the mockup, you can click on the
+  about the app's required functionality. **Details provided in the mockup are to be
+  considered as part of the project requirements.** To access the mockup, you can click on the
   image below or the link below the image.
 
   [![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/mockup_thumb.png)](https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1)
@@ -247,8 +248,8 @@ highest possible grade is 120 (due to extra credit).
 
   * **Main Content (10):** The app must have an area near its center that displays
     a collection of twenty (20) artwork images. The initial set of images are all
-    the same defult image (`"file:resources/default.png"`), but users can change them
-    using the "Update Images" button. Additional details are provided in the
+    the same defult image (`"file:resources/default.png"`), but users can update
+    the images by clicking the "Get Images" button. Additional details are provided in the
     mockup.
 
     * Images are gathered by querying the iTunes Search API. We have included
