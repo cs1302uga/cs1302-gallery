@@ -192,7 +192,7 @@ highest possible grade is 120 (due to extra credit).
 
   Here are some details about the required elements:
 
-  * **Search Bar (60):** The app  must have an area near the top that contains
+  * **Search Bar (60 points):** The app  must have an area near the top that contains
     a play/pause button, a component for users to enter a search term, a component
     for users to select a media type, and a "Get Images" button. Additional
     details are provided in the mockup.
