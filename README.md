@@ -76,7 +76,9 @@ things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this
 document. Here is an example of what your program might look like:
 
-![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/screenshot.png)
+[![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/screenshot.png)](https://youtu.be/5SsO63m-Q5A)
+
+Click the image above or [here](https://youtu.be/5SsO63m-Q5A) for a video demo of the app (no audio).
 
 Part of software development is being given a goal but not necessarily being
 given instruction on all of the details needed to accomplish that goal. For example,
