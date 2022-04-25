@@ -813,27 +813,17 @@ Below are some frequently asked questions related to this project.
 
    From time to time, you may need to access one part of your app from another part of your app.
    You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
-   of reference variales around, perhaps through constructors. If it were one or two variables,
-   then it would not be a big deal. However, you are likely reading this question because you
-   are passing a lot of variables around. Your first thought might be to make those variables
-   static, but that is not good for a couple different reasons--recall what it means for
-   a variable to be static as well as the non-functional requirements for this project.
-   Using static variables as a "go to" solution is an example of an anti-pattern, i.e.,  a
-   common response to a recurring problem that is usually ineffective and risks being highly
-   counterproductive.
-
-   The reccommended strategy is to add all those variables to your `Application` subclass as
-   instance variables, then create getters / setters and higher level methods that interact
-   with groups of variables in a controlled way. This will make the application object easier
-   to work with, promote encapsulation, and help enforce self-governance of the object.
-   When employing this strategy, you can then pass a reference to your application object around as needed.
-   This way, you are only passing around one variable instead of many! In the other parts of your
-   app (e.g., in custom components), simply call on the application object's methods to access and
-   change the things you were previously passing around.
-
-   Remember, if you are currently in your application class's `start` method, then you can pass
-   a reference to the current application object into a method using the `this` reference
-   variable.
+   of reference variales around, perhaps through constructors. 
+   
+   The reccommended strategy is to NOT pass objects via constructors. Instead, expose parts of 
+   your custom components via getter methods in the custom component classes, then make the connections
+   that you need in your `Application` subclass. The thinking here is that a component should be reusable,
+   not just in the current app, but perhaps in future apps that you create. Just like the `Button` class
+   exposes methods, so should your custom component class -- an app knows about a button, but the button's
+   class need not know about the app. Methods in custom component classes should deal only with the nodes
+   in that component. If you're trying to make part of a custom compnent deal with something outside of 
+   the custom component, then the best place to make that connection is outside
+   the custom component.
 
 1. **How do I access a local, non-downloaded resource (e.g., an image file)?**
 
