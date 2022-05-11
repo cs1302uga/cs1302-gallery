@@ -370,7 +370,7 @@ made to modify your submission to evaluate other requirements.
   project harder, especially since those topics have not been covered.
 
 * **No use of `JsonArray`, `JsonElement`, `JsonObject`, and `JsonParser`:**
-  You may not use the following classes provided by Gson:
+  You may not use or mention the following classes provided by Gson:
 
   * `com.google.gson.JsonArray`
   * `com.google.gson.JsonElement`
@@ -384,7 +384,7 @@ made to modify your submission to evaluate other requirements.
   [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst).
 
 * **No use of the `openStream()` method in `URL`:**
-  You may not use the `openStream()` method provided by the `java.net.URL` class.
+  You may not use or mention the `openStream()` method provided by the `java.net.URL` class.
   If you need to access web content, then use an HTTP client as described in the
   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
 
