@@ -1,4 +1,4 @@
-# CSCI 1302 - Gallery v2022.sp
+# CSCI 1302 - Gallery v2022.fa
 
 ![Approved for: Fall 2022](https://img.shields.io/badge/Approved%20for-Fall%202022-darkgreen)
 
