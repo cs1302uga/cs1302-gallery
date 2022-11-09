@@ -1,11 +1,11 @@
 # CSCI 1302 - Gallery v2022.sp
 
-![Approved for: Spring 2022](https://img.shields.io/badge/Approved%20for-Spring%202022-purple)
+![Approved for: Fall 2022](https://img.shields.io/badge/Approved%20for-Fall%202022-darkgreen)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Spring 2022 CSCI 1302 classes
+assigned to the students in the Fall 2022 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -15,9 +15,9 @@ final submission via the `submit` command before the date/times listed below
 automatically receive the associated Submission-Based (SB) extra credit. The late
 penalty does not start applying until after the final date listed.
 
-* **TUE 2022-04-26 (APR 26) @ 11:55 PM EST (`+20` SB Extra Credit)**
-* **WED 2022-04-27 (APR 27) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **THU 2022-04-28 (APR 28) @ 11:55 PM EDT (`+0` SB Extra Credit)**
+* **MON 2022-11-21 (Nov 21) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **TUE 2022-11-22 (Nov 22) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **MON 2022-11-28 (Nov 28) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
@@ -41,7 +41,7 @@ the Appendix.**
 
 ## Course-Specific Learning Outcomes
 
-* **LO1.d:**	Use shell commands to compile new and existing software solutions that
+* **LO1.d:** Use shell commands to compile new and existing software solutions that
 are organized into multi-level packages and have external dependencies.
 * **LO2.e:** Utilize existing generic methods, interfaces, and classes in a software solution.
 * **LO3.a:** Create and update source code that adheres to established style guidelines.
@@ -58,8 +58,8 @@ fork this repository on GitHub if you have an account. Doing so will more than
 likely make your copy of the project publicly visible. Please follow the
 instructions contained in the
 [How to Download the Project](#how-to-download-the-project)
-section below in order to do your development on odin. Furthermore, you must adhere
- to the copyright notice and licensing information at the bottom of this document.
+section below in order to do your development on odin. Furthermore, you must adhere 
+to the copyright notice and licensing information at the bottom of this document.
 
 ## Updates
 
@@ -68,7 +68,7 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 ## Project Description
 
-Your goal is to implement a GUI application in Java using JavaFX 11 that displays a
+Your goal is to implement a GUI application in Java using JavaFX 17 that displays a
 gallery of images based on the results of a search query to the
 [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching).
 This will require you to lookup things in Javadoc and apply your knowledge of
@@ -76,7 +76,7 @@ things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this
 document. Here is an example of what your program might look like:
 
-[![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/screenshot.png)](https://youtu.be/5SsO63m-Q5A)
+[![screenshot1](https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/alsi/resources/screenshot.png)](https://youtu.be/5SsO63m-Q5A)
 
 Click the image above or [here](https://youtu.be/5SsO63m-Q5A) for a video demo of the app (no audio).
 
@@ -111,7 +111,7 @@ Instead, you can use Maven to more easily compile your code and handle dependenc
 [Absolute Requirements](#absolute-requirements) section for an overview of
 what you can do with Maven. While this project is already provided to you
 as a Maven project, you may still find is useful to read the
-[CSCI 1302 Maven Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/master/maven.md)
+[CSCI 1302 Maven Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/maven.md)
 to gain a better understanding of what Maven is.
 
 ## Suggested Checklist
@@ -187,7 +187,7 @@ highest possible grade is 120 (due to extra credit).
   image below or the link below the image.
 
   <p align="center">
-  <a href="https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1"><img src="https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/master/resources/mockup_thumb.png"></a>
+  <a href="https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1"><img src="https://raw.githubusercontent.com/cs1302uga/cs1302-gallery/alsi/resources/mockup_thumb.png"></a>
   <br>
   <a href="https://www.figma.com/file/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?node-id=0%3A1">Entire Mockup</a> | <a href="https://www.figma.com/proto/EGF7oPEpbLIdlQIrXsPRD7/cs1302-gallery?page-id=0%3A1&node-id=1%3A3&viewport=241%2C48%2C1.08&scaling=min-zoom&starting-point-node-id=1%3A3&show-proto-sidebar=1">Mockup Slideshow</a>
   </p>
@@ -329,7 +329,7 @@ made to modify your submission to evaluate other requirements.
   The main application class should be `cs1302.gallery.GalleryApp`, and the
   driver class should be `cs1302.gallery.GalleryDriver`.
 
-  Executable [scripts](https://github.com/cs1302uga/cs1302-tutorials/blob/master/scripts/scripts.md)
+  Executable [scripts](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/scripts/scripts.md)
   are provided with the starter code to help you execute the various Maven commands
   with corrrect command-line arguments. Assuming you are in the top-level project directory,
   use the following commands to run Maven:
