@@ -166,7 +166,7 @@ exhaustive list of steps that you may need to take to complete the project.
 ## Project Requirements & Grading
 
 This assignment is worth 100 points. The lowest possible grade is 0, and the
-highest possible grade is 120 (due to extra credit).
+highest possible grade is 110 (due to extra credit).
 
 ### Functional Requirements
 
@@ -393,7 +393,7 @@ made to modify your submission to evaluate other requirements.
 The graders will compile and run your code on Odin using Maven. They will test
 each of the functional and non-functional requirements and total up the points
 earned. This project is worth 100 points. Students have an opportunity to earn
-up to an additional 20 points via extra credit.
+up to an additional 10 points via extra credit.
 
 ## How to Download the Project
 
