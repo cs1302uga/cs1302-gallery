@@ -813,9 +813,9 @@ Below are some frequently asked questions related to this project.
 
    From time to time, you may need to access one part of your app from another part of your app.
    You used a good design (e.g., classes and inheritance), but you find that you're passing a lot
-   of reference variales around, perhaps through constructors. 
+   of reference variables around, perhaps through constructors. 
    
-   The reccommended strategy is to NOT pass objects via constructors. Instead, expose parts of 
+   The recommended strategy is to NOT pass objects via constructors. Instead, expose parts of 
    your custom components via getter methods in the custom component classes, then make the connections
    that you need in your `Application` subclass. The thinking here is that a component should be reusable,
    not just in the current app, but perhaps in future apps that you create. Just like the `Button` class
