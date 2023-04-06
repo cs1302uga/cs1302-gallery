@@ -1,11 +1,11 @@
-# CSCI 1302 - Gallery v2022.fa
+# CSCI 1302 - Gallery v2023.sp
 
-![Approved for: Fall 2022](https://img.shields.io/badge/Approved%20for-Fall%202022-darkgreen)
+![Approved for: Spring 2023](https://img.shields.io/badge/Approved%20for-Spring%202023-magenta)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Fall 2022 CSCI 1302 classes
+assigned to the students in the Spring 2023 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -15,9 +15,9 @@ final submission via the `submit` command before the date/times listed below
 automatically receive the associated Submission-Based (SB) extra credit. The late
 penalty does not start applying until after the final date listed.
 
-* **MON 2022-11-21 (Nov 21) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **TUE 2022-11-22 (Nov 22) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **MON 2022-11-28 (Nov 28) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **FRI 2023-04-21 (Apr 21) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **SAT 2023-04-22 (Apr 22) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **SUN 2023-04-23 (Apr 23) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
