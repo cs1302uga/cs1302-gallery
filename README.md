@@ -1,11 +1,11 @@
-# CSCI 1302 - Gallery v2023.sp
+# CSCI 1302 - Gallery v2023.fa
 
-![Approved for: Spring 2023](https://img.shields.io/badge/Approved%20for-Spring%202023-magenta)
+![Approved for: Fall 2023](https://img.shields.io/badge/Approved%20for-Fall%202023-green)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Spring 2023 CSCI 1302 classes
+assigned to the students in the Fall 2023 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
