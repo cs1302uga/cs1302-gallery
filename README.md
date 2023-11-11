@@ -70,7 +70,7 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 Your goal is to implement a GUI application in Java using JavaFX 17 that displays a
 gallery of images based on the results of a search query to the
-[iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching).
+[iTunes Search API](https://performance-partners.apple.com/search-api#searching).
 This will require you to lookup things in Javadoc and apply your knowledge of
 things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this
@@ -453,7 +453,7 @@ is probably not the best idea.
 
 ## Third Party APIs and Libraries
 
-* [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
+* [iTunes Search API](https://performance-partners.apple.com/search-api)
 * [Google Gson Library](https://github.com/google/gson)
 
 
@@ -498,7 +498,7 @@ Below are some frequently asked questions related to this project.
 
    If you want to read more about each parameter in the query URI, then refer to their
    entries in the
-   [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
+   [iTunes Search API documentation](https://performance-partners.apple.com/search-api).
 
    The body of the response, i.e., the content of a request to the iTunes Search API, is simply
    a string that is formatted using JavaScript Object Notation (JSON). You _could_
