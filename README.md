@@ -520,18 +520,24 @@ Below are some frequently asked questions related to this project.
    **See the String:** You can see the giant JSON-formatted string by visiting
    one of your carefully constructed URLs for an iTunes Search API query.
    Some web browsers may display the string directly, while others may attempt to
-   download it. You can see it on Odin using `wget` and `cat`
-   (or use `less` if you want scrolling):
+   download it. You can see it on Odin using `curl`:
 
    ```
-   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | cat
+   $ curl -s "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music"
    ```
 
    If you want to see formatted JSON output (i.e., properly tabbled, newlines added, etc.),
-   then you might pipe the output of `wget` into `jq` instead:
+   then you might pipe the output of `curl` into `jq`:
 
    ```
-   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq "."
+   $ curl -s "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq -C
+   ```
+   
+   If you want to scroll through the API response, then pipe the output of `jq` into `less` -- to
+   exit `less`, press `q`:
+
+   ```
+   $ curl -s "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq -C | less -R
    ```
 
    **URL-Encoding:** You may have noticed that we said `jack+johnson` is the URL-encoded
