@@ -533,7 +533,7 @@ Below are some frequently asked questions related to this project.
    $ curl -s "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq -C
    ```
    
-   If you want to scroll through the API response, then pipe the output of `jq` into `less` -- to
+   If you want to scroll through the API response, then pipe the output of `jq` into `less` — to
    exit `less`, press `q`:
 
    ```
@@ -831,7 +831,7 @@ Below are some frequently asked questions related to this project.
    your custom components via getter methods in the custom component classes, then make the connections
    that you need in your `Application` subclass. The thinking here is that a component should be reusable,
    not just in the current app, but perhaps in future apps that you create. Just like the `Button` class
-   exposes methods, so should your custom component class -- an app knows about a button, but the button's
+   exposes methods, so should your custom component class — an app knows about a button, but the button's
    class need not know about the app. Methods in custom component classes should deal only with the nodes
    in that component. If you're trying to make part of a custom compnent deal with something outside of 
    the custom component, then the best place to make that connection is outside
