@@ -64,7 +64,7 @@ fork this repository on GitHub if you have an account. Doing so will more than
 likely make your copy of the project publicly visible. Please follow the
 instructions contained in the
 [How to Download the Project](#how-to-download-the-project)
-section below in order to do your development on odin. Furthermore, you must adhere 
+section below in order to do your development on Odin. Furthermore, you must adhere 
 to the copyright notice and licensing information at the bottom of this document.
 
 ## Updates
@@ -77,7 +77,7 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 Your goal is to implement a GUI application in Java using JavaFX 17 that displays a
 gallery of images based on the results of a search query to the
 [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching).
-This will require you to lookup things in Javadoc and apply your knowledge of
+This will require you to look up things in documentation and apply your knowledge of
 things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this
 document. Here is an example of what your program might look like:
@@ -116,7 +116,7 @@ Instead, you can use Maven to more easily compile your code and handle dependenc
 "Project Structure" sub-section of the
 [Absolute Requirements](#absolute-requirements) section for an overview of
 what you can do with Maven. While this project is already provided to you
-as a Maven project, you may still find is useful to read the
+as a Maven project, you may still find it useful to read the
 [CSCI 1302 Maven Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/maven.md)
 to gain a better understanding of what Maven is.
 
@@ -258,7 +258,7 @@ highest possible grade is 110 (due to extra credit).
 
   * **Main Content (10):** The app must have an area near its center that displays
     a collection of twenty (20) artwork images. The initial set of images are all
-    the same defult image (`"file:resources/default.png"`), but users can update
+    the same default image (`"file:resources/default.png"`), but users can update
     the images by clicking the "Get Images" button. Additional details are provided in the
     mockup.
 
@@ -278,10 +278,10 @@ highest possible grade is 110 (due to extra credit).
       progress of downloading the individual images.
 
   * **Random Replacement (10):** The app must allow users to enter into a "play" mode
-    after images are successfully gathered. While in play mode, the app reandomly
-    replaces one of the displayed images with an already downloded image. Users
+    after images are successfully gathered. While in play mode, the app randomly
+    replaces one of the displayed images with an already downloaded image. Users
     should be able to turn off "play" mode once they start it, either by clicking
-    "Pause" (changes to button to "Play" and stops the replacements) or by
+    "Pause" (which changes the button to "Play" and stops the replacements) or by
     clicking the "Update Images" button. Whenever the play/pause button displays
     "Play" and is enabled, a user should be able to click the play/pause button
     to enter "play" mode. Additional details are provided in the mockup.
@@ -299,7 +299,7 @@ point total. That is, they are all or nothing.
 
 * **(10 points) User-Friendly Experience:**
   The windows of your application should not exceed a pixel dimension of 1280 (width) by 720 (height).
-  Except for reasonable delays resulting X forwarding, your application should not
+  Except for reasonable delays resulting from X forwarding, your application should not
   hang/freeze or crash during execution. If a grader encounters lag, then they will
   try to run your application locally using the same version of Java/JavaFX that's used on Odin.
 
@@ -504,12 +504,12 @@ Below are some frequently asked questions related to this project.
 
    If you want to read more about each parameter in the query URI, then refer to their
    entries in the
-   [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
+   [iTunes Search API documentation](https://performance-partners.apple.com/search-api).
 
    The body of the response, i.e., the content of a request to the iTunes Search API, is simply
    a string that is formatted using JavaScript Object Notation (JSON). You _could_
    perform string manipulation to retrieve pieces of information from this
-   JSON-formatted string, however, in this project, you should parse it using a `Gson`
+   JSON-formatted string; however, in this project, you should parse it using a `Gson`
    object's `fromJson` method as described in the
    [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst).
    A complete example that illustrates how to download and parse the JSON-formatted
