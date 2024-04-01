@@ -70,7 +70,7 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 Your goal is to implement a GUI application in Java using JavaFX 17 that displays a
 gallery of images based on the results of a search query to the
-[iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searching).
+[iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html).
 This will require you to look up things in Javadoc and apply your knowledge of
 things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this
