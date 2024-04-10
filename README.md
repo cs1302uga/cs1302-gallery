@@ -379,12 +379,12 @@ made to modify your submission to evaluate other requirements.
   the string directly into instances of classes that represent the data. Classes for
   an iTunes Search response and result are provided with the starter code. Instructions
   for parsing JSON-formatted strings using `fromJson` is described in the
-  [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst).
+  [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/json.md).
 
 * **No use of the `openStream()` method in `URL`:**
   You may not use or mention the `openStream()` method provided by the `java.net.URL` class.
   If you need to access web content, then use an HTTP client as described in the
-  [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
+  [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md).
 
 ### Grading
 
@@ -445,8 +445,8 @@ is probably not the best idea.
 
 ## Important Readings
 
-* [CSCI 1302 HTTP Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst)
-* [CSCI 1302 JSON Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst)
+* [CSCI 1302 HTTP Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md)
+* [CSCI 1302 JSON Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/json.md)
 * [CSCI 1302 JavaFX Bookmarks](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md)
 
 ## Third-Party APIs and Libraries
@@ -503,10 +503,10 @@ Below are some frequently asked questions related to this project.
    perform string manipulation to retrieve pieces of information from this
    JSON-formatted string, however, in this project, you should parse it using a `Gson`
    object's `fromJson` method as described in the
-   [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst).
+   [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/json.md).
    A complete example that illustrates how to download and parse the JSON-formatted
    string for a query to the iTunes Search API is also provided in the
-   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst)
+   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md)
    (see `cs1302.web/cs1302.web.Example3` under "Complete Examples").
 
    **See the String:** You can see the giant JSON-formatted string by visiting
@@ -541,7 +541,7 @@ Below are some frequently asked questions related to this project.
    [`URLEncoder`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URLEncoder.html).
    You should use the non-deprecated overload of this method, supplying `StandardCharsets.UTF_8`
    for the character encoding as seen in the
-   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
+   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md).
    Here is an example that URL-encodes `"jack johnson"` into something that can be used
    in a URI query string:
 
@@ -556,7 +556,7 @@ Below are some frequently asked questions related to this project.
 
     Instructions that describe how to download content from a URI into a string
     are provided in the
-    [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
+    [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md).
     That reading includes a complete example that illustrates how to download and parse the JSON-formatted
     string for a query to the iTunes Search API (see `cs1302.web/cs1302.web.Example3` under "Complete Examples").
     Classes to model the search response and results are already provided with
