@@ -451,7 +451,7 @@ is probably not the best idea.
 
 ## Third-Party APIs and Libraries
 
-* [iTunes Search API](https://performance-partners.apple.com/search-api)
+* [iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html)
 * [Google Gson Library](https://github.com/google/gson)
 
 
@@ -496,7 +496,7 @@ Below are some frequently asked questions related to this project.
 
    If you want to read more about each parameter in the query URI, then refer to their
    entries in the
-   [iTunes Search API documentation](https://performance-partners.apple.com/search-api).
+   [iTunes Search API documentation](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html).
 
    The body of the response, i.e., the content of a request to the iTunes Search API, is simply
    a string that is formatted using JavaScript Object Notation (JSON). You _could_
