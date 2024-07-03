@@ -1,11 +1,11 @@
-# CSCI 1302 - Gallery v2023.fa
+# CSCI 1302 - Gallery v2024.sp
 
-![Approved for: Fall 2023](https://img.shields.io/badge/Approved%20for-Fall%202023-green)
+![Approved for: Spring 2024](https://img.shields.io/badge/Approved%20for-Spring%202024-blue)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
 This document contains the description for the `cs1302-gallery` project
-assigned to the students in the Fall 2023 CSCI 1302 classes
+assigned to the students in the Spring 2024 CSCI 1302 classes
 at the University of Georgia.
 
 ## Deadline Options
@@ -15,9 +15,9 @@ final submission via the `submit` command before the date/times listed below
 automatically receive the associated Submission-Based (SB) extra credit. The late
 penalty does not start applying until after the final date listed.
 
-* **SUN 2023-11-19 (Nov 19) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **MON 2023-11-20 (Nov 20) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **TUE 2023-11-21 (Nov 21) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **WED 2024-04-17 (Apr 17) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **THU 2024-04-18 (Apr 18) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **FRI 2024-04-19 (Apr 19) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
@@ -70,8 +70,8 @@ through **Piazza** and **eLC** so please keep a lookout for them.
 
 Your goal is to implement a GUI application in Java using JavaFX 17 that displays a
 gallery of images based on the results of a search query to the
-[iTunes Search API](https://performance-partners.apple.com/search-api#searching).
-This will require you to lookup things in Javadoc and apply your knowledge of
+[iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html).
+This will require you to look up things in Javadoc and apply your knowledge of
 things like inheritance, polymorphism, and interfaces. The functional
 and non-functional requirements for this project are outlined later in this
 document. Here is an example of what your program might look like:
@@ -81,10 +81,8 @@ document. Here is an example of what your program might look like:
 Click the image above or [here](https://youtu.be/5SsO63m-Q5A) for a video demo of the app (no audio).
 
 Part of software development is being given a goal but not necessarily being
-given instruction on all of the details needed to accomplish that goal. For example,
-even though working with things like images, threads, JSON, and the iTunes Search API
-haven't been covered in class, you are going to need to lookup how to do these things
-in order to complete this project. Starter code and a generously helpful [FAQ](#faq)
+given instruction on all of the details needed to accomplish that goal. Starter code and 
+a generously helpful [FAQ](#faq)
 are provided. After actively reading through the main parts of this project description
 and taking notes, please read through the [FAQ](#faq) to see if it answers any of your
 questions.
@@ -119,7 +117,7 @@ to gain a better understanding of what Maven is.
 To help you with planning out this project, here are some suggested steps you can take that
 your instructors believe will help you complete the project more easily. Some of the
 items in this checklist may not make sense until you have read the entire project description,
-including the appendices. These steps are suggesions and, therefore, do not constitute an
+including the appendices. These steps are suggestions and, therefore, do not constitute an
 exhaustive list of steps that you may need to take to complete the project.
 
 **Preparation:**
@@ -143,7 +141,7 @@ exhaustive list of steps that you may need to take to complete the project.
 
 - [ ] Create any custom component classes.
 - [ ] On paper, hash out how you might store the list or lists of image URIs.
-- [ ] Write a method to retreive the JSON response string for a query to the iTunes
+- [ ] Write a method to retrieve the JSON response string for a query to the iTunes
       Search API based on a query string.
 - [ ] Write a method that returns a list of URI strings based on a JSON response
       string retrieved from the iTunes Search API.
@@ -154,12 +152,12 @@ exhaustive list of steps that you may need to take to complete the project.
 
 - [ ] Consider using a list or array to help you access the various `ImageView`
       objects in your scene; making new `ImageView` objects all the time is
-      _not_ reccommended. Remember, the `ImageView` objects are like the picture
+      _not_ recommended. Remember, the `ImageView` objects are like the picture
       frames. You wouldn't toss out a picture frame every time you changed the picture.
 - [ ] Make the buttons work at a basic level (you can decide what basic is).
 - [ ] Make the progress bar work (requires careful consideration of the threading
       required by some of your app's event handlers).
-- [ ] Make the random-replacement work.
+- [ ] Make the random replacement work.
 - [ ] Use Git to stage and commit your changes often; create and merge branches,
       as needed.
 
@@ -176,7 +174,7 @@ highest possible grade is 110 (due to extra credit).
   aspect is at the discretion of the implementor. The screenshot provided earlier
   in this project description is meant to serve as a reference.
   **It is okay if implementors deviate visually from the screenshot.** You should
-  setup the application's scene graph in whatever way makes most sense to you and meets
+  set up the application's scene graph in whatever way makes most sense to you and meets
   the requirements. In addition to the required components, implementors should feel
   free to add more components and/or functionality as long they do not distract too heavily
   from the functionality of the required components. Here are the required components:
@@ -218,7 +216,7 @@ highest possible grade is 110 (due to extra credit).
       and media type provided by the user, then update the "Main Content" area
       accordingly and/or show an alert (if a problem is encountered).
 
-	  * Instructions for how to query to iTunes Search API are provided
+	  * Instructions for how to query the iTunes Search API are provided
 	    [here](#query-how), including a description of the parameters
 		you can provide when performing a query. When your application performs
 		a search query, **only the following parameters should be used:**
@@ -233,12 +231,12 @@ highest possible grade is 110 (due to extra credit).
         are any duplicates. Implementers are not expected to handle situations
         where two distinct URIs refer to identical images.
 
-      * If **less than twenty one (21)** distinct artwork image URIs are available
+      * If **less than twenty-one (21)** distinct artwork image URIs are available
 	    in the query response, then an alert dialog should be displayed to the
 		user with an appropriate error message. In this scenario, the images in
 		the main content area should not be updated.
 
-      * If **twenty one (21) or more** distinct artwork image URIs are available in
+      * If **twenty-one (21) or more** distinct artwork image URIs are available in
 	    the query response, then all the images associated with those distinct URIs
 		should be downloaded. After all the downloads are complete, the main content
 		area should be updated to display the first 20 downloaded images. The
@@ -252,7 +250,7 @@ highest possible grade is 110 (due to extra credit).
 
   * **Main Content (10):** The app must have an area near its center that displays
     a collection of twenty (20) artwork images. The initial set of images are all
-    the same defult image (`"file:resources/default.png"`), but users can update
+    the same default image (`"file:resources/default.png"`), but users can update
     the images by clicking the "Get Images" button. Additional details are provided in the
     mockup.
 
@@ -261,7 +259,7 @@ highest possible grade is 110 (due to extra credit).
       a query. A query response may contain multiple results, each with its own
       artwork URI (named `artworkUrl100`) that you can use to download the images.
 
-  * **Status Bar (10)** The app must have an area near the botton that contains
+  * **Status Bar (10)** The app must have an area near the bottom that contains
     a functional progress bar and a message indicating that images are provided
     by the iTunes Search API. Additional details are provided in the mockup.
 
@@ -272,18 +270,18 @@ highest possible grade is 110 (due to extra credit).
       progress of downloading the individual images.
 
   * **Random Replacement (10):** The app must allow users to enter into a "play" mode
-    after images are successfully gathered. While in play mode, the app reandomly
-    replaces one of the displayed images with an already downloded image. Users
+    after images are successfully gathered. While in play mode, the app randomly
+    replaces one of the displayed images with an already downloaded image. Users
     should be able to turn off "play" mode once they start it, either by clicking
-    "Pause" (changes to button to "Play" and stops the replacements) or by
+    "Pause" (changes the button to "Play" and stops the replacements) or by
     clicking the "Update Images" button. Whenever the play/pause button displays
-    "Play" and is enabled, a user should be able to click the play/pause button
+    "Play" is enabled, a user should be able to click the play/pause button
     to enter "play" mode. Additional details are provided in the mockup.
 
 ### Non-Functional Requirements
 
 A non-functional requirement is *subtracted* from your point total if
-not satisfied. In order to emphasize the importance of these requirements,
+not satisfied. To emphasize the importance of these requirements,
 non-compliance results in the full point amount being subtracted from your
 point total. That is, they are all or nothing.
 
@@ -293,12 +291,12 @@ point total. That is, they are all or nothing.
 
 * **(10 points) User-Friendly Experience:**
   The windows of your application should not exceed a pixel dimension of 1280 (width) by 720 (height).
-  Except for reasonable delays resulting X forwarding, your application should not
-  hang/freeze or crash during execution. If a grader encounters lag, then they will
-  try to run your application locally using the same version of Java/JavaFX that's used on Odin.
+  Except for reasonable delays caused by X-forwarding, your application should not
+  hang/freeze or crash during execution. If a grader encounters lag, they will
+  try to run your application locally using the same version of Java/JavaFX used on Odin.
 
 * **(20 points) Code Style Guidelines:** You should be consistent with the style
-  aspect of your code in order to promote readability. Every `.java` file that
+  aspect of your code to promote readability. Every `.java` file that
   you include as part of your submission for this project must be in valid style
   as defined in the [CS1302 Code Style Guide](https://github.com/cs1302uga/cs1302-styleguide).
   All of the individual code style guidelines listed in that document are part
@@ -322,7 +320,7 @@ made to modify your submission to evaluate other requirements.
 
 * **Project Structure:** The location of the default
   package for the source code should be a direct subdirectory called `src/main/java`.
-  When the project is compiled using Maven, the the default package for compiled
+  When the project is compiled using Maven, the default package for compiled
   code should be `target/classes`. The classes in the starter code are in
   the `cs1302.gallery` package. **Any additional classes that you create should
   be located in or under the `cs1302.gallery` package.**
@@ -381,12 +379,12 @@ made to modify your submission to evaluate other requirements.
   the string directly into instances of classes that represent the data. Classes for
   an iTunes Search response and result are provided with the starter code. Instructions
   for parsing JSON-formatted strings using `fromJson` is described in the
-  [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst).
+  [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/json.md).
 
 * **No use of the `openStream()` method in `URL`:**
   You may not use or mention the `openStream()` method provided by the `java.net.URL` class.
   If you need to access web content, then use an HTTP client as described in the
-  [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
+  [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md).
 
 ### Grading
 
@@ -397,8 +395,8 @@ up to an additional 10 points via extra credit.
 
 ## How to Download the Project
 
-On Odin, execute the following terminal command in order to download the project
-files into sub-directory within your present working directory:
+On Odin, execute the following terminal command to download the project
+files into a sub-directory within your present working directory:
 
 ```
 $ git clone --depth 1 https://github.com/cs1302uga/cs1302-gallery.git
@@ -447,11 +445,11 @@ is probably not the best idea.
 
 ## Important Readings
 
-* [CSCI 1302 HTTP Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst)
-* [CSCI 1302 JSON Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst)
+* [CSCI 1302 HTTP Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md)
+* [CSCI 1302 JSON Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/json.md)
 * [CSCI 1302 JavaFX Bookmarks](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md)
 
-## Third Party APIs and Libraries
+## Third-Party APIs and Libraries
 
 * [iTunes Search API](https://performance-partners.apple.com/search-api)
 * [Google Gson Library](https://github.com/google/gson)
@@ -468,12 +466,12 @@ Below are some frequently asked questions related to this project.
 
 1. <a id="query-how" />**How do I query the iTunes Search API?**
 
-   In order query the iTunes Search API, you need to access the iTunes Search
-   API service via a carefully contructed URI. Here is a an example of a query
+   In order to query the iTunes Search API, you need to access the iTunes Search
+   API service via a carefully constructed URI. Here is an example of a query
    URI that searches for all
    [Jack Johnson](https://en.wikipedia.org/wiki/Jack_Johnson_(musician))
    audio and video content (movies,
-   podcasts, music, music videos, audiobooks, short films, and tv shows):
+   podcasts, music, music videos, audiobooks, short films, and TV shows):
 
    ```
    https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music
@@ -505,27 +503,33 @@ Below are some frequently asked questions related to this project.
    perform string manipulation to retrieve pieces of information from this
    JSON-formatted string, however, in this project, you should parse it using a `Gson`
    object's `fromJson` method as described in the
-   [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/json.rst).
+   [JSON reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/json.md).
    A complete example that illustrates how to download and parse the JSON-formatted
    string for a query to the iTunes Search API is also provided in the
-   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst)
+   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md)
    (see `cs1302.web/cs1302.web.Example3` under "Complete Examples").
 
    **See the String:** You can see the giant JSON-formatted string by visiting
    one of your carefully constructed URLs for an iTunes Search API query.
    Some web browsers may display the string directly, while others may attempt to
-   download it. You can see it on Odin using `wget` and `cat`
-   (or use `less` if you want scrolling):
+   download it. You can see it on Odin using `curl`:
 
    ```
-   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | cat
+   $ curl -s "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music"
    ```
 
-   If you want to see formatted JSON output (i.e., properly tabbled, newlines added, etc.),
-   then you might pipe the output of `wget` into `jq` instead:
+   If you want to see formatted JSON output (i.e., properly tabled, newlines added, etc.),
+   then you might pipe the output of `curl` into `jq`:
 
    ```
-   $ wget -qO- "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq "."
+   $ curl -s "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq -C
+   ```
+   
+   If you want to scroll through the API response, then pipe the output of `jq` into `less` -- to
+   exit `less`, press `q`:
+
+   ```
+   $ curl -s "https://itunes.apple.com/search?term=jack+johnson&limit=200&media=music" | jq -C | less -R
    ```
 
    **URL-Encoding:** You may have noticed that we said `jack+johnson` is the URL-encoded
@@ -537,7 +541,7 @@ Below are some frequently asked questions related to this project.
    [`URLEncoder`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URLEncoder.html).
    You should use the non-deprecated overload of this method, supplying `StandardCharsets.UTF_8`
    for the character encoding as seen in the
-   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
+   [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md).
    Here is an example that URL-encodes `"jack johnson"` into something that can be used
    in a URI query string:
 
@@ -552,7 +556,7 @@ Below are some frequently asked questions related to this project.
 
     Instructions that describe how to download content from a URI into a string
     are provided in the
-    [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/master/web/http.rst).
+    [HTTP reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md).
     That reading includes a complete example that illustrates how to download and parse the JSON-formatted
     string for a query to the iTunes Search API (see `cs1302.web/cs1302.web.Example3` under "Complete Examples").
     Classes to model the search response and results are already provided with
@@ -578,7 +582,7 @@ Below are some frequently asked questions related to this project.
 
    Like local and anonymous classes, a lambda expression can only access local
    variables of the enclosing block that are `final` or effectively `final`.
-   That is, a variable local to method can only be involved in the body of
+   That is, a variable local to a method can only be involved in the body of
    a lambda expression if it is either explicitly declared as `final` or if
    its value does not change after initialization over the entire body of
    the method. A variable is local to a method (i.e., it's a local variable)
@@ -589,7 +593,7 @@ Below are some frequently asked questions related to this project.
    internal state of the object being referenced is changed so long as the
    variable itself (i.e., the reference value) does not change.
 
-   This problem can be usually be fixed by effectively making use of
+   This problem can usually be fixed by effectively making use of
    instance variables and/or writing methods that return an instance
    of the interface being implemented via the lambda. For example,
    consider the following scenario that results in the compile-time
@@ -643,13 +647,13 @@ Below are some frequently asked questions related to this project.
    **Why is this an issue?** Well, the big reason is that the language does not support it.
    Why doesn't the language support it? I speculate that the reason has to do with
    how local variables are managed internally in memory. As methods get called and
-   return they occupy and free up a region of memory called the program stack. It is
-   very likely that the region of memory used by the method that created the lambda
+   return they occupy and free up a region of memory called the program stack. Likely,
+   the region of memory used by the method that created the lambda
    is freed up before the object created by the lambda is used. If the body of the
    lambda expression attempts to change the value of the variable, then what does
-   that mean if the variable is not longer there!?
+   that mean if the variable is no longer there!?
 
-1. **How do I make my application not freeze/hang when executing long running event handlers?**
+1. **How do I make my application not freeze/hang when executing long-running event handlers?**
 
    For the most part, your GUI application is just like any other
    Java application you have ever written. If a line of code takes a long time to
@@ -679,7 +683,7 @@ Below are some frequently asked questions related to this project.
    Therefore, I will try to use "task" throughout the remainder of this
    response.
 
-   To create a new thread, you need to instatiate a
+   To create a new thread, you need to instantiate a
    [`Thread`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Thread.html) object
    with a [`Runnable`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html)
    implementation for your task. Since `Runnable` is a functional interface,
@@ -695,7 +699,7 @@ Below are some frequently asked questions related to this project.
    ```
    The call to `taskThread.setDaemon(true)` prevents this newly created thread from
    delaying program termination in the case where either the main thread
-   or the JavaFX Application Thread terminate first. After the call to
+   or the JavaFX Application Thread terminates first. After the call to
    `taskThread.start()`, both the JavaFX Application Thread and the newly created
    thread are executing concurrently. You cannot assume that statements in
    either thread execute in any predetermined order.
@@ -821,7 +825,7 @@ Below are some frequently asked questions related to this project.
    not just in the current app, but perhaps in future apps that you create. Just like the `Button` class
    exposes methods, so should your custom component class -- an app knows about a button, but the button's
    class need not know about the app. Methods in custom component classes should deal only with the nodes
-   in that component. If you're trying to make part of a custom compnent deal with something outside of 
+   in that component. If you're trying to make part of a custom component deal with something outside of 
    the custom component, then the best place to make that connection is outside
    the custom component.
 
