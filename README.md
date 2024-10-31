@@ -109,7 +109,7 @@ Instead, you can use Maven to more easily compile your code and handle dependenc
 [Absolute Requirements](#absolute-requirements) section for an overview of
 what you can do with Maven. While this project is already provided to you
 as a Maven project, you may still find is useful to read the
-[CSCI 1302 Maven Tutorial](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/maven.md)
+[CSCI 1302 Maven Chapter](https://cs1302uga.github.io/cs1302-book/tools/maven/maven-index.html)
 to gain a better understanding of what Maven is.
 
 ## Suggested Checklist
@@ -327,9 +327,9 @@ made to modify your submission to evaluate other requirements.
   The main application class should be `cs1302.gallery.GalleryApp`, and the
   driver class should be `cs1302.gallery.GalleryDriver`.
 
-  Executable [scripts](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/scripts/scripts.md)
-  are provided with the starter code to help you execute the various Maven commands
-  with corrrect command-line arguments. Assuming you are in the top-level project directory,
+  Executable [scripts](https://cs1302uga.github.io/cs1302-book/tools/scripts/scripts-index.html)
+  are provided with the starter code to help you execute the various [Maven](https://cs1302uga.github.io/cs1302-book/tools/maven/maven-index.html)
+  commands with correct command-line arguments. Assuming you are in the top-level project directory,
   use the following commands to run Maven:
 
   * Clean and Compile:
@@ -447,7 +447,7 @@ is probably not the best idea.
 
 * [CSCI 1302 HTTP Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/http.md)
 * [CSCI 1302 JSON Reading](https://github.com/cs1302uga/cs1302-tutorials/blob/alsi/web/json.md)
-* [CSCI 1302 JavaFX Bookmarks](https://github.com/cs1302uga/cs1302-tutorials/blob/master/javafx/javafx-bookmarks.md)
+* [CSCI 1302 JavaFX Bookmarks](https://cs1302uga.github.io/cs1302-book/java/javafx/bookmarks.html)
 
 ## Third-Party APIs and Libraries
 
@@ -707,11 +707,12 @@ Below are some frequently asked questions related to this project.
    **Note:** Using a daemon thread may not be desirable when writing data to a
    file or database as the JVM may terminate the thread before it's finished.
 
-   **From the Reading:** <a id="runNow"/> You are free to use the `runNow` method from the
-   [Brief Introduction to Java Threads](https://github.com/cs1302uga/cs1302-tutorials/blob/master/threads/brief-intro-threads.md)
-   reading (please attribute the reading in your Javadoc comment). This method
+   **From the Reading:** <a id="runNow"/> You are free to use the `runNow` method used in the
+   [Threads Chapter](https://cs1302uga.github.io/cs1302-book/java/threads/threads-index.html)
+   (please attribute the book in your Javadoc comment). This method
    wraps the lines above into a single method so that you can write the
    following instead:
+
    ```java
    runNow(() -> {
        /* task
@@ -720,7 +721,9 @@ Below are some frequently asked questions related to this project.
         */
     });
     ```
+
     Or, if you have written a method for your task, then it looks even nicer:
+
     ```java
     runNow(() -> myTaskMethod());
     ```
@@ -737,12 +740,14 @@ Below are some frequently asked questions related to this project.
    [`Platform`](https://openjfx.io/javadoc/17/javafx.graphics/javafx/application/Platform.html).
    Since `Runnable` is a functional interface, this process is simplified using
    a lambda expression or method reference. Here is a basic example:
+
    ```java
    Runnable sceneTask = () -> {
        /* place code interacting with scene graph here */
    };
    Platform.runLater(sceneTask);
    ```
+
    The `runLater` method ensures that the code in your `Runnable` implementation
    executes in the JavaFX Application Thread.
 
