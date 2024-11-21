@@ -381,9 +381,10 @@ made to modify your submission to evaluate other requirements.
   for parsing JSON-formatted strings using `fromJson` is described in the
   [JSON chapter](https://cs1302uga.github.io/cs1302-book/java/json/json-index.html).
 
-* **No use of the `openStream()` method in `URL`:**
-  You may not use or mention the `openStream()` method provided by the `java.net.URL` class.
-  If you need to access web content, then use an HTTP client as described in the
+* **No use of the `openStream()` and `openConnection()` methods in `URL`:**
+  You may not use or mention the `openStream()` method or the `openConnection()` method
+  provided by the `java.net.URL` class. If you need to access web content, then use
+  an HTTP client as described in the
   [HTTP chapter](https://cs1302uga.github.io/cs1302-book/java/http/http-index.html).
 
 ### Grading
