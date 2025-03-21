@@ -1,6 +1,6 @@
 # CSCI 1302 - Gallery v2024.sp
 
-![Approved for: Fall 2024](https://img.shields.io/badge/Approved%20for-Fall%202024-green)
+![Approved for: Spring 2025](https://img.shields.io/badge/Approved%20for-Spring%202025-blue)
 
 ![Some Image](http://cobweb.cs.uga.edu/~mec/cs1302/cs1302-gallery.jpg)
 
@@ -15,9 +15,9 @@ final submission via the `submit` command before the date/times listed below
 automatically receive the associated Submission-Based (SB) extra credit. The late
 penalty does not start applying until after the final date listed.
 
-* **WED 2024-11-20 (Nov 20) @ 11:55 PM EST (`+10` SB Extra Credit)**
-* **THU 2024-11-21 (Nov 21) @ 11:55 PM EST (`+5` SB Extra Credit)**
-* **FRI 2024-11-22 (Nov 22) @ 11:55 PM EST (`+0` SB Extra Credit)**
+* **WED 2025-04-16 (Apr 16) @ 11:55 PM EST (`+10` SB Extra Credit)**
+* **THU 2025-04-17 (Apr 17) @ 11:55 PM EST (`+5` SB Extra Credit)**
+* **FRI 2025-04-18 (Apr 18) @ 11:55 PM EST (`+0` SB Extra Credit)**
 
 **Please read the entirety of this file before
 beginning your project, including the FAQ in
