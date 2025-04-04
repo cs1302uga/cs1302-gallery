@@ -1,4 +1,4 @@
-# CSCI 1302 - Gallery v2024.sp
+# CSCI 1302 - Gallery v2025.sp
 
 ![Approved for: Spring 2025](https://img.shields.io/badge/Approved%20for-Spring%202025-blue)
 
@@ -58,7 +58,7 @@ fork this repository on GitHub if you have an account. Doing so will more than
 likely make your copy of the project publicly visible. Please follow the
 instructions contained in the
 [How to Download the Project](#how-to-download-the-project)
-section below in order to do your development on odin. Furthermore, you must adhere 
+section below in order to do your development on Odin. Furthermore, you must adhere 
 to the copyright notice and licensing information at the bottom of this document.
 
 ## Updates
@@ -496,7 +496,7 @@ Below are some frequently asked questions related to this project.
 
    If you want to read more about each parameter in the query URI, then refer to their
    entries in the
-   [iTunes Search API documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
+   [iTunes Search API documentation](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html).
 
    The body of the response, i.e., the content of a request to the iTunes Search API, is simply
    a string that is formatted using JavaScript Object Notation (JSON). You _could_
