@@ -5,6 +5,7 @@ import java.net.http.HttpClient;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -29,7 +30,7 @@ public class GalleryApp extends Application {
 
     private Stage stage;
     private Scene scene;
-    private HBox root;
+    private VBox root;
 
     /**
      * Constructs a {@code GalleryApp} object}.
@@ -37,7 +38,7 @@ public class GalleryApp extends Application {
     public GalleryApp() {
         this.stage = null;
         this.scene = null;
-        this.root = new HBox();
+        this.root = new VBox();
     } // GalleryApp
 
     /** {@inheritDoc} */
