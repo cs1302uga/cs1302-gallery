@@ -2,7 +2,7 @@
 
 ![Approved for: Fall 2025](https://img.shields.io/badge/Approved%20for-Fall%202025-green)
 
-![Some Image](resources/banner.jpeg)
+![Some Image](/resources/banner.jpeg)
 
 This document contains the description for the `cs1302-gallery` project
 assigned to the students in the Fall 2025 CSCI 1302 classes
